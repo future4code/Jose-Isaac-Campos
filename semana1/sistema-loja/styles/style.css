@@ -1,0 +1,177 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    font-family:'Courier New', Courier, monospace, serif;
+    background-color: #dcdde1;
+    color: #353b48;
+}
+
+header {
+    padding-top: 5%;
+    background-color: #192a56;
+    color: #f5f6fa;
+    text-align: center;
+    height: 40%;
+    font-family:'Courier New', Courier, monospace, serif;
+
+}
+
+.img-entrada {
+    width: 10%;
+}
+
+header h1 {
+    text-transform: uppercase;
+}
+
+header p {
+    letter-spacing: 1px;
+}
+
+header div p {
+    font-weight: bold;
+}
+
+.menu-bar {
+    background-color: #f5f6fa;
+    width: 70%;
+    margin: 6.65% auto;
+    padding: 1%;
+}
+
+.menu-bar-inicial {
+    margin: 3% auto;
+}
+
+.menu-bar a {
+    text-decoration: none;
+    margin: 1%;
+    font-weight: 400;
+    letter-spacing: 1px;
+    border-right: 1px solid #192a56;
+    padding-right: 2%;
+}
+
+.menu-bar a:last-child {
+    border: none;
+}
+
+main {
+    width: 50%;
+    height: auto;
+    margin: 3% auto;
+    padding-top: 3%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+main div {
+    display: inline-block;
+    width: 40%;
+ }
+
+main div p {
+    color: #273c75;
+    font-size: 1.1em;
+    margin-right: 20%;
+    line-height: 150%;
+    letter-spacing: 2px;
+    text-align: left;
+}
+
+main h2 {
+    color: #f5f6fa;
+    background-color: #192a56;
+    padding: 1.5%;
+}
+
+.ilustracao-principal {
+    display: inline-block;
+    width: 100%;
+}
+
+table {
+    margin-top: 7%;
+    width: 100%;
+}
+
+table img {
+    width: 90%;
+}
+
+.table-linha td {
+    padding: 6% 4%;
+}
+
+.lista-funcionarios {
+    padding: 0;
+}
+
+.lista-funcionarios li{
+    list-style: none;
+    margin: 2%;
+    font-size: 1.15rem;
+}
+
+.form-produtos {
+    margin-top: 3%;
+}
+
+.form-produtos div {
+    display: block;
+    width: 70%;
+    margin: 2% auto;
+    text-align: left;
+}
+
+.form-produtos div label {
+    display: block;
+    text-align: left;
+    margin-bottom: 2%;
+}
+
+.form-produtos div input {
+    width: 97%;
+    background-color: #dcdde1;
+    border: 1px solid #192a56;
+    padding: 1.5%;
+}
+
+.form-add button {
+    width: 100%;
+    font-size: 1.15rem;
+    padding: 2%;
+    background-color: #192a56;
+    color: #dcdde1;
+    letter-spacing: 2px;
+}
+
+.form-add button:hover {
+   font-weight: bold;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #718093;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1.12em;
+    letter-spacing: 1px;
+    padding: 1%;
+    margin: 0;
+    color: #f5f6fa;
+    font-weight: 400;
+}
+
+footer img {
+    width: 40px;
+    padding: 1%;
+}
