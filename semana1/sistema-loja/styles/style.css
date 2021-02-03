@@ -40,7 +40,7 @@ header div p {
     background-color: #f5f6fa;
     width: 70%;
     margin: 6.65% auto;
-    padding: 1%;
+    padding: .7%;
 }
 
 .menu-bar-inicial {
@@ -49,15 +49,19 @@ header div p {
 
 .menu-bar a {
     text-decoration: none;
-    margin: 1%;
     font-weight: 400;
     letter-spacing: 1px;
     border-right: 1px solid #192a56;
-    padding-right: 2%;
+    padding: 1%;
 }
 
 .menu-bar a:last-child {
     border: none;
+}
+
+.item-selecionado {
+    background-color: #192a56;
+    color: #f5f6fa;
 }
 
 main {
@@ -107,6 +111,22 @@ table img {
     padding: 6% 4%;
 }
 
+.table-carrinho tr:last-child td:last-child {
+    border-top: 1px solid;
+    padding-top: 2%;
+}
+
+.forma-pagamento {
+    margin-top: 5%;
+}
+
+.forma-pagamento select {
+    padding: 4%;
+    font-size: 1em;
+    color: #f5f6fa;
+    background-color: #192a56;
+}
+
 .lista-funcionarios {
     padding: 0;
 }
@@ -141,7 +161,7 @@ table img {
     padding: 1.5%;
 }
 
-.form-add button {
+.form-produtos .form-add button {
     width: 100%;
     font-size: 1.15rem;
     padding: 2%;
@@ -152,6 +172,65 @@ table img {
 
 .form-add button:hover {
    font-weight: bold;
+}
+
+.box-opcoes {
+    width: 100%;
+}
+
+.box-opcoes button {
+    font-size: 1.15em;
+    padding: 1%;
+    background-color: #192a56;
+    color: #dcdde1;
+}
+
+.box-opcoes a {
+    text-decoration: none;
+    color: #dcdde1;
+}
+
+.form-busca {
+    width: 70%;
+    margin: auto;
+}
+
+.form-busca div {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 2%;
+}
+
+.form-busca div:first-child {
+    width: 70%;
+    text-align: left;
+}
+
+.form-busca label {
+    padding: 1%;
+    display: block;
+}
+
+.form-busca input {
+    padding: 1%;
+    width: 100%;
+}
+
+.form-busca .form-add {
+    width: 30%;
+}
+
+.form-busca .form-add button {
+    width: 100%;
+    font-size: 1.1em;
+    padding: 3%;
+    background-color: #192a56;
+    color: #dcdde1;
+}
+
+.footer {
+    position: absolute;
 }
 
 footer {
