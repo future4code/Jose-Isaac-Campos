@@ -74,36 +74,6 @@ header div p {
     color: #fad06c;
     border-radius: 5px;
 }
-/* Estilos antigos do menu 
-[ deve ser removido após a refatração] */
-
-.menu-bar {
-    background-color: #f5f6fa;
-    width: 70%;
-    margin: 6.65% auto;
-    padding: .7%;
-}
-
-.menu-bar-inicial {
-    margin: 3% auto;
-}
-
-.menu-bar a {
-    text-decoration: none;
-    font-weight: 400;
-    letter-spacing: 1px;
-    border-right: 1px solid #192a56;
-    padding: 1%;
-}
-
-.menu-bar a:last-child {
-    border: none;
-}
-
-.item-selecionado {
-    background-color: #192a56;
-    color: #f5f6fa;
-}
 
 main {
     width: 50%;
