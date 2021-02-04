@@ -22,6 +22,10 @@ input {
     width: 500px;
 }
 
+input, button {
+    outline: none;
+}
+
 button:focus {
     color: white;
 }
