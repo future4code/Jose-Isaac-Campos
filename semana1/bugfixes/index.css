@@ -72,11 +72,12 @@ div>p:first-child {
 
 #container-de-descricao p {
     display: inline-block;
-    width: 19%;
+    width: 14%;
 }
 
-#container-de-descricao>ol {
+#container-de-descricao> ol {
     padding: 15px 0px;
+    list-style-position: inside;
 }
 
 #container-para-comprar {
