@@ -64,6 +64,10 @@ div>p:first-child {
     opacity: 0.5;
 }
 
+.icone:active {
+    opacity: 100;
+}
+
 
 /** 
   *
