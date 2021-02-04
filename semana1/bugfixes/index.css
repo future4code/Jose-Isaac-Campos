@@ -136,6 +136,11 @@ td button:hover {
     border-bottom: 2px solid black;
 }
 
+#container-back-button {
+    width: 13%;
+    margin: auto;
+}
+
 
 #back-button {
     background-color: white;
