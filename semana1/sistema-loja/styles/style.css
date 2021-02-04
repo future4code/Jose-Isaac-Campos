@@ -15,7 +15,7 @@ header {
     background-color: #192a56;
     color: #f5f6fa;
     text-align: center;
-    height: 35%;
+    height: auto;
     font-family:'Courier New', Courier, monospace, serif;
 }
 
@@ -42,9 +42,13 @@ header div p {
 /* Estilos do Menu de Navegação */
 
 .box-menu {
+    position: relative;
+    z-index: 2;
     width: 100%;
-    background-color:rgba(25,42,86, .3);
+    /* background-color:rgba(46, 69, 128, 0.4); */
+    background-color: rgba(245,246,250, .1);
     padding: .6em;
+    margin-top: 1.2%;
 }
 
 .box-menu .lista-links {
@@ -58,9 +62,6 @@ header div p {
     margin-right: 1%;
 }
 
-.box-menu .lista-links li a:hover {
-    background-color: #192a56;
-}
 
 .box-menu .lista-links li a {
     color: #f5f6fa;
@@ -68,6 +69,11 @@ header div p {
     padding: .6%;
 }
 
+.box-menu .lista-links li a:hover, .item-ativo {
+    background-color: rgba(245, 246, 250, .13);
+    color: #fad06c;
+    border-radius: 5px;
+}
 /* Estilos antigos do menu 
 [ deve ser removido após a refatração] */
 
