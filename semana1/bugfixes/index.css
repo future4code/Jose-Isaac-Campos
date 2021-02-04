@@ -137,8 +137,9 @@ td button:hover {
 }
 
 #container-back-button {
-    width: 13%;
+    width: 5%;
     margin: auto;
+    margin-top: 10%;
 }
 
 
