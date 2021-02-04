@@ -72,7 +72,7 @@ div>p:first-child {
 
 #container-de-descricao p {
     display: inline-block;
-    width: 12%;
+    width: 19%;
 }
 
 #container-de-descricao>ol {
@@ -107,6 +107,7 @@ div:last-child {
 table {
     width: 60%;
     text-align: center;
+    margin: auto;
 }
 
 td > img {
