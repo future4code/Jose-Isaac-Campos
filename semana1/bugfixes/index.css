@@ -73,6 +73,11 @@ div img {
     box-sizing: border-box;
 }
 
+#container-de-descricao p {
+    display: inline-block;
+    width: 12%;
+}
+
 #container-de-descricao>ol {
     padding: 15px 0px;
 }
@@ -81,7 +86,7 @@ div img {
     background-color: #e7eb90;
 }
 
-#container-para-comprar>p {
+#container-para-comprar > p {
     color: #c44f00;
     padding: 100px 0;
     font-size: 60px;
