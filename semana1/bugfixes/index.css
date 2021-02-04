@@ -94,6 +94,7 @@ div>p:first-child {
 
 #container-para-comprar {
     background-color: #e7eb90;
+    padding-top: 3%;
 }
 
 #container-para-comprar > p {
@@ -104,6 +105,7 @@ div>p:first-child {
 
 #container-para-comprar > a {
     display: block;
+    margin-top: 3%;
 }
 
 /**
