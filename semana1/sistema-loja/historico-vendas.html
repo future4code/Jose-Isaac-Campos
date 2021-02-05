@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./styles/style.css" />
+    <link rel="shortcut icon" type="image/png" href="./icon/sacolas-de-compras.svg">
+    <title>FastShop</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img class="img-entrada" src="./icon/sacolas-de-compras.svg"
+                alt="Uma sacola de loja com uma alça sorridente">
+            <p>FastShop</p>
+        </div>
+        <nav class="box-menu">
+            <ul class="lista-links">
+                <li>
+                    <a href="./index.html">Página Inicial</a>
+                </li>
+                <li>
+                    <a href="./ctrl-estoque.html">Controle de Estoque</a>
+                </li>
+                <li>
+                    <a class="item-ativo" href="./historico-vendas.html">Histórico de Vendas</a>
+                </li>
+                <li>
+                    <a href="./funcionarios.html">Funcionários</a>
+                </li>
+                <li>
+                    <a href="./add-produto.html">Adicionar Produto</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <h2>Histórico de Vendas</h2>
+
+        <form action="#" class="form-busca">
+            <div>
+                <label for="data">Data:</label>
+                <!-- Adicione o id apropriado para o input abaixo -->
+                <input type="text" id="data" name="descrição">
+            </div>
+
+            <div class="form-add">
+                <!-- Adicione ao type do botão abaixo o valor para que ele submeta o formulário -->
+                <button type="submit">Buscar</button>
+            </div>
+        </form>
+
+        <table class="table-carrinho">
+            <thead>
+                <tr>
+                    <th>Funcionário</th>
+                    <th>Produto</th>
+                    <th>Unidades</th>
+                    <th>Preço Unitário</th>
+                    <th>Hora da Venda</th>
+                    <th>Forma de Pagamento</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Isaac Asimov</td>
+                    <td>Poco X3</td>
+                    <td>1</td>
+                    <td>R$: 1.978,00</td>
+                    <td>04:45</td>
+                    <td>Cartão</td>
+                </tr>
+
+                <tr>
+                    <td>Katie Bouman</td>
+                    <td>Redmi Note 9s</td>
+                    <td>2</td>
+                    <td>R$: 1.730,00</td>
+                    <td>04:45</td>
+                    <td>Dinheiro</td>
+                </tr>
+
+                <tr>
+                    <td>Sigmund Freud</td>
+                    <td>Fone JB950</td>
+                    <td>3</td>
+                    <td>R$: 119,00</td>
+                    <td>04:45</td>
+                    <td>Dinheiro</td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Total: 3.907,00</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>Siga-nos nas redes sociais!</p>
+        <img src="https://image.flaticon.com/icons/png/512/25/25305.png" alt="Facebook" />
+        <img src="https://image.flaticon.com/icons/png/512/25/25425.png" alt="Instagram" />
+        <img src="https://image.flaticon.com/icons/png/512/8/8800.png" / alt="Twitter" />
+    </footer>
+</body>
+
+</html>
