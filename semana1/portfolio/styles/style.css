@@ -224,6 +224,7 @@ header {
     width: 70%;
     margin: auto;
     margin-top: 4%;
+    list-style: none;
 }
 
 .box-projetos img {
