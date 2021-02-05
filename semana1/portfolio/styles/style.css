@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #2a4d69;
+}
+
+body {
+    background-color: #e7eff6;
+}
+
+section {
+    width: 100%;
+}
+
+#section-habilidades div h3, #section-projetos h3 {
+    font-size: 1.7em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/**
+*
+* HEADER
+*
+*/
+
+header {
+    padding-top: 1%;
+    width: 75%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-logo {
+    width: 14%;
+    display: flex;
+    align-items: center;
+}
+
+.box-logo img {
+    width: 70px;
+    border-radius: 10px;
+}
+
+.box-logo p {
+    width: auto;
+    margin-left: 5%;
+    font-weight: bold;
+    font-size: 1.4em;
+    letter-spacing: 2px;
+    line-height: 1.2em;
+}
+
+.box-menu {
+    display: flex;
+    align-items: center;
+    width: 60%;
+}
+
+.box-menu ul {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    list-style: none;
+}
+
+.box-menu li {
+    margin: 0 6%;
+}
+
+.box-menu li a {
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: 1.1em;
+    letter-spacing: 2px;
+}
+
+.box-menu li a:hover {
+    font-weight: 600;
+}
+
+/**
+*
+* PÁGINA PRINCIAL
+*
+*/
+
+.box-principal {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 7%;
+}
+
+.box-principal h1 {
+    font-size: 6em;
+    text-transform: lowercase;
+    letter-spacing: .3em;
+}
+
+.box-principal p {
+    font-size: 1.2em;
+    letter-spacing: .2em;
+    padding-right: 1.2em;
+}
+
+.ilustracao-principal {
+    margin-top: 6%;
+    width: 40%;
+}
+
+/**
+*
+* SOBRE MIM
+*
+*/
+
+#section-sobre-mim {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: 	#adcbe3;
+    margin-top: 2%;
+    padding: 2% 0;
+}
+
+#section-sobre-mim > div {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    margin-top: 2%;
+}
+
+#section-sobre-mim img {
+    width: 370px;
+    border-radius: 20px;
+}
+
+.box-sobre-mim {
+    width: 80%;
+    padding: 5%;
+    margin: 0;
+}
+
+.box-sobre-mim h2 {
+    margin-bottom: 4%;
+    letter-spacing: 5px;
+
+}
+
+.box-sobre-mim p {
+    width: 64%;
+    line-height: 1.5em;
+    letter-spacing: 3px;
+    font-weight: 500;
+
+}
+
+.box-sobre-mim p:last-child {
+    margin-top: 2%;
+}
+
+/**
+*
+* HISTORICO ACADEMICO
+*
+*/
+
+#section-habilidades {
+    width: 80%;
+    margin: 2% auto;
+    text-align: center;
+    padding: 4% 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+#section-habilidades div {
+    width: 30%;
+}
+
+#section-habilidades div h3 {
+    margin-bottom: 6%;
+    text-align: left;
+}
+
+#section-habilidades div ul {
+    text-align: left;
+    margin-left: 2%;
+    /* list-style: none; */
+}
+
+#section-habilidades ul li {
+    margin-top: 4%;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+
+/**
+*
+* PROJETOS
+*
+*/
+
+#section-projetos {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: 	#adcbe3;
+    padding: 4% 0;
+}
+
+.box-projetos ul {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    margin: auto;
+    margin-top: 4%;
+}
+
+.box-projetos img {
+    width: 500px;
+    border-radius: 10px;
+}
+
+/**
+*
+* RODAPE
+*
+*/
+
+footer {
+    padding: 2%;
+    text-align: center;
+}
+
+footer ul {
+    display: flex;
+    margin: auto;
+    width: 15%;
+    justify-content: space-around;
+    list-style: none;
+}
+
+footer img {
+    width: 40px;
+}
+
+footer img:hover {
+    width: 42px;
+}
+
+footer p {
+    font-size: 1.2em;
+    letter-spacing: 3px;
+    margin-top: .5%;
+}
+
+form {
+    width: 20%;
+    margin: auto;
+    margin-top: 2%;
+    background-color: 	#adcbe3;
+    padding: 2%;
+    border-radius: 8px;
+    letter-spacing: 2px;
+}
+
+form div {
+    text-align: left;
+    margin: 2% auto;
+    display: flex;
+    flex-direction: column;
+
+}
+
+form label {
+    margin: 1.6% 0;
+}
+
+form input {
+    padding: 2%;
+    border-width: 0 3px 3px 0;
+    outline: none;
+}
+
+form button {
+    background-color: #2a4d69;
+    padding: 2%;
+    color:#e7eff6;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 4%;
+}
+
+form button:hover {
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
