@@ -12,7 +12,7 @@ section {
     width: 100%;
 }
 
-#section-habilidades div h3, #section-projetos h3 {
+#section-habilidades div h3, #section-projetos h3, .section-projeto h1 {
     font-size: 1.7em;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -307,3 +307,45 @@ form button:hover {
     font-weight: bold;
 }
 
+
+/**
+*
+* PÁGINO PROJETO
+*
+*/
+
+.section-projeto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.section-projeto img {
+    width: 50%;
+    border-radius: 20px;
+    margin-top: 2%;
+}
+
+.section-projeto div {
+    width: 50%;
+    margin-top: 2%;
+    font-size: 1.25em;
+}
+
+.section-projeto div p {
+    margin-top: 2%;
+}
+
+.section-projeto h3 {
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+.section-projeto ul {
+    margin: 2% 4%;
+}
+
+.section-projeto ul li {
+    margin: 1%;
+}
