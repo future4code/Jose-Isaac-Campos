@@ -53,7 +53,11 @@ body {
 
 .green-background,
 .yellow-background,
-.pink-background {
+.pink-background,
+.blue-background,
+.red-background,
+.lightgreen-background,
+.purple-background {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,6 +81,30 @@ body {
 
 #middle-container {
     grid-row: 3 / 4;
+    grid-column: 1 / 5;
+}
+
+#content2, #image, #extra, #footer-container {
+    display: grid;
+    grid-template: 100%;
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+}
+
+#vertical-middle-container {
+    display: grid;
+    grid-template: 50% 50% / 100%;
+    grid-row: 1 / 2;
+    grid-column: 4 / 5;
+}
+
+#extra {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+}
+
+#footer-container {
+    grid-row: 4 / 5;
     grid-column: 1 / 5;
 }
 
