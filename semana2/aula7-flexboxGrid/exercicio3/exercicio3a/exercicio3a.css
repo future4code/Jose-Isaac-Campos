@@ -1,0 +1,105 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    color: white;
+}
+
+.green-background {
+    background-color: green;
+}
+
+.yellow-background {
+    background-color: yellow;
+}
+
+.pink-background {
+    background-color: fuchsia;
+}
+
+.blue-background {
+    background-color: blue;
+}
+
+.red-background {
+    background-color: red;
+}
+
+.lightgreen-background {
+    background-color: lightgreen;
+}
+
+.purple-background {
+    background-color: purple;
+}
+
+#main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#top-container {
+    display: flex;
+    justify-content: space-between;
+    flex: .5;
+}
+
+.green-background {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.yellow-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content2, 
+#middle-container, 
+.yellow-background {
+    flex: 2;
+}
+
+.pink-background {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#middle-container {
+    display: flex;
+    align-items: stretch;
+}
+
+.blue-background, 
+.red-background, 
+.lightgreen-background, 
+.purple-background  {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#blank, 
+#image, 
+#extra, 
+#vertical-middle-container {
+    flex: 1;
+}
+
+#vertical-middle-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.purple-background {
+    flex: .5;
+}

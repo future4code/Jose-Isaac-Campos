@@ -1,0 +1,219 @@
+/* 
+  level one
+*/
+#pond {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* 
+  level two
+*/
+#pond {
+  display: flex;
+  justify-content: center;
+}
+
+/* 
+  level three
+*/
+#pond {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* 
+  level four
+*/
+#pond {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 
+  level five
+*/
+#pond {
+  display: flex;
+  align-items: flex-end;
+}
+
+/* 
+  level six
+*/
+#pond {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+  level seven
+*/
+#pond {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+/* 
+  level eight
+*/
+#pond {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* 
+  level nine
+*/
+#pond {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 
+  level ten
+*/
+#pond {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+}
+
+/* 
+  level our
+*/
+#pond {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* 
+  level twelve
+*/
+#pond {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+
+/* 
+  level thirteen
+*/
+#pond {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+}
+
+/* 
+  level fourteen
+*/
+#pond {
+  display: flex;
+}
+
+.yellow {
+  order: 3;
+}
+
+/* 
+  level fifteen
+*/
+#pond {
+  display: flex;
+}
+
+.red {
+  order: -4;
+}
+
+/* 
+  level sixteen
+*/
+#pond {
+  display: flex;
+}
+
+.yellow {
+  align-self: flex-end;
+}
+
+/* 
+  level seventeen
+*/
+#pond {
+  display: flex;
+}
+
+.yellow {
+  align-self: flex-end;
+  order: 1;
+}
+
+/* 
+  level eighteen
+*/
+#pond {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* 
+  level nineteen
+*/
+#pond {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+/* 
+  level twenty
+*/
+#pond {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+/* 
+  level twenty-one
+*/
+#pond {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+/* 
+  level twenty-two
+*/
+#pond {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+}
+
+/* 
+  level twenty-three
+*/
+#pond {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  align-content: center;
+}
+
+/* 
+  level twnety-four
+*/
+#pond {
+  display: flex;
+  flex-flow: column-reverse wrap-reverse;
+  justify-content: center;
+  align-content: space-between;
+}
+
