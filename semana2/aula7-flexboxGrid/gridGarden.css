@@ -1,0 +1,401 @@
+/* 
+  level one
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-column-start: 3
+}
+
+/* 
+  level two
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#poison {
+  grid-column-start: 5;
+}
+
+/* 
+  level three
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+/* 
+  level four
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-column-start: 5;
+  grid-column-end: 2;
+}
+
+/* 
+  level five
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-column-start: 1;
+  grid-column-end: -2;
+}
+
+/* 
+  level six
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#poison {
+  grid-column-start: -3;
+}
+
+/* 
+  level seven
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-column-start: 2;
+  grid-column-end: span 2;
+}
+
+/* 
+  level eight
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-column-start: 1;
+  grid-column-end: span 5;
+}
+
+/* 
+  level nine
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-column-start: span 3;
+  grid-column-end: 6;
+}
+
+/* 
+  level ten
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+grid-column: 4/6;
+}
+
+/* 
+  level our
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-column: 2 / span 3;
+}
+
+/* 
+  level twelve
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-row-start: 3;
+}
+
+/* 
+  level thirteen
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-row: 3 / span 3;
+}
+
+/* 
+  level fourteen
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#poison {
+  grid-column: 2;
+  grid-row: 5;
+}
+
+/* 
+  level fifteen
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-column: 2 / span 4;
+  grid-row: 1 / span 5;
+}
+
+/* 
+  level sixteen
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-area: 1 / 2 / 4 / 6;
+}
+
+/* 
+  level seventeen
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water-1 {
+  grid-area: 1 / 4 / 6 / 5;
+}
+
+#water-2 {
+  grid-area: 2 / 3 / 5 / 6;
+}
+
+/* 
+  level eighteen
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+.water {
+  order: 0;
+}
+
+#poison {
+  order: 1;
+}
+
+/* 
+  level nineteen
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+.water {
+  order: 0;
+}
+
+.poison {
+  order: -1;
+}
+
+/* 
+  level twenty
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 50%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* 
+  level twenty-one
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: repeat(8, 12.5%);
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* 
+  level twenty-two
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 100px 3em 40%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+/* 
+  level twenty-three
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+/* 
+  level twnety-four
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 50px 1fr 1fr 1fr 50px;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+#water {
+  grid-area: 1 / 1 / 6 / 2;
+}
+
+#poison {
+  grid-area: 1 / 5 / 6 / 6;
+}
+
+/*
+  level twenty-five
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 75px 3fr 2fr;
+  grid-template-rows: 100%;
+}
+
+/*
+  level twenty-six
+*/
+
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+grid-template-rows: 50px 0fr 0fr 0fr 1fr;
+}
+
+#water {
+  grid-column: 1 / 6;
+  grid-row: 5 / 6;
+}
+
+/*
+  level twenty-seven
+*/
+
+#garden {
+  display: grid;
+  grid-template: 60% / 200px;
+}
+
+#water {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/*
+  level twenty-eight
+*/
+
+#garden {
+  display: grid;
+  grid-template: 1fr 50px / 20% 1fr;
+}
