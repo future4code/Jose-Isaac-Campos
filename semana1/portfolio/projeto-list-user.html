@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css" type="text/css">
+    <title>José Isaac</title>
+</head>
+<body>
+    <header>
+        <div class="box-logo">
+            <img src="./img/avatar.png" alt="Avatar de José Isaac">
+            <p>José Isaac</p>
+        </div>
+        <nav class="box-menu">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section-projeto">
+            <h1>Sistema de Listagem de usuários</h1>
+            <img src="./img/list-user.png" alt="Projeto de sistema de listagem de usuário">
+            <div>
+                <p>Nesse projeto o objetive era criar uma aplicação para filtragem de usuário com base no que o usuário fosse digitando.</p>
+                <p>Para alimentar a aplicação com dados foi utilizado a api <a href="https://randomuser.me/api/?seed=javascript&results=100&nat=BR&noinfo">randomuser.me</a></p>
+            </div>
+            <div>
+                <h3>Tecnologias Utilizadas</h3>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Scss</li>
+                    <li>Consulta a API</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer id="contato">
+            <ul>
+                <li><a href="https://www.linkedin.com/in/jose-isaac/" target="_blank"><img src="./icon/linkedin.png" alt="Linkedin"></a></li>
+                <li><a href="https://github.com/Jose-Isaac" target="_blank"><img src="./icon/github-sign.png" alt="Github"></a></li>
+                <li><a href="https://www.instagram.com/j.isaac.b.c/" target="_blank"><img src="./icon/instagram.png" alt="Instagram"></a></li>
+            </ul>
+            <p>Siga-me nas redes sociais</p>
+
+            <form action="#">
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome...">
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu email...">
+                </div>
+                <div>
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" placeholder="Mensagem"></textarea>
+                </div>
+                <div>
+                    <button tipe="submit">Enviar</button>
+                </div>
+            </form>
+        </footer>
+    </main>
+</body>
+</html>
