@@ -1,0 +1,161 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+div {
+    border: 1px solid black;
+}
+#main-container,
+#section-second-block,
+#section-third-block,
+#section-fourth-block {
+    border: none;
+}
+
+#main-container {
+    height: 100vh;
+}
+
+#section-second-block,
+#section-third-block,
+#section-fourth-block {
+    display: flex;
+    justify-content: space-around;
+}
+
+#section-second-block {
+    height: 30%;
+
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#section-third-block {
+    height: 40%;
+}
+
+#section-fourth-block {
+    height: 12%;
+
+    align-items: center;
+}
+
+#first-block {
+    background-color: red;
+    height: 10%;
+}
+
+.blue-block {
+    background-color: blue;
+}
+
+.yellow-block {
+    background-color: yellow;
+}
+
+.green-block {
+    background-color: green;
+}
+
+.black-block {
+    background-color: black;
+    color: white;
+    width: 49%;
+}
+
+.white-block {
+    background-color: white;
+    width: 32%;
+    height: 80%;
+}
+
+.blue-block,
+.yellow-block,
+.green-block {
+    width: 32%;
+    height: 44%;
+}
+
+@media screen and (max-device-width: 800px) {
+    #section-second-block {
+        height: 45%;
+    }
+
+    #section-third-block {
+        height: 44%;
+    }
+
+    #section-fourth-block {
+        height: 20%;
+
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .blue-block,
+    .yellow-block,
+    .green-block {
+        width: 48.5%;
+        height: 21%;
+    }
+
+    .green-block {
+        width: 99%;
+    }
+
+    .white-block {
+        width: 49%;
+        height: 42%;
+    }
+
+    .white-block:last-child {
+        width: 99%;
+    }
+}
+@media screen and (max-device-width: 420px) {
+    #section-second-block {
+        height: 70%;
+
+        flex-direction: column;
+    }
+
+    .blue-block,
+    .yellow-block,
+    .green-block,
+    .black-block,
+    .white-block {
+        width: 99%;
+        height: 15%;
+    }
+
+    #section-third-block {
+        height: 25%;
+        flex-direction: column;
+    }
+
+    .black-block {
+        height: 46%;
+    }
+
+    #section-fourth-block {
+        height: 30%;
+        flex-direction: column;
+    }
+
+    .white-block {
+        height: 30%;
+    }
+}
+
+.black-block,
+.blue-block,
+.green-block,
+.white-block,
+.yellow-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
