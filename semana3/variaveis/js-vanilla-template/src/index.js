@@ -12,6 +12,7 @@
 /**
  * Exercício de escrita de código - 1
  */
+console.log('\n\n[ Exercício de escrita de código] - [1]\n\n')
 
 // 1) a, b
 let nome, idade
@@ -44,6 +45,7 @@ console.log('Olá ', nome, ', você tem ', idade, ' anos.');
 /**
  * Exercício de escrita de código - 2
  */
+console.log('\n\n[ Exercício de escrita de código] - [2]\n\n')
 
 let serieFavorita,
   desenhoInfancia,
@@ -61,7 +63,7 @@ corFavorita = prompt('Qual sua cor favorita?')
 localQueDesejaConhecer = prompt('Se você acabasse de ganhar uma viagem com ' +
   'um pacote completo, que local desejaria conhecer?')
 
-animalPreferido = prompt('Qual seu animal estimação preferido?')
+animalPreferido = prompt('Qual seu animal de estimação preferido?')
 
 // Respostas
 console.log('1. ', nome, ', qual sua série favorita?',
@@ -81,6 +83,7 @@ console.log('5. ', 'Qual seu animal de estimação preferido?',
 /**
  * Exercício de escrita de código - 3
  */
+console.log('\n\n[ Exercício de escrita de código] - [3]\n\n')
 
 const comidasFavoritas = ['Feijoada', 'Baião de dois', 'Lasanha', 'Tapioca', 'Macarronada']
 
@@ -103,3 +106,21 @@ comidaPreferida = prompt(nome + ', qual sua comida preferida?')
 comidasFavoritas[1] = comidaPreferida
 
 console.log(comidasFavoritas)
+
+/**
+ * Exercício de escrita de código - 4
+ */
+console.log('\n\n[ Exercício de escrita de código] - [4]\n\n')
+
+const perguntas = [
+  'Curte ficção científica?',
+  'Pretende ler os livros de Isaac Asimov?',
+  'Gosta de Futebol?']
+
+// 4) a
+const respostas = [false, true]
+
+// 4) b
+console.log(perguntas[0], respostas[1])
+console.log(perguntas[1], respostas[1])
+console.log(perguntas[2], respostas[0])
