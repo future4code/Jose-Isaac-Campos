@@ -10,7 +10,7 @@
  */
 
 /**
- * Exercício de escrita de código
+ * Exercício de escrita de código - 1
  */
 
 // 1) a, b
@@ -40,3 +40,40 @@ console.log('typeof nome: ', typeof nome, '\ntypeof idade: ', typeof idade)
 // 1) g
 console.log('Olá ', nome, ', você tem ', idade, ' anos.');
 
+
+/**
+ * Exercício de escrita de código - 2
+ */
+
+let serieFavorita,
+  desenhoInfancia,
+  corFavorita,
+  localQueDesejaConhecer,
+  animalPreferido
+
+// Perguntas
+serieFavorita = prompt(nome + ', qual sua série favorita?')
+
+desenhoInfancia = prompt('Qual desenho que marcou sua infância ' + nome + '?')
+
+corFavorita = prompt('Qual sua cor favorita?')
+
+localQueDesejaConhecer = prompt('Se você acabasse de ganhar uma viagem com ' +
+  'um pacote completo, que local desejaria conhecer?')
+
+animalPreferido = prompt('Qual seu animal estimação preferido?')
+
+// Respostas
+console.log('1. ', nome, ', qual sua série favorita?',
+  '\nResposta: ', serieFavorita)
+
+console.log('2. ', 'Qual desenho que marcou sua infância ', nome, '?',
+  '\nResposta: ', desenhoInfancia)
+
+console.log('3. ', 'Qual sua cor favorita?', '\nResposta: ', corFavorita)
+
+console.log('4. ', 'Se você acabasse de ganhar uma viagem com um pacote ',
+  'completo, que local desejaria conhecer?', '\nResposta: ', localQueDesejaConhecer)
+
+console.log('5. ', 'Qual seu animal de estimação preferido?',
+  '\nResposta: ', animalPreferido)
