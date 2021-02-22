@@ -77,3 +77,29 @@ console.log('4. ', 'Se você acabasse de ganhar uma viagem com um pacote ',
 
 console.log('5. ', 'Qual seu animal de estimação preferido?',
   '\nResposta: ', animalPreferido)
+
+/**
+ * Exercício de escrita de código - 3
+ */
+
+const comidasFavoritas = ['Feijoada', 'Baião de dois', 'Lasanha', 'Tapioca', 'Macarronada']
+
+// 3) a
+console.log(comidasFavoritas)
+
+// 3) b
+console.log('Essas são as minhas comidas preferidas:')
+console.log(comidasFavoritas[0])
+console.log(comidasFavoritas[1])
+console.log(comidasFavoritas[2])
+console.log(comidasFavoritas[3])
+console.log(comidasFavoritas[4])
+
+// 3) c
+let comidaPreferida
+
+comidaPreferida = prompt(nome + ', qual sua comida preferida?')
+
+comidasFavoritas[1] = comidaPreferida
+
+console.log(comidasFavoritas)
