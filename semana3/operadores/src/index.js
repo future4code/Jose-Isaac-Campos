@@ -42,3 +42,22 @@ console.log('Resto da divisão de ', numero, ' por 2: ', numero % 2); //b.
 // c. o resto da divisão de qualquer número par por 2 sempre resulta em 0
 
 // d. o resto da divisão de qualquer número ímpar por 2 sempre resulta em 1
+
+/**
+ * Exercícios de escrita de código - 3
+ */
+
+let listaDeTarefas = [] // a.
+
+// b.
+listaDeTarefas.push(prompt('Insira uma nova tarefa na lista:'))
+listaDeTarefas.push(prompt('Insira uma nova tarefa na lista:'))
+listaDeTarefas.push(prompt('Insira uma nova tarefa na lista:'))
+
+console.log('Lista de tarefas: ', listaDeTarefas) // c.
+
+let tarefaConcluida = Number(prompt('Digite o index referente a tarefa concluída')) // d.
+
+listaDeTarefas.splice(tarefaConcluida, 1) // e.
+
+console.log('Lista de tarefas: ', listaDeTarefas) // f.
