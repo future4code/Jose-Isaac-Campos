@@ -97,3 +97,19 @@ valorEmGrausCelcius = Number(prompt('Digete um valor em graus Celcius: '))
 console.log(
   valorEmGrausCelcius + '°C equivale á ', valorEmGrausCelcius * 9 / 5 + 32, '°F',
   '\n' + valorEmGrausCelcius + '°C equivale á ', valorEmGrausCelcius + 273.15, '°K')
+
+/**
+ * Desafio de escrita de código - 2
+ */
+console.log('\n\nDesafio de escrita de código - 2\n\n')
+
+let valorQuilowattHora = 0.05
+let quantidadeQuilowattHoraConsumida, porcentagemDesconto
+
+quantidadeQuilowattHoraConsumida = Number(prompt('Digite a quantidade de Quilowatt-hora consumida:'))
+porcentagemDesconto = Number(prompt('Digite a porcentagem de desconto para a residência:'))
+
+let valor = quantidadeQuilowattHoraConsumida * valorQuilowattHora
+console.log('Total a ser pago (sem o desconto): R$: ', valor)
+
+console.log('Total a ser pago (com o desconto de ', porcentagemDesconto, '%): R$: ', valor - valor * (porcentagemDesconto / 100))
