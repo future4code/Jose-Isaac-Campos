@@ -19,6 +19,7 @@
 /**
  * Exercícios de escrita de código - 1
  */
+console.log('\n\nExercícios de escrita de código - 1\n\n')
 
 let idade, melhorAmigoIdade
 
@@ -32,6 +33,7 @@ console.log('Vocês tem ', idade - melhorAmigoIdade, ' anos de diferênça de id
 /**
  * Exercícios de escrita de código - 2
  */
+console.log('\n\nExercícios de escrita de código - 2\n\n')
 
 let numero
 
@@ -46,6 +48,7 @@ console.log('Resto da divisão de ', numero, ' por 2: ', numero % 2); //b.
 /**
  * Exercícios de escrita de código - 3
  */
+console.log('\n\nExercícios de escrita de código - 3\n\n')
 
 let listaDeTarefas = [] // a.
 
@@ -61,3 +64,15 @@ let tarefaConcluida = Number(prompt('Digite o index referente a tarefa concluíd
 listaDeTarefas.splice(tarefaConcluida, 1) // e.
 
 console.log('Lista de tarefas: ', listaDeTarefas) // f.
+
+/**
+ * Exercícios de escrita de código - 4
+ */
+console.log('\n\nExercícios de escrita de código - 4\n\n')
+
+let nomeDoUsuario, emailDoUsuario
+
+nomeDoUsuario = prompt('Digite seu nome:')
+emailDoUsuario = prompt('Digite seu e-mail: ')
+
+console.log('O e-mail ', emailDoUsuario, ' foi cadastrado com sucesso. Seja bem-vinda(o), ', nomeDoUsuario, '!')
