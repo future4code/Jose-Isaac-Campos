@@ -76,3 +76,24 @@ nomeDoUsuario = prompt('Digite seu nome:')
 emailDoUsuario = prompt('Digite seu e-mail: ')
 
 console.log('O e-mail ', emailDoUsuario, ' foi cadastrado com sucesso. Seja bem-vinda(o), ', nomeDoUsuario, '!')
+
+/**
+ * Desafio de escrita de código - 1
+ */
+console.log('\n\nDesafio de escrita de código - 1\n\n')
+
+console.log('77°F equivale á ', (77 - 32) * 5 / 9 + 273.15, '°K') // a.
+
+console.log('80°C equivale á ', 80 * 9 / 5 + 32, '°F') // b.
+
+console.log(
+  '30°C equivale á ', 30 * 9 / 5 + 32, '°F',
+  '\n30°C equivale á ', 30 + 273.15, '°K') // c.
+
+let valorEmGrausCelcius
+
+valorEmGrausCelcius = Number(prompt('Digete um valor em graus Celcius: '))
+
+console.log(
+  valorEmGrausCelcius + '°C equivale á ', valorEmGrausCelcius * 9 / 5 + 32, '°F',
+  '\n' + valorEmGrausCelcius + '°C equivale á ', valorEmGrausCelcius + 273.15, '°K')
