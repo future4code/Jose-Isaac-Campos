@@ -22,10 +22,23 @@
 
 let idade, melhorAmigoIdade
 
-idade = Number(prompt("Digite sua idade:")) // a.
-melhorAmigoIdade = Number(prompt("Digite a idade do seu ou sua melhor amigo(a):")) // b.
+idade = Number(prompt('Digite sua idade:')) // a.
+melhorAmigoIdade = Number(prompt('Digite a idade do seu ou sua melhor amigo(a):')) // b.
 
 console.log('"Sua idade é maior do que a do seu melhor amigo?', idade > melhorAmigoIdade) // c.
 
 console.log('Vocês tem ', idade - melhorAmigoIdade, ' anos de diferênça de idade entre vocês') //d.
 
+/**
+ * Exercícios de escrita de código - 2
+ */
+
+let numero
+
+numero = Number(prompt('Digite um número par:')) // a.
+
+console.log('Resto da divisão de ', numero, ' por 2: ', numero % 2); //b.
+
+// c. o resto da divisão de qualquer número par por 2 sempre resulta em 0
+
+// d. o resto da divisão de qualquer número ímpar por 2 sempre resulta em 1
