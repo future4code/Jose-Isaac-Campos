@@ -66,6 +66,28 @@ if (turno === 'M') {
   console.log('Bom Dia!')
 } else if (turno === 'V') {
   console.log('Bom Tarde!')
-} else {
+} else if (turno === 'N') {
   console.log('Bom Noite!')
+} else {
+  console.log('Informe un turno valido')
+}
+
+
+/**
+ * EXERCÍCIO 6
+ */
+console.log('\n\nEXERCÍCIO 6\n\n')
+
+switch (turno) {
+  case 'M':
+    console.log('Bom Dia!')
+    break
+  case 'V':
+    console.log('Bom Tarde!')
+    break
+  case 'N':
+    console.log('Bom Noite!')
+    break
+  default:
+    console.log('Informe un turno valido')
 }
