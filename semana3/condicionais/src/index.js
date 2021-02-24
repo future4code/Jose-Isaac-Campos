@@ -177,6 +177,12 @@ if (categoria >= 1 && categoria <= 4
 ) {
   valorImgresso = categorias[categoria - 1][etapasDosJogos.indexOf(etapaDoJogo)]
   valorTotal = valorImgresso * quantidadeIngressos;
+
+  if (tipoDojogo === 'IN') {
+    valorImgresso *= 4.10
+    valorTotal *= 4.10
+  }
+
 } else {
   console.log('Informações inválidas')
 }
@@ -213,5 +219,11 @@ console.log('Etapa do jogo: ', etapaDoJogo)
 console.log('Categoria: ', categoria)
 console.log('Quantidade de Ingressos: ', quantidadeIngressos, ' ingressos')
 console.log('---Valores---')
-console.log('Valor do ingresso: R$ ', valorImgresso)
-console.log('Valor total: R$ ', valorTotal)
+
+if (tipoDojogo === 'Internacional') {
+  console.log('Valor do ingresso: U$ ', valorImgresso)
+  console.log('Valor total: U$ ', valorTotal)
+} else {
+  console.log('Valor do ingresso: R$ ', valorImgresso)
+  console.log('Valor total: R$ ', valorTotal)
+}
