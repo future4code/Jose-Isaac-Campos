@@ -179,8 +179,8 @@ if (categoria >= 1 && categoria <= 4
   valorTotal = valorImgresso * quantidadeIngressos;
 
   if (tipoDojogo === 'IN') {
-    valorImgresso *= 4.10
-    valorTotal *= 4.10
+    valorImgresso /= 4.10
+    valorTotal /= 4.10
   }
 
 } else {
