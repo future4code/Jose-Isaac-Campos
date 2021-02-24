@@ -49,3 +49,23 @@ if (idade >= 18) {
 } else {
   console.log('Você não pode dirigir')
 }
+
+
+/**
+ * EXERCÍCIO 5
+ */
+console.log('\n\nEXERCÍCIO 5\n\n')
+
+const turno =
+  prompt(
+    'Informe o seu turno de estudo:\n' +
+    'Por favor insira M (matutino) ou V (Vespertino) ou N (Noturno)'
+  ).toUpperCase()
+
+if (turno === 'M') {
+  console.log('Bom Dia!')
+} else if (turno === 'V') {
+  console.log('Bom Tarde!')
+} else {
+  console.log('Bom Noite!')
+}
