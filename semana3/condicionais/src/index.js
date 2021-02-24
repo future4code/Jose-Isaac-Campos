@@ -98,11 +98,31 @@ switch (turno) {
  */
 console.log('\n\nEXERCÍCIO 7\n\n')
 
-const generoFilme = prompt('Digite o gênero do filme:').toLowerCase()
-const valorImgresso = Number(prompt('Qual o valor do ingresso para o filme:'))
+let generoFilme = prompt('Digite o gênero do filme:').toLowerCase()
+let valorImgresso = Number(prompt('Qual o valor do ingresso para o filme:'))
 
 if (generoFilme === 'fantasia' && valorImgresso < 15) {
   console.log('Bom filme!')
+} else {
+  console.log('Escolha outro filme :(')
+}
+
+
+/**
+ * Desafios de escrita de código
+ */
+
+/**
+ * DESAFIO 1
+ */
+console.log('\n\DESAFIO 1\n\n')
+
+generoFilme = prompt('Digite o gênero do filme:').toLowerCase()
+valorImgresso = Number(prompt('Qual o valor do ingresso para o filme:'))
+
+if (generoFilme === 'fantasia' && valorImgresso < 15) {
+  let snack = prompt('Qual snack que você quer comprar?')
+  console.log('Bom filme!\n... com ', snack)
 } else {
   console.log('Escolha outro filme :(')
 }
