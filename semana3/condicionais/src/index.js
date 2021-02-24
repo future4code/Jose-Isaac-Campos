@@ -40,4 +40,12 @@
 /**
  * EXERCÍCIO 4
  */
+console.log('\n\nEXERCÍCIO 4\n\n')
 
+const idade = Number(prompt('Digite a sua idade:'))
+
+if (idade >= 18) {
+  console.log('Você pode dirigir')
+} else {
+  console.log('Você não pode dirigir')
+}
