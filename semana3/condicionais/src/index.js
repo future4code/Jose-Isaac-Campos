@@ -126,3 +126,92 @@ if (generoFilme === 'fantasia' && valorImgresso < 15) {
 } else {
   console.log('Escolha outro filme :(')
 }
+
+/**
+ * DESAFIO 2
+ */
+console.log('\n\DESAFIO 2\n\n')
+
+
+// categoria | etapa
+// 0 -> categogoria 1 | 1 -> SF 
+// 1 -> categogoria 2 | 2 -> DT
+// 2 -> categogoria 3 | 3 -> FL
+// 3 -> categogoria 4 | 1 -> SF
+const categorias = [
+  [1320.00, 660.00, 1980.00],
+  [1320.00, 660.00, 1980.00],
+  [550.00, 330.00, 880.00],
+  [220.00, 170.00, 3300.00]
+]
+
+const etapasDosJogos = ['SF', 'DT', 'FL']
+
+
+// entrada dos dados
+const nome = prompt('Digite seu nome completo:')
+
+let tipoDojogo = prompt(
+  'Digite o tipo do jogo:\n' +
+  'IN (internacional)\nDO (doméstico)'
+).toUpperCase()
+
+let etapaDoJogo = prompt(
+  'Qual a etapo do jogo:\n' +
+  'SF (semi-final)\n' +
+  'DT (decisão de terceiro lugar)\n' +
+  'FI (final)'
+).toUpperCase()
+
+const categoria = Number(prompt('Em qual categoria está o jogo: (1 á 4)'))
+const quantidadeIngressos = Number(prompt('Quantidade de ingressos: '))
+
+
+// processamento das informações
+let valorTotal;
+
+if (categoria >= 1 && categoria <= 4
+  && (etapaDoJogo === etapasDosJogos[0]
+    || etapaDoJogo === etapasDosJogos[1]
+    || etapaDoJogo === etapasDosJogos[2])
+) {
+  valorImgresso = categorias[categoria - 1][etapasDosJogos.indexOf(etapaDoJogo)]
+  valorTotal = valorImgresso * quantidadeIngressos;
+} else {
+  console.log('Informações inválidas')
+}
+
+// tipo de jogo
+switch (tipoDojogo) {
+  case 'DO':
+    tipoDojogo = 'Nacional'
+    break
+  case 'IN':
+    tipoDojogo = 'Internacional'
+  default:
+    console.log('Tipo do jogo inválido')
+}
+
+// etapa do jogo
+switch (etapaDoJogo) {
+  case 'SF':
+    etapaDoJogo = 'Semifinais'
+    break
+  case 'DT':
+    etapaDoJogo = 'Decisão de 3° lugar'
+    break
+  case 'FL':
+    etapaDoJogo = 'Final'
+    break
+}
+
+// exibindo os dados da compra
+console.log('---Dados da compra---')
+console.log('Nome do cliente: ', nome)
+console.log('Tipo do jogo: ', tipoDojogo)
+console.log('Etapa do jogo: ', etapaDoJogo)
+console.log('Categoria: ', categoria)
+console.log('Quantidade de Ingressos: ', quantidadeIngressos, ' ingressos')
+console.log('---Valores---')
+console.log('Valor do ingresso: R$ ', valorImgresso)
+console.log('Valor total: R$ ', valorTotal)
