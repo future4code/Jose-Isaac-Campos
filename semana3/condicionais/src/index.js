@@ -91,3 +91,18 @@ switch (turno) {
   default:
     console.log('Informe un turno valido')
 }
+
+
+/**
+ * EXERCÍCIO 7
+ */
+console.log('\n\nEXERCÍCIO 7\n\n')
+
+const generoFilme = prompt('Digite o gênero do filme:').toLowerCase()
+const valorImgresso = Number(prompt('Qual o valor do ingresso para o filme:'))
+
+if (generoFilme === 'fantasia' && valorImgresso < 15) {
+  console.log('Bom filme!')
+} else {
+  console.log('Escolha outro filme :(')
+}
