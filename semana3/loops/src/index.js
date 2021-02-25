@@ -94,6 +94,10 @@ console.log('O maior número é ' + maiorNumero + ' e o menor é ' + menorNumero
 /**
  * DesafioS de escrita de código
  */
+const colorGreen = 'color: green'
+const colorRed = 'color: red'
+const colorYellow = 'color: yellow'
+const emojiPalmas = '\u{1F44F} \u{1F44F} \u{1F44F}'
 
 // DESAFIO 1
 console.log('\n\DESAFIO 1\n')
@@ -117,27 +121,27 @@ while (numeroSecreto !== null) {
       break
     }
     else if (numeroChutado === numeroSecreto) {
-      console.log('Acertou!!!')
+      console.log('%c Acertou!!! ' + emojiPalmas, colorGreen)
       console.log('O número de tentativas foi: ' + ++numeroTentativas)
       break
     }
     else {
       let error = 'Você errou. O número escolhido é '
 
-      if (numeroChutado > numeroSecreto) { console.log(error + 'menor') }
-      else { console.log(error + 'maior') }
+      if (numeroChutado > numeroSecreto) { console.log(error + '%c menor \u{1F447}', colorRed) }
+      else { console.log(error + '%c maior \u{1F446}', colorGreen) }
 
       numeroTentativas++
     }
   }
 }
 
-console.log('Saindo do game...')
+console.log('%c Saindo do game...', colorYellow)
 
-numeroSecreto = -1
 
 // DESAFIO 2
 console.log('\n\DESAFIO 2\n')
+numeroSecreto = -1
 
 while (numeroSecreto !== null) {
   numeroSecreto = Math.round((Math.random() * (100 - 1)) + 1)
@@ -156,22 +160,22 @@ while (numeroSecreto !== null) {
       break
     }
     else if (numeroChutado == numeroSecreto) {
-      console.log('Acertou!!!')
+      console.log('%c Acertou!!! ' + emojiPalmas, colorGreen)
       console.log('O número de tentativas foi: ' + ++numeroTentativas)
       break
     }
     else {
       let error = 'Você errou. O número escolhido é '
 
-      if (numeroChutado > numeroSecreto) { console.log(error + 'menor') }
-      else { console.log(error + 'maior') }
+      if (numeroChutado > numeroSecreto) { console.log(error + '%c menor \u{1F447}', colorRed) }
+      else { console.log(error + '%c maior \u{1F446}', colorGreen) }
 
       numeroTentativas++
     }
   }
 }
 
-console.log('Saindo do game...')
+console.log('%c Saindo do game...', colorYellow)
 
 /**
  * Reflexão sobre a mudança
