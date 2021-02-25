@@ -23,3 +23,70 @@
  * linha 3 -> 000
  * linha 4 -> 0000
  */
+
+
+/**
+ * Exercícios de escrita de código
+ */
+
+// EXERCÍCIO 3
+console.log('\n\nEXERCÍCIO 3\n')
+
+// Este array será usado para exemplificar as respostas de todos os itens
+const arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+
+// 3) a. 
+console.log('\n3)a.\n')
+
+for (let numero of arrayOriginal) {
+  console.log(numero)
+}
+
+
+// 3) b.
+console.log('\n3)b.\n')
+
+for (let numero of arrayOriginal) {
+  console.log(numero / 10)
+}
+
+
+// 3) c.
+console.log('\n3)c.\n')
+
+const numerosPares = []
+
+for (let numero of arrayOriginal) {
+  if (numero % 2 === 0) {
+    numerosPares.push(numero)
+  }
+}
+
+console.log(numerosPares)
+
+
+// 3) d.
+console.log('\n3)d.\n')
+
+for (let index = 0; index < arrayOriginal.length; index++) {
+  const elemento = arrayOriginal[index];
+  console.log('O elemento do índex ' + index + ' é: ' + elemento)
+}
+
+
+// 3) e.
+console.log('\n3)e.\n')
+
+let maiorNumero = arrayOriginal[0], menorNumero = arrayOriginal[0]
+
+for (let numero of arrayOriginal) {
+  if (maiorNumero < numero) {
+    maiorNumero = numero
+  }
+
+  if (menorNumero > numero) {
+    menorNumero = numero
+  }
+}
+
+console.log('O maior número é ' + maiorNumero + ' e o menor é ' + menorNumero)
