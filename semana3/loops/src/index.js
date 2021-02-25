@@ -90,3 +90,46 @@ for (let numero of arrayOriginal) {
 }
 
 console.log('O maior número é ' + maiorNumero + ' e o menor é ' + menorNumero)
+
+/**
+ * DesafioS de escrita de código
+ */
+
+// DESAFIO 1
+console.log('\n\DESAFIO 1\n')
+
+let numeroSecreto
+
+while (numeroSecreto !== null) {
+  numeroSecreto = prompt('[JOGADOR: {1}] - Entre com um número secreto!')
+
+  if (numeroSecreto === null) { break }
+  console.log('Vamos jogar!')
+
+  let numeroChutado, numeroTentativas = 0
+
+
+  while (numeroChutado !== numeroSecreto && numeroChutado !== null) {
+    numeroChutado = prompt('[JOGADOR: {2}] - Qual o número secreto:')
+
+    if (numeroChutado == null) {
+      console.log('[JOGADOR 2 DESISTIU!]')
+      break
+    }
+    else if (numeroChutado === numeroSecreto) {
+      console.log('Acertou!!!')
+      console.log('O número de tentativas foi: ' + ++numeroTentativas)
+      break
+    }
+    else {
+      let error = 'Você errou. O número escolhido é '
+
+      if (numeroChutado > numeroSecreto) { console.log(error + 'menor') }
+      else { console.log(error + 'maior') }
+
+      numeroTentativas++
+    }
+  }
+}
+
+console.log('Saindo do game...')
