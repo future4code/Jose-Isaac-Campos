@@ -133,3 +133,49 @@ while (numeroSecreto !== null) {
 }
 
 console.log('Saindo do game...')
+
+numeroSecreto = -1
+
+// DESAFIO 2
+console.log('\n\DESAFIO 2\n')
+
+while (numeroSecreto !== null) {
+  numeroSecreto = Math.round((Math.random() * (100 - 1)) + 1)
+
+  console.log('Vamos jogar!')
+
+  let numeroChutado, numeroTentativas = 0
+
+
+  while (numeroChutado !== numeroSecreto && numeroChutado !== null) {
+    numeroChutado = prompt('[JOGADOR] - Qual o número secreto:')
+
+    if (numeroChutado == null) {
+      console.log('[JOGADOR DESISTIU!]')
+      numeroSecreto = null
+      break
+    }
+    else if (numeroChutado == numeroSecreto) {
+      console.log('Acertou!!!')
+      console.log('O número de tentativas foi: ' + ++numeroTentativas)
+      break
+    }
+    else {
+      let error = 'Você errou. O número escolhido é '
+
+      if (numeroChutado > numeroSecreto) { console.log(error + 'menor') }
+      else { console.log(error + 'maior') }
+
+      numeroTentativas++
+    }
+  }
+}
+
+console.log('Saindo do game...')
+
+/**
+ * Reflexão sobre a mudança
+ *
+ * Foi relativamente fácil, tive que altera apenas 3 linha de código
+ * para que a nova funcionalidade funcionasse.
+ */
