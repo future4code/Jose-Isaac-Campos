@@ -55,7 +55,7 @@ if (confirm('Deseja iniciar um nova rodada?')) {
 
     let temosUmVencedor = false
     do {
-        if (confirm(`Suas cartas são ${stringCartas(jogador)}. A carta revelada do          computador é ${computador[0]}.\n` + "Deseja comprar mais uma carta?") && pontosJogador <= 20) {
+        if (confirm(`Suas cartas são ${stringCartas(jogador)}. A carta revelada do computador é ${computador[0]}.\n` + "Deseja comprar mais uma carta?") && pontosJogador <= 20) {
             let carta = comprarCarta()
             jogador.push(carta.texto)
             pontosJogador += carta.valor
