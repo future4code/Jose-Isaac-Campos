@@ -14,93 +14,90 @@
 console.log('Bem vindo ao jogo de Blackjack!')
 
 if (confirm('Deseja iniciar um nova rodada?')) {
-   const jogador = []
-   const computador = []
-   let pontuacaoJogador = 0, pontuacaoComputador = 0
+    const jogador = ['']
+    const computador = ['']
 
-   let estaDiferente = false
-   do {
-      let carta = comprarCarta()
-      jogador[0] = (carta.texto)
-      pontuacaoJogador += carta.valor
+    let pontosJogador = 0,
+        pontosComputador = 0
 
-      carta = comprarCarta()
-      computador[0] = (carta.texto)
-      pontuacaoComputador += carta.valor
+    let estaDiferent = false
+    do {
+        let carta = comprarCarta()
+        jogador[0] = carta.texto
+        pontosJogador = carta.valor
 
-      if (computador[0] !== jogador[0] || carta.texto !== 'A') {
-         carta = comprarCarta()
-         jogador.push(carta.texto)
-         pontuacaoJogador += carta.valor
+        carta = comprarCarta()
+        computador[0] = carta.texto
+        pontosComputador = carta.valor
 
-         carta = comprarCarta()
-         computador.push(carta.texto)
-         pontuacaoComputador += carta.valor
+        if (jogador[0] === computador[0] && carta.texto[0] === 'A') {
+            console.log('São iguais á A')
+            pontosJogador = 0
+            pontosComputador = 0
+            break
+        } else {
+            carta = comprarCarta()
+            jogador.push(carta.texto)
+            pontosJogador += carta.valor
 
-         estaDiferente = true;
-         break
-      } else {
-         pontuacaoComputador = 0
-         pontuacaoJogador = 0
-      }
-   } while (estaDiferente !== true)
+            carta = comprarCarta()
+            computador.push(carta.texto)
+            pontosComputador += carta.valor
 
-   console.log('jogador: ', jogador, ' pontuação: ', pontuacaoJogador)
+            estaDiferent = true
+            break
+        }
+    }
+    while (estaDiferent !== true)
 
-   let temosUmVencedor = false
-   do {
-      let cartasJogador = ''
-      for (let carta of jogador) {
-         cartasJogador += carta + ' '
-      }
+    console.log('CARTAS DO JOGADOR: ' + jogador + ' PONTUAÇÃO: ' + pontosJogador)
+    console.log('CARTAS DO COMPUTADOR: ' + computador + ' PONTUAÇÃO: ' + pontosComputador)
 
-      if (confirm(
-         `Suas cartas são ${cartasJogador}.A carta revelada do computador é ${computador[0]}.` +
-         "\n" +  // \n faz pular a linha
-         "Deseja comprar mais uma carta?"
-      ) && pontuacaoJogador < 21) {
-         let carta = comprarCarta()
-         jogador.push(carta.texto)
-         pontuacaoJogador += carta.valor
+    let temosUmVencedor = false
+    do {
+        if (confirm(`Suas cartas são ${stringCartas(jogador)}. A carta revelada do          computador é ${computador[0]}.\n` + "Deseja comprar mais uma carta?") && pontosJogador <= 20) {
+            let carta = comprarCarta()
+            jogador.push(carta.texto)
+            pontosJogador += carta.valor
 
-         console.log('Carta: ', carta.texto, 'Valor: ', carta.valor)
-
-         console.log('Compra carta: ', jogador, ' pontuação: ', pontuacaoJogador)
-      } else {
-         if (pontuacaoJogador > 21) {
-            temosUmVencedor = true;
-            break;
-         } else {
-
-            while (pontuacaoComputador < pontuacaoJogador) {
-               let carta = comprarCarta()
-               computador.push(carta.texto)
-               pontuacaoComputador += carta.valor
+            if (pontosJogador > 21) {
+                temosUmVencedor = true
+                break
             }
-         }
-      }
-   } while (temosUmVencedor != true)
+        } else {
+            while (pontosComputador <= pontosJogador) {
+                let carta = comprarCarta()
+                computador.push(carta.texto)
+                pontosComputador += carta.valor
 
-   let cartasJogador = ''
-   for (carta of jogador) {
-      cartasJogador += carta + ' '
-   }
+                if (pontosComputador > 21) {
+                    temosUmVencedor = true
+                    break
+                }
+            }
+        }
+    } while (temosUmVencedor !== true)
 
-   let cartasComputador = ''
-   for (carta of computador) {
-      cartasComputador += carta + ' '
-   }
-   console.log(`Usuário - cartas: ${cartasJogador} - pontuação ${pontuacaoJogador}`)
-   console.log(`Computador - cartas: ${cartasComputador} - pontuação ${pontuacaoComputador}`)
+    console.log(`Suas cartas são ${stringCartas(jogador)} . Sua pontuação é ${pontosJogador}.`)
+    console.log(`As cartas do computador são ${stringCartas(computador)}. A pontuação do computador é ${pontosComputador}.`)
 
-   if (pontuacaoJogador > pontuacaoComputador && pontuacaoJogador <= 21) {
-      console.log('O usuário ganhou!')
-   } else if (pontuacaoJogador < pontuacaoComputador) {
-      console.log('O computador ganhou!')
-   } else {
-      console.log('Empate!')
-   }
+    if (pontosJogador > 21 && pontosComputador <= 21) {
+        console.log('O Computador ganhou!')
+    } else if (pontosComputador > 21 && pontosJogador <= 21) {
+        console.log('O usuário ganhou!')
+    } else {
+        console.log('Empate!')
+    }
 
 } else {
-   console.log('O jogo acabou!')
+    console.log('O jogo acabou!')
+}
+
+function stringCartas(cartas) {
+    let string = ''
+    for (carta of cartas) {
+        string += carta + ' '
+    }
+
+    return string
 }
