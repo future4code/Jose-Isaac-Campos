@@ -62,24 +62,25 @@ function isValidImage(element) {
 }
 
 function renderPost() {
-  // sessionStorage.setItem('posts', [...posts])
+  // let container = document.getElementById('container-de-posts')
 
-  // location.pathname = `/blog/src/post.html`
-
-  let container = document.getElementById('container-de-posts')
-
-  container.innerHTML = ''
+  // container.innerHTML = ''
+  let htmlPosts = ''
   for (const post of posts) {
-    container.innerHTML += `
-      <article>
-        <h3>${post['title-post']}</h3>
-        <p>${post['author-post']}</p>
-        <div>
-          <img id='banner' src='${post['image-post']}'>
-          <p>${post['content-post']}</p>
-        </div>
-      </article>
+    htmlPosts += `
+    <article>
+    <h3>${post['title-post']}</h3>
+    <p>${post['author-post']}</p>
+    <div>
+    <img id='banner' src='${post['image-post']}'>
+    <p>${post['content-post']}</p>
+    </div>
+    </article>
     `
+    sessionStorage.setItem('posts', htmlPosts)
+
+    location.pathname = `/blog/src/post.html`
+
   }
 
 }
