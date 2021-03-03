@@ -25,6 +25,7 @@ label {
     text-align: right;
     padding-right: 10px;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 input, textarea {
@@ -42,5 +43,21 @@ button {
 
 #container-de-posts {
     margin: 10px;
+    width: 70%;
+    margin: auto;
     border-top: 3px double rgb(77, 77, 77);
+}
+
+.error {
+    outline-color: red;
+    border-color: red;
+}
+
+.success {
+    outline-color: greenyellow;
+    border-color: greenyellow;
+}
+
+#banner {
+    width: 50%;
 }

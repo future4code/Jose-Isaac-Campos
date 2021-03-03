@@ -12,16 +12,19 @@
 
 <body>
     <section id="formulario">
-        <label for="titulo-post">Título:</label>
-        <input type="text" id="titulo-post">
+        <label for="title-post">Título:</label>
+        <input onkeyup="isValidInput(this)" type="text" id="title-post">
 
-        <label for="autor-post">Autor:</label>
-        <input type="text" id="autor-post">
+        <label for="author-post">Autor:</label>
+        <input onkeyup="isValidInput(this)" type="text" id="author-post">
 
-        <label for="conteudo-post">Conteúdo:</label>
-        <textarea id="conteudo-post" cols="30" rows="10"></textarea>
+        <label for="image-post">Imagem:</label>
+        <input onkeyup="isValidImage(this)" type="text" id="image-post">
 
-        <button>Criar Post</button>
+        <label for="content-post">Conteúdo:</label>
+        <textarea onkeyup="isValidInput(this)" id="content-post" cols="30" rows="10"></textarea>
+
+        <button onclick="createPost()">Criar Post</button>
     </section>
 
     <section id="container-de-posts">
