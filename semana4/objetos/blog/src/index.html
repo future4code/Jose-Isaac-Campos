@@ -7,29 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="index.js" defer></script>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,300&display=swap"
+        rel="stylesheet">
     <title>Blog</title>
 </head>
 
 <body>
-    <section id="formulario">
-        <label for="title-post">Título:</label>
-        <input onkeyup="isValidInput(this)" type="text" id="title-post">
+    <main>
+        <section id="formulario">
+            <form>
+                <label for="title-post">Título:</label>
+                <input onkeyup="isValidInput(this)" type="text" id="title-post">
 
-        <label for="author-post">Autor:</label>
-        <input onkeyup="isValidInput(this)" type="text" id="author-post">
+                <label for="author-post">Autor:</label>
+                <input onkeyup="isValidInput(this)" type="text" id="author-post">
 
-        <label for="image-post">Imagem:</label>
-        <input onkeyup="isValidImage(this)" type="text" id="image-post">
+                <label for="image-post">Link da Imagem:</label>
+                <input onkeyup="isValidImage(this)" type="text" id="image-post">
 
-        <label for="content-post">Conteúdo:</label>
-        <textarea onkeyup="isValidInput(this)" id="content-post" cols="30" rows="10"></textarea>
+                <label for="content-post">Conteúdo:</label>
+                <textarea onkeyup="isValidInput(this)" id="content-post" cols="30" rows="10"></textarea>
 
-        <button onclick="createPost()">Criar Post</button>
-    </section>
-
-    <section id="container-de-posts">
-
-    </section>
+                <button onclick="createPost()">Criar Post</button>
+            </form>
+        </section>
+    </main>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-const posts = sessionStorage.getItem('posts')
+const posts = localStorage.getItem('posts')
 
 console.log(posts)
 let container = document.getElementById('container-de-posts')

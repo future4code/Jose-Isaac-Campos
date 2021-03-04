@@ -62,10 +62,8 @@ function isValidImage(element) {
 }
 
 function renderPost() {
-  // let container = document.getElementById('container-de-posts')
-
-  // container.innerHTML = ''
   let htmlPosts = ''
+
   for (const post of posts) {
     htmlPosts += `
     <article>
@@ -77,12 +75,10 @@ function renderPost() {
     </div>
     </article>
     `
-    sessionStorage.setItem('posts', htmlPosts)
-
-    location.pathname = `/blog/src/post.html`
-
   }
 
+  localStorage.setItem('posts', htmlPosts)
+  location.assign(`${location.origin}/post/src/posts.html`)
 }
 
 function createPost() {
