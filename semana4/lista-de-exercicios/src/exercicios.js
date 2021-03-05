@@ -241,6 +241,7 @@ function menoresDe18(arrayDePessoas) {
 
 function multiplicaArrayPor2(array) {
    // implemente sua lógica aqui
+   return array.map(numero => { return numero * 2 })
 }
 
 // Exercício 17, letra B
