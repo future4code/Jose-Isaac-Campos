@@ -3,15 +3,15 @@
 function inverteArray(array) {
    let length = array.length - 1
 
-   let stopNumber = 0
+   let stopnumero = 0
    if (array.length % 2 === 0) {
-      stopNumber = array.length / 2
+      stopnumero = array.length / 2
    } else {
-      stopNumber = array.length / (2 + 1)
+      stopnumero = array.length / (2 + 1)
    }
 
    let i = 0
-   while (i <= stopNumber) {
+   while (i <= stopnumero) {
       let temp = array[i]
 
       array[i] = array[length - i]
@@ -27,10 +27,10 @@ function inverteArray(array) {
 function retornaNumerosParesElevadosADois(array) {
    // implemente sua lógica aqui
 
-   const numberPar = retornaNumerosPares(array)
+   const numeroPar = retornaNumerosPares(array)
 
-   const parAoQuadrado = numberPar.map((number) => {
-      return (number * number)
+   const parAoQuadrado = numeroPar.map((numero) => {
+      return (numero * numero)
    })
 
    return parAoQuadrado
@@ -41,8 +41,8 @@ function retornaNumerosParesElevadosADois(array) {
 function retornaNumerosPares(array) {
    // implemente sua lógica aqui
 
-   return numberPar = array.filter((number) => {
-      return (number % 2 === 0)
+   return numeroPar = array.filter((numero) => {
+      return (numero % 2 === 0)
    })
 }
 
@@ -50,6 +50,14 @@ function retornaNumerosPares(array) {
 
 function retornaMaiorNumero(array) {
    // implemente sua lógica aqui
+
+   let maiorNumero = array[0]
+
+   array.forEach((numero) => {
+      if (maiorNumero < numero) { maiorNumero = numero }
+   })
+
+   return maiorNumero
 }
 
 //Exercício 5
