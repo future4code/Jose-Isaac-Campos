@@ -42,6 +42,10 @@ function retornaNumerosParesElevadosADois(array) {
 
 function retornaNumerosPares(array) {
    // implemente sua lógica aqui
+
+   return numberPar = array.filter((number) => {
+      return (number % 2 === 0)
+   })
 }
 
 //Exercício 4
