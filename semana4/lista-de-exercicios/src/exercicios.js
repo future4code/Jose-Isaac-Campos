@@ -27,9 +27,7 @@ function inverteArray(array) {
 function retornaNumerosParesElevadosADois(array) {
    // implemente sua lógica aqui
 
-   const numberPar = array.filter((number) => {
-      return (number % 2 === 0)
-   })
+   const numberPar = retornaNumerosPares(array)
 
    const parAoQuadrado = numberPar.map((number) => {
       return (number * number)
