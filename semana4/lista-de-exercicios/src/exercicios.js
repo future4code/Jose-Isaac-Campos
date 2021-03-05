@@ -144,6 +144,20 @@ function segundoMaiorEMenor(array) {
 
 function ordenaArray(array) {
    // implemente sua lógica aqui
+   let ouveMudanca = false
+   do {
+      ouveMudanca = false
+      for (let index = 0; index < array.length - 1; index++) {
+         if (array[index] > array[index + 1]) {
+            let temp = array[index]
+            array[index] = array[index + 1]
+            array[index + 1] = temp
+            ouveMudanca = true
+         }
+      }
+   } while (ouveMudanca !== false)
+
+   return array
 }
 
 // Exercício 12
