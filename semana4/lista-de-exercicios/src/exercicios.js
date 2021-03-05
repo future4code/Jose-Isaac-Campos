@@ -91,6 +91,15 @@ function retornaExpressoesBooleanas() {
 
 function retornaNNumerosPares(n) {
    // implemente sua lógica aqui
+   const numerosPares = []
+
+   let index = 0
+   while (numerosPares.length !== n) {
+      if (index % 2 === 0) { numerosPares.push(index) }
+      index++
+   }
+
+   return numerosPares
 }
 
 // Exercício 8
