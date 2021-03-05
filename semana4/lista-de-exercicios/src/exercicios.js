@@ -255,6 +255,13 @@ function multiplicaArrayPor2S(array) {
 
 function verificaParidade(array) {
    // implemente sua lógica aqui
+   return array.map(numero => {
+      if (numero % 2 === 0) {
+         return `${numero} é par`
+      } else {
+         return `${numero} é ímpar`
+      }
+   })
 }
 
 // Exercício 18
