@@ -138,6 +138,9 @@ function comparaDoisNumeros(num1, num2) {
 
 function segundoMaiorEMenor(array) {
    // implemente sua lógica aqui
+
+   array.sort((a, b) => { return a - b })
+   return [array[array.length - 2], array[1]]
 }
 
 //Exercício 11
