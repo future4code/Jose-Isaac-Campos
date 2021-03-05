@@ -277,8 +277,12 @@ const pessoas = [
 
 //Exercício 18, letra A
 
-function retornaPessoasAutorizadas(pessoas) {
+function retornaPessoasAutorizadas() {
    // implemente sua lógica aqui
+   return pessoas.filter(pessoa => {
+      if (pessoa.altura >= 1.5 && pessoa.idade > 14 && pessoa.idade < 60) { return true }
+      return false
+   })
 }
 
 
