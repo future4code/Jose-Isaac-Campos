@@ -1,0 +1,7 @@
+.endereco-container {
+    text-align: center;
+}
+
+.endereco-container > p {
+    padding: 6px 0;
+}
