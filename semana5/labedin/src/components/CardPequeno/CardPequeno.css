@@ -1,7 +1,12 @@
 .endereco-container {
-    text-align: center;
+    padding: 10px 0;
+    border: 1px solid black;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
 }
 
-.endereco-container > p {
-    padding: 6px 0;
+.endereco-container > img {
+    width: 26px;
+    margin: 0 20px;
 }

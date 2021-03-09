@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  background-color: #f5f6fa;
 }
 
 .App {
@@ -14,6 +15,7 @@
 .page-section-container {
   width: 40vw;
   margin: 10px 0;
+  line-height: 1.2em;
 }
 
 .page-section-container > h3 {

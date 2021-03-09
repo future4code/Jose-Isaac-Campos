@@ -3,7 +3,8 @@ import './CardPequeno.css'
 
 const CardPequeno = (props) => {
     return (
-        <div className='endereco-container'>
+        <div className="endereco-container">
+            <img src={props.img} />
             <p>{props.texto}</p>
         </div>
     )

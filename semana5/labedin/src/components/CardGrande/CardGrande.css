@@ -12,6 +12,12 @@
     width: 70px;
     margin-right: 10px;
     border-radius: 10px 30px;
+    transition: all .6s ease-in-out
+}
+
+.bigcard-container:hover > img {
+    border-radius: 20px 10px;
+    transform: translateX(-20px) scale(1.2);
 }
 
 .bigcard-container h4 {
@@ -23,3 +29,4 @@
     flex-direction: column;
     justify-items: flex-start;
 }
+
