@@ -6,6 +6,9 @@ import {IconeComContador} from '../IconeComContador/IconeComContador'
 import iconeCoracaoBranco from '../../img/favorite-white.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
+import iconeMarcacaoPostPreto from '../../img/bookmark-black.svg'
+import iconeMarcacaoPostBranco from '../../img/bookmark_border-black.svg'
+import iconeSharePreto from '../../img/share-black.svg'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
 
 class Post extends React.Component {
@@ -13,7 +16,8 @@ class Post extends React.Component {
     curtido: false,
     numeroCurtidas: 0,
     comentando: false,
-    numeroComentarios: 0
+    numeroComentarios: 0,
+    marcado: false,
   }
 
   onClickCurtida = () => {
@@ -31,6 +35,10 @@ class Post extends React.Component {
     })
   }
 
+  onClickMarcacao = () => {
+    this.setState({marcado: !this.state.marcado})
+  }
+
   aoEnviarComentario = () => {
     this.setState({
       comentando: false,
@@ -39,12 +47,19 @@ class Post extends React.Component {
   }
 
   render() {
-    let iconeCurtida
+    let iconeCurtida,
+        iconeMarcacao
 
     if(this.state.curtido) {
       iconeCurtida = iconeCoracaoPreto
     } else {
       iconeCurtida = iconeCoracaoBranco
+    }
+
+    if (this.state.marcado) {
+      iconeMarcacao = iconeMarcacaoPostPreto
+    } else {
+      iconeMarcacao = iconeMarcacaoPostBranco
     }
 
     let componenteComentario
@@ -72,6 +87,10 @@ class Post extends React.Component {
           icone={iconeComentario}
           onClickIcone={this.onClickComentario}
           valorContador={this.state.numeroComentarios}
+        />
+        <IconeComContador 
+          icone={iconeMarcacao}
+          onClickIcone={this.onClickMarcacao}
         />
       </div>
       {componenteComentario}
