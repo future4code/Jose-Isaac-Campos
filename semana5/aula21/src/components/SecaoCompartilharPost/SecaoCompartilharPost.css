@@ -1,0 +1,33 @@
+#container-compartilhamento {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#container-compartilhamento > p {
+    font-size: .8em;
+    color: gray;
+    margin: 4% 0 0 4%;
+}
+
+.container-redes-sociais {
+    display: flex;
+    justify-content: space-around;
+    margin: 4% 0;
+}
+
+.container-redes-sociais > div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container-redes-sociais img {
+    width: 16px;
+}
+
+.container-redes-sociais span {
+    font-size: .8em;
+}

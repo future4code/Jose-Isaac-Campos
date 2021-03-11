@@ -1,0 +1,17 @@
+.container-enviar {
+    display: flex;
+    justify-content: space-between;
+    margin: 2%;
+}
+
+.container-enviar button {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 4px;
+}
+
+.container-enviar img {
+    width: 20px;
+}
