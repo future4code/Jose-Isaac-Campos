@@ -3,6 +3,36 @@ import './App.css';
 import Post from './components/Post/Post';
 import styled from 'styled-components'
 
+
+const SecaoCriarPost = styled.div`
+  display: flex;
+  justify-content: stretch;
+  align-items: space-around;
+  margin: 10px 0;
+  width: 302px;
+`
+
+const Botao = styled.button`
+  flex: 1;
+  background-color: gray;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+`
+
+const FormNovoPost = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-around;
+  width: 100%;
+`
+
+const Input = styled.input`
+  margin-bottom: 10px;
+  padding: 4px;
+`
+
 class App extends React.Component {
   state = {
     posts: [
@@ -33,56 +63,39 @@ class App extends React.Component {
   }
 
   handleFotoPost = (event) => {
-    this.setState({inputFotoPost : event.target.value})
+    this.setState({inputFotoPost: event.target.value})
   }
 
   handleFotoUsuario = (event) => {
-    this.setState({inputFotoUsuario : event.target.value})
+    this.setState({inputFotoUsuario: event.target.value})
   }
 
   onClickNovoPost = () => {
     this.setState({criandoPost: true})
   }
 
+  adicionarPost = () => {
+    const novoPost = { 
+      nomeUsuario: this.state.inputNomeUsuario,
+      fotoUsuario: this.state.inputFotoUsuario,
+      fotoPost: this.state.inputFotoPost
+    }
+
+    const novaListaDePosts = [novoPost, ...this.state.posts]
+    this.setState({posts: novaListaDePosts, criandoPost: false})
+  }
+
   render() {
-    const SecaoCriarPost = styled.div`
-      display: flex;
-      justify-content: stretch;
-      align-items: space-around;
-      margin: 10px 0;
-      width: 302px;
-    `
-
-    const ButaoNovoPost = styled.button`
-      flex: 1;
-      background-color: gray;
-      color: white;
-      font-size: 1.4em;
-    `
-
-    const FormNovoPost = styled.div`
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      justify-content: space-around;
-      width: 100%;
-      padding: 0 10px;
-    `
-
-    const Input = styled.input`
-      width: 100%;
-      margin-top: 4px;
-    `
-
     let content
 
     if (!this.state.criandoPost) {
-      content = <ButaoNovoPost onClick={this.onClickNovoPost}>+</ButaoNovoPost>
+      content = <Botao onClick={this.onClickNovoPost}>+</Botao>
     } else {
-      <FormNovoPost>
+      content = <FormNovoPost>
         <Input value={this.state.inputNomeUsuario} onChange={this.handleNomeUsuario} placeholder='Nome do usuário' />
         <Input value={this.state.inputFotoPost} onChange={this.handleFotoPost} placeholder='Url da image do post' />
         <Input value={this.state.inputFotoUsuario} onChange={this.handleFotoUsuario} placeholder='Url da image do perfil' />
+        <Botao onClick={this.adicionarPost}>Adicionar</Botao>
       </FormNovoPost>
     }
 
