@@ -30,12 +30,12 @@ export default class ClosedQuestion extends React.Component {
         const question = this.props.question
 
         const componentsOptions = question.options.map((option) => {
-            return <Option value={option}>{option}</Option>
+            return <Option key={option} value={option}>{option}</Option>
         })
 
         return (
             <DivFlex>
-                <Label for={question.sequence}>
+                <Label htmlFor={question.sequence}>
                 {`${question.sequence}) ${question.enuciated}?`}
                 </Label>
                 <Select id={question.sequence}>

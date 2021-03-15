@@ -26,7 +26,7 @@ export default class OpenQuest extends React.Component {
 
         return (
             <DivFlex>
-                <Label for={question.sequence}>
+                <Label htmlFor={question.sequence}>
                     {`${question.sequence}) ${question.enuciated}?`}
                 </Label>
                 <Input id={question.sequence}/>

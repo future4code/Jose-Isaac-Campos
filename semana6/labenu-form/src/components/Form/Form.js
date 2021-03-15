@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import BtnAction from '../BtnAction/BtnAction'
 import Questions from '../Questions/Questions'
 
-const FormStyle = styled.form`
+const FormStyle = styled.div`
     background-color: #f5f6fa;
     height: 98vh;
     width: 70%;
@@ -99,7 +99,7 @@ export default class Form extends React.Component {
                 ]
             }
         ],
-        stage: [
+        etapa: [
             'Dados Gerais',
             'Informações do Ensino Superior',
             'Informações gerais do ensino'
@@ -108,7 +108,6 @@ export default class Form extends React.Component {
     }
 
     nextPage = () => {
-        console.log('passou')
         this.setState({currentPage: this.state.currentPage + 1})
     }
 
@@ -119,8 +118,20 @@ export default class Form extends React.Component {
 
         return (
             <FormStyle>
-                <Questions questions={currenPagetQuestions} stage={this.state.stage[this.state.currentPage -1]}/>
-                <BtnAction nextPage={this.nextPage} />
+                <Questions 
+                    questions={currenPagetQuestions} 
+                    stage={this.state.etapa[this.state.currentPage -1]}
+                />
+
+                {this.state.currentPage === 3 ? 
+                    <BtnAction 
+                        nextPage={this.props.isSend}
+                        value='Enviar' 
+                    /> : 
+                    <BtnAction 
+                        nextPage={this.nextPage} 
+                        value='Próxima página'
+                    />}
             </FormStyle>
         )
     }

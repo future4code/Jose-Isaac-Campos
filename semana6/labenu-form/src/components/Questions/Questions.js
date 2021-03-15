@@ -14,9 +14,8 @@ const DivFlex = styled.div`
 
 export default class Questions extends React.Component {
     render() {
-        console.log(this.props.questions)
         const componentsQuestions = this.props.questions.map((question, index) => {
-            return question.type === 'open' ?  <OpenQuestion key={index} question={question}/> : <ClosedQuestion key={index} question={question}/>
+            return question.type === 'open' ?  <OpenQuestion key={index.toString()} question={question}/> : <ClosedQuestion key={index.toString()} question={question}/>
         })
         return (
             <DivFlex>
