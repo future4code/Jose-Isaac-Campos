@@ -13,6 +13,7 @@ const Tarefa = styled.li`
   text-decoration: ${({completa}) => (completa ? 'line-through' : 'none')};
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 4% 0;
 `
 
@@ -104,17 +105,15 @@ class App extends React.Component {
   }
 
   render() {
-    let listaFiltrada
+    let tarefasCompletas
+    let tarefasPendentes
     if (this.state.tarefas) {
-      listaFiltrada = this.state.tarefas.filter(tarefa => {
-        switch (this.state.filtro) {
-          case 'pendentes':
-            return !tarefa.completa
-          case 'completas':
-            return tarefa.completa
-          default:
-            return true
-        }
+      tarefasCompletas = this.state.tarefas.filter(tarefa => {
+        return tarefa.completa ? true : false
+      })
+
+      tarefasPendentes = this.state.tarefas.filter(tarefa => {
+        return tarefa.completa ? false : true
       })
     }
 
@@ -135,8 +134,26 @@ class App extends React.Component {
             <option value="completas">Completas</option>
           </select>
         </InputsContainer>
+        <h2>Tarafas pendentes</h2>
         <TarefaList>
-          {listaFiltrada && listaFiltrada.map(tarefa => {
+          {tarefasPendentes && tarefasPendentes.map(tarefa => {
+            return (
+              <Tarefa 
+                completa={tarefa.completa}
+              >
+                <p 
+                  onClick={() => this.selectTarefa(tarefa.id)}
+                >
+                  {tarefa.texto}
+                </p>
+                <button onClick={() => this.deletarTarefa(tarefa.id)}>X</button>
+              </Tarefa>
+            )
+          })}
+        </TarefaList>
+        <h2>Tarefas completas</h2>
+        <TarefaList>
+          {tarefasCompletas && tarefasCompletas.map(tarefa => {
             return (
               <Tarefa 
                 completa={tarefa.completa}
