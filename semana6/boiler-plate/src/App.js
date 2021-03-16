@@ -4,12 +4,16 @@ import './styles.css'
 
 const TarefaList = styled.ul`
   padding: 0;
-  width: 200px;
+  width: 300px;
+  list-style: none;
 `
 
 const Tarefa = styled.li`
   text-align: left;
   text-decoration: ${({completa}) => (completa ? 'line-through' : 'none')};
+  display: flex;
+  justify-content: space-between;
+  margin: 4% 0;
 `
 
 const InputsContainer = styled.div`
@@ -74,6 +78,14 @@ class App extends React.Component {
     this.setState({tarefas: novasTarefas})
   }
 
+  deletarTarefa = (id) => {
+    const tarefasFiltradas = this.state.tarefas.filter(tarefa => {
+      return tarefa.id === id ? false : true
+    })
+
+    this.setState({tarefas: tarefasFiltradas})
+  }
+
   selectTarefa = (id) => {
     let tarefas = this.state.tarefas.map(tarefa => {
       if (tarefa.id !== id) {
@@ -126,11 +138,15 @@ class App extends React.Component {
         <TarefaList>
           {listaFiltrada && listaFiltrada.map(tarefa => {
             return (
-              <Tarefa
+              <Tarefa 
                 completa={tarefa.completa}
-                onClick={() => this.selectTarefa(tarefa.id)}
               >
-                {tarefa.texto}
+                <p 
+                  onClick={() => this.selectTarefa(tarefa.id)}
+                >
+                  {tarefa.texto}
+                </p>
+                <button onClick={() => this.deletarTarefa(tarefa.id)}>X</button>
               </Tarefa>
             )
           })}
