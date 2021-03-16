@@ -39,7 +39,7 @@ class App extends React.Component {
         }
       ],
       inputValue: '',
-      filtro: ''
+      filtro: '',
     }
 
   componentDidUpdate() {
@@ -76,7 +76,7 @@ class App extends React.Component {
       novasTarefas = [tarefa]
     }
 
-    this.setState({tarefas: novasTarefas})
+    this.setState({tarefas: novasTarefas, inputValue: ''})
   }
 
   deletarTarefa = (id) => {
@@ -135,10 +135,11 @@ class App extends React.Component {
           </select>
         </InputsContainer>
         <h2>Tarafas pendentes</h2>
-        <TarefaList>
+        {(this.state.filtro === "pendentes" || this.state.filtro === "") && <TarefaList>
           {tarefasPendentes && tarefasPendentes.map(tarefa => {
             return (
               <Tarefa 
+                key={tarefa.id}
                 completa={tarefa.completa}
               >
                 <p 
@@ -150,12 +151,13 @@ class App extends React.Component {
               </Tarefa>
             )
           })}
-        </TarefaList>
+        </TarefaList>}
         <h2>Tarefas completas</h2>
-        <TarefaList>
+        {(this.state.filtro === "completas" || this.state.filtro === "") && <TarefaList>
           {tarefasCompletas && tarefasCompletas.map(tarefa => {
             return (
               <Tarefa 
+                key={tarefa.id}
                 completa={tarefa.completa}
               >
                 <p 
@@ -167,7 +169,7 @@ class App extends React.Component {
               </Tarefa>
             )
           })}
-        </TarefaList>
+        </TarefaList>}
       </div>
     )
   }
