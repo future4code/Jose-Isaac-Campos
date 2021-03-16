@@ -38,11 +38,19 @@ class App extends React.Component {
     }
 
   componentDidUpdate() {
-
+    const tarefas = this.state.tarefas
+    if (tarefas) {
+      localStorage.setItem('tarefasSalvas', JSON.stringify(tarefas))
+    }
   };
 
   componentDidMount() {
+    let tarefasSalvas = localStorage.getItem('tarefasSalvas')
 
+    if (tarefasSalvas) { 
+      tarefasSalvas = JSON.parse(tarefasSalvas)
+      this.setState({tarefas: tarefasSalvas})
+    }
   };
 
   onChangeInput = (event) => {
@@ -56,7 +64,12 @@ class App extends React.Component {
       completa: false
     }
 
-    const novasTarefas = [...this.state.tarefas, tarefa]
+    let novasTarefas
+    if (this.state.tarefas) {
+      novasTarefas = [...this.state.tarefas, tarefa]
+    } else {
+      novasTarefas = [tarefa]
+    }
 
     this.setState({tarefas: novasTarefas})
   }
@@ -79,16 +92,19 @@ class App extends React.Component {
   }
 
   render() {
-    const listaFiltrada = this.state.tarefas.filter(tarefa => {
-      switch (this.state.filtro) {
-        case 'pendentes':
-          return !tarefa.completa
-        case 'completas':
-          return tarefa.completa
-        default:
-          return true
-      }
-    })
+    let listaFiltrada
+    if (this.state.tarefas) {
+      listaFiltrada = this.state.tarefas.filter(tarefa => {
+        switch (this.state.filtro) {
+          case 'pendentes':
+            return !tarefa.completa
+          case 'completas':
+            return tarefa.completa
+          default:
+            return true
+        }
+      })
+    }
 
     return (
       <div className="App">
@@ -108,7 +124,7 @@ class App extends React.Component {
           </select>
         </InputsContainer>
         <TarefaList>
-          {listaFiltrada.map(tarefa => {
+          {listaFiltrada && listaFiltrada.map(tarefa => {
             return (
               <Tarefa
                 completa={tarefa.completa}
