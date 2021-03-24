@@ -72,22 +72,15 @@ export default class CardPrincipal extends React.Component {
         this.getAllUsers()
     }
 
-    getAllUsers = () => {
-        axios.get(baseUrl, headers)
-        .then(response => {
+    getAllUsers = async () => {
+        try {
+            const response = await axios.get(baseUrl, headers)
             this.setState({userList: response.data})
-        })
-        .catch(err => {
-            console.error(err)
-        })
-    }
-
-    deleteUserLocal = (id) => {
-        const userList = this.state.userList.filter(user => {
-            return user.id !== id
-        })
-
-        this.setState({userList: userList})
+            
+        } catch (error) {
+            console.error(error)
+            alert('Falha ao obter dados do servidor!\n', error.response.data.message)
+        }
     }
 
     render() {
