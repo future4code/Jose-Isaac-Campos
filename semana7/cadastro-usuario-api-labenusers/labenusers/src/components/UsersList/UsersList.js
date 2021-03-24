@@ -35,19 +35,18 @@ const UlPrincipal = styled.ul`
 `;
 
 export default class UsersList extends React.Component {
-  deleteUser = (id) => {
-    axios
-      .delete(`${baseUrl}/${id}`, headers)
-      .then((response) => {
+  deleteUser = async (id) => {
+    try {
+        await axios.delete(`${baseUrl}/${id}`, headers)
+        
         this.props.getAllUsers();
         alert("Usuário deletado com sucesso");
-      })
-      .catch((error) => {
+    } catch (error) {
         if (error.response.data.message === "User not found.") {
           alert("Usuário não encontrado");
         }
         console.log(error.response.data.message);
-      });
+    }
   };
 
   render() {
