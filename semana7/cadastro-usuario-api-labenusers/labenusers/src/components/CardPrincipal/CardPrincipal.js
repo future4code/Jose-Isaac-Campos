@@ -3,6 +3,7 @@ import React from "react";
 import styled from 'styled-components'
 import NewUser from "../NewUser/NewUser";
 import UsersList from "../UsersList/UsersList";
+import {baseUrl, headers} from '../../parameters'
 
 import addIcon from '../../icons/add.png'
 import usersListIcon from '../../icons/list.png'
@@ -72,11 +73,7 @@ export default class CardPrincipal extends React.Component {
     }
 
     getAllUsers = () => {
-        axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users', 
-        {headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'jose-isaac-cruz'
-        }})
+        axios.get(baseUrl, headers)
         .then(response => {
             this.setState({userList: response.data})
         })
