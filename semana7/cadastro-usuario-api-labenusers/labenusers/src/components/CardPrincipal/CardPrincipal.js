@@ -32,7 +32,7 @@ const Titile = styled.h1`
     }
 `
 
-const ButtonAddUser = styled.div`
+const ButtonAcion = styled.div`
     display: flex;
     align-items: center;
     margin: 6% 4%;
@@ -87,8 +87,8 @@ export default class CardPrincipal extends React.Component {
         return (
             <DivPrincipal>
                 <Titile><span>L</span>aben<span>U</span>sers</Titile>
-                <ButtonAddUser onClick={this.handleCreatingNewUser}>
-                    <img src={this.state.creatingNewUser ? addIcon : usersListIcon } alt="" />
+                <ButtonAcion onClick={this.handleCreatingNewUser}>
+                    <img src={this.state.creatingNewUser ? usersListIcon : addIcon } alt="" />
                     <span>
                         {
                             !this.state.creatingNewUser ?
@@ -97,7 +97,7 @@ export default class CardPrincipal extends React.Component {
                             'users list'
                         }
                     </span>
-                </ButtonAddUser>
+                </ButtonAcion>
 
                 {
                     this.state.creatingNewUser ? 

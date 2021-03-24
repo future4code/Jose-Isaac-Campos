@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { baseUrl, headers } from "../../parameters";
 
 import removeIcon from "../../icons/remove.png";
+import UserDetails from "../UserDetails/UserDetails";
 
 const UlPrincipal = styled.ul`
   list-style: none;
@@ -16,6 +17,7 @@ const UlPrincipal = styled.ul`
     padding: 2%;
     border-radius: 6px;
     font-size: 1.2em;
+    cursor: pointer;
 
     display: flex;
     justify-content: space-between;
@@ -35,6 +37,11 @@ const UlPrincipal = styled.ul`
 `;
 
 export default class UsersList extends React.Component {
+    state = {
+        displayingUserDetails: false,
+        userIdInDetail: {}
+    }
+
   deleteUser = async (id) => {
     if (window.confirm('Deseja realmente deleter esse usuário?')) {
         try {
@@ -51,10 +58,21 @@ export default class UsersList extends React.Component {
     }
   };
 
+  isDisplayingUserDetails = (id) => {
+    this.setState(
+        {
+            displayingUserDetails: !this.state.displayingUserDetails,
+            userIdInDetail: id
+        })
+  }
+
   render() {
+    console.log(this.state.displayingUserDetails)
     const users = this.props.users.map((user) => {
       return (
-        <li key={user.id}>
+        <li key={user.id}
+            onClick={() => this.isDisplayingUserDetails(user.id)}
+        >
           {user.name}
           <img
             src={removeIcon}
@@ -66,6 +84,17 @@ export default class UsersList extends React.Component {
         </li>
       );
     });
-    return <UlPrincipal>{users}</UlPrincipal>;
+    console.log(this.state.userIdInDetail)
+    return <UlPrincipal>
+        { this.state.displayingUserDetails ? 
+            <UserDetails 
+            userId={this.state.userIdInDetail} 
+            back={this.isDisplayingUserDetails}
+            deleteUser={this.deleteUser}
+            />
+            :
+            users
+        }
+    </UlPrincipal>;
   }
 }
