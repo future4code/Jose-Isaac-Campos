@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellota:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+
+.App {
+  text-align: center;
+  background-color: #282c34;
+  height: 100vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
