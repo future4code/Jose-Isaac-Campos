@@ -3,6 +3,7 @@ import React from "react";
 import styled from 'styled-components'
 import NewUser from "../NewUser/NewUser";
 import UsersList from "../UsersList/UsersList";
+import {baseUrl, headers} from '../../parameters'
 
 import addIcon from '../../icons/add.png'
 import usersListIcon from '../../icons/list.png'
@@ -31,7 +32,7 @@ const Titile = styled.h1`
     }
 `
 
-const ButtonAddUser = styled.div`
+const ButtonAcion = styled.div`
     display: flex;
     align-items: center;
     margin: 6% 4%;
@@ -71,34 +72,23 @@ export default class CardPrincipal extends React.Component {
         this.getAllUsers()
     }
 
-    getAllUsers = () => {
-        axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users', 
-        {headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'jose-isaac-cruz'
-        }})
-        .then(response => {
+    getAllUsers = async () => {
+        try {
+            const response = await axios.get(baseUrl, headers)
             this.setState({userList: response.data})
-        })
-        .catch(err => {
-            console.error(err)
-        })
-    }
-
-    deleteUserLocal = (id) => {
-        const userList = this.state.userList.filter(user => {
-            return user.id !== id
-        })
-
-        this.setState({userList: userList})
+            
+        } catch (error) {
+            console.error(error)
+            alert('Falha ao obter dados do servidor!\n', error.response.data.message)
+        }
     }
 
     render() {
         return (
             <DivPrincipal>
                 <Titile><span>L</span>aben<span>U</span>sers</Titile>
-                <ButtonAddUser onClick={this.handleCreatingNewUser}>
-                    <img src={this.state.creatingNewUser ? addIcon : usersListIcon } alt="" />
+                <ButtonAcion onClick={this.handleCreatingNewUser}>
+                    <img src={this.state.creatingNewUser ? usersListIcon : addIcon } alt="" />
                     <span>
                         {
                             !this.state.creatingNewUser ?
@@ -107,7 +97,7 @@ export default class CardPrincipal extends React.Component {
                             'users list'
                         }
                     </span>
-                </ButtonAddUser>
+                </ButtonAcion>
 
                 {
                     this.state.creatingNewUser ? 
