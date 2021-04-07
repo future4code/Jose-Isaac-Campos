@@ -23,10 +23,25 @@ const Main = styled.div`
     padding: 2% 0;
     background-color: rgba(34, 47, 62, .2);
     width: 100%;
+
+    a {
+        display: flex;
+        align-items: center;
+    }
 `
 
 const Icon = styled.img`
     width: 40px;
     height: 40px;
     cursor: pointer;
+
+    @media screen and (max-width: 1024px) {
+        width: 44px;
+        height: 44px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        width: 40px;
+        height: 40px;
+    }
 `

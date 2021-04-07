@@ -23,6 +23,18 @@ const Main = styled.div`
     & > span {
         font-size: 1.2vw;
         letter-spacing: 2px;
+
+        @media screen and (max-width: 1024px) {
+            font-size: 3vw;
+        }
+
+        @media screen and (max-width: 414px) {
+            font-size: 5vw;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        padding: 4% 0;
     }
 
     &:hover {
@@ -37,4 +49,14 @@ const Icon = styled.img`
     height: 60px;
     margin: 0 4%;
     border-radius: 10px;
+
+    @media screen and (max-width: 1024px) {
+        width: 90px;
+        height: 90px;
+    }
+
+    @media screen and (max-width: 414px) {
+        width: 70px;
+        height: 70px;
+    }
 `

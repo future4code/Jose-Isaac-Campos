@@ -26,4 +26,13 @@ const Button = styled.button`
         transition: all 0.4s;
         letter-spacing: 10px;
     }
+
+    @media screen and (max-width: 1024px) {
+        font-size: 3vw;
+    }
+
+    @media screen and (max-width: 1024px) {
+        font-size: 5vw;
+        padding: 2%;
+    }
 `

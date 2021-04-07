@@ -5,15 +5,18 @@ import ChangePage from '../components/ChangePage/ChangePage'
 import Card from '../components/Card/Card'
 import ButtonClear from '../components/ButtonClear/ButtonClear'
 import {getMatches, Clear} from '../services/api'
+import LoaderAnimation from '../components/LoaderAnimation/LoaderAnimation'
 
 export default function Matches() {
     const [matches, setMatches] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         let mounted = true
         getMatches().then((matches) => {
             if (mounted) {
                 setMatches(matches)
+                setLoading(false)
             }
         })
         return () => {mounted = false}
@@ -39,9 +42,13 @@ export default function Matches() {
         <Main>
             <CardHeader />
             <ChangePage page={'/'}/>
-            <ContainerMatches>
-                {renderProfiles()}
-            </ContainerMatches>
+            { !loading ?
+                <ContainerMatches>
+                    {renderProfiles()}
+                </ContainerMatches>
+                :
+                <LoaderAnimation />
+            }
             <ButtonClear onClick={clearMatches}>Limpar</ButtonClear>
         </Main>
     )
@@ -65,6 +72,17 @@ const Main = styled.main`
     overflow: auto;
 
     background-color: rgba(34, 47, 62, .08);
+
+    @media screen and (max-width: 1024px) {
+      min-width: 45vw;
+      max-width: 55vw;
+    }
+
+
+    @media screen and (max-width: 414px) {
+      min-width: 77vw;
+      max-width: 83vw;
+    }
 `
 
 const ContainerMatches = styled.div`

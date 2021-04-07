@@ -51,6 +51,18 @@ const Main = styled.div`
                 font-weight: 600;
             }
         }
+
+        @media screen and (max-width: 1024px) {
+          font-size: 3vw;
+        }
+
+        @media screen and (max-width: 414px) {
+          font-size: 6vw;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+      padding: 2% 0;
     }
 `
 

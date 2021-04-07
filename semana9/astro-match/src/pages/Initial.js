@@ -71,4 +71,17 @@ const Main = styled.main`
     overflow: auto;
 
     background-color: rgba(34, 47, 62, .08);
+
+    @media screen and (max-width: 1024px) {
+      min-width: 40vw;
+      max-width: 45vw;
+    }
+
+
+    @media screen and (max-width: 414px) {
+      min-width: 70vw;
+      max-width: 80vw;
+    }
+
+
 `

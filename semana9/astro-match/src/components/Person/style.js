@@ -14,6 +14,9 @@ export const DivMain = styled.div`
     & > div {
         background-color: rgba(255, 255, 255, .9);
         border-radius: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 `
 
@@ -21,10 +24,18 @@ export const Photo = styled.img`
     width: 100%;
     max-height: 320px;
     border-radius: 14px;
+
+    @media screen and (max-width: 1024px) {
+        max-height: 390px;
+    }
+
+    @media screen and (max-width: 414px) {
+        max-height: 340px;
+    }
 `
 
 export const InfoProfile = styled.div`
-    margin: 5% auto;
+    margin: 5% 0;
     width: 96%;
     
     p {
@@ -43,11 +54,31 @@ export const InfoProfile = styled.div`
         &:nth-child(2) {
             font-weight: 300;
             font-size: .7em;
+
+            @media screen and (max-width: 1024px) {
+                font-size: 1em;
+            }
         }
 
         &:last-child {
             font-size: .66em;
+
+            @media screen and (max-width: 1024px) {
+                font-size: .9em;
+            }
         }
+
+        @media screen and (max-width: 1024px) {
+            font-size: 3.6vw;
+        }
+
+        @media screen and (max-width: 414px) {
+            font-size: 5vw;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        margin: 6% 0;
     }
 `
 
@@ -57,6 +88,14 @@ export const ContainerBottons = styled.div`
     align-items: center;
     width: 100%;
     margin: 2% 0 4% 0;
+
+    @media screen and (max-width: 1024px) {
+        margin: 6% 0 0% 0;
+    }
+
+    @media screen and (max-width: 1024px) {
+        margin: 4% 0 0% 0;
+    }
 `
 
 export const Botton = styled.button`
@@ -69,10 +108,24 @@ export const Botton = styled.button`
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.4s;
+
+    @media screen and (max-width: 1024px) {
+        width: 76px;
+        height: 76px;
+    }
+
+    @media screen and (max-width: 414px) {
+        width: 66px;
+        height: 66px;
+    }
 `
 
 export const Icon = styled.img`
     width: 22px;
+
+    @media screen and (max-width: 414px) {
+        width: 18px;
+    }
 `
 
 export const Discard = styled(Botton)`
@@ -92,5 +145,9 @@ export const Match = styled(Botton)`
 
     img {
         width: 32px;
+
+        @media screen and (max-width: 414px) {
+            width: 28px;
+        }
     }
 `
