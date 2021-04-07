@@ -14,15 +14,21 @@ const Main = styled.div`
     display: flex;
     align-items: center;
     margin: 1.1%;
-    padding: 4% 0;
+    padding: 2% 0;
     width: 96%;
     border-radius: 8px;
-
+    transition: all 0.4s;
     background-color: rgba(34, 47, 62, .18);
 
     & > span {
         font-size: 1.2vw;
         letter-spacing: 2px;
+    }
+
+    &:hover {
+        transform: scale(1.02);
+        background-color: rgba(34, 47, 62, .22);
+        transition: all 0.4s;
     }
 `
 

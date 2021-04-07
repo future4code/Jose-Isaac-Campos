@@ -19,7 +19,6 @@ export const choosePerson = async (id, choice) => {
             choice: choice
         }
         await axios.post(`${baseUrl}/choose-person`, body)
-        console.log('deu certo!')
     } catch (error) {
         console.log('choosePerson: ', error.data.message)
     }
@@ -37,7 +36,8 @@ export const getMatches = async () => {
 
 export const Clear = async () => {
     try {
-        await axios.put(`${baseUrl}/clear`)
+        const response = await axios.put(`${baseUrl}/clear`)
+        console.log('clear: ', response.data.message)
     } catch (error) {
         console.log('clear: ' , error.data.message)
     }

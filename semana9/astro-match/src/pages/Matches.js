@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import CardHeader from '../components/CardHeader/CardHeader'
 import ChangePage from '../components/ChangePage/ChangePage'
 import Card from '../components/Card/Card'
-
+import ButtonClear from '../components/ButtonClear/ButtonClear'
 import {getMatches, Clear} from '../services/api'
 
 export default function Matches() {
@@ -19,8 +19,6 @@ export default function Matches() {
         return () => {mounted = false}
     }, [])
 
-    console.log('matches: ', matches)
-
     const clearMatches = async () => {
         try {
             await Clear()
@@ -32,7 +30,7 @@ export default function Matches() {
 
     const renderProfiles = () => {
         return matches.map((match) => {
-            return <Card profile={match} />
+            return <Card key={match.id} profile={match} />
         })
     }
 
@@ -44,7 +42,7 @@ export default function Matches() {
             <ContainerMatches>
                 {renderProfiles()}
             </ContainerMatches>
-            <Button onClick={clearMatches}>Limpar</Button>
+            <ButtonClear onClick={clearMatches}>Limpar</ButtonClear>
         </Main>
     )
 }
@@ -76,25 +74,4 @@ const ContainerMatches = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-`
-
-const Button = styled.button`
-    width: 100%;
-    font-size: 1.6vw;
-    text-transform: uppercase;
-    letter-spacing: 20px;
-    cursor: pointer;
-    color: #ffffff;
-    padding: .6% 0;
-    position: fixed;
-    bottom: 0px;
-    background-color: rgba(34, 47, 62, .18);
-    transition: all 1s;
-
-    &:hover {
-        background-color: rgba(34, 47, 62, .30);
-        transform: scale(1.1); 
-        transition: all 0.4s;
-        letter-spacing: 10px;
-    }
 `

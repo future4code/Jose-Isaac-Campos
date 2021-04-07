@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
-import {getProfile} from '../services/api'
+import {getProfile, Clear} from '../services/api'
 import Person from '../components/Person/Person'
 import CardHeader from '../components/CardHeader/CardHeader'
 import ChangePage from '../components/ChangePage/ChangePage'
+import ButtonClear from '../components/ButtonClear/ButtonClear'
 
 export default function Card() {
     const [profile, setProfile] = useState({})
@@ -27,12 +28,22 @@ export default function Card() {
 
         setProfile(res)
     }
+
+    const clearMatches = async () => {
+      try {
+          await Clear()
+          await getCurrentProfile()
+      } catch (error) {
+          console.log('clearMatches: ', error.data.message)
+      }
+    }
     
     return (
         <Main>
             <CardHeader />
             <ChangePage page={'/matches'}/>
             <Person profile={profile} getProfile={getCurrentProfile}/>
+            <ButtonClear onClick={() => {clearMatches()}}>Limpar</ButtonClear>
         </Main>
     )
 }
@@ -47,6 +58,7 @@ const Main = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 
     background-color: white;
 
