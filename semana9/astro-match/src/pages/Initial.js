@@ -5,6 +5,7 @@ import Person from '../components/Person/Person'
 import CardHeader from '../components/CardHeader/CardHeader'
 import ChangePage from '../components/ChangePage/ChangePage'
 import ButtonClear from '../components/ButtonClear/ButtonClear'
+import LoaderAnimation from '../components/LoaderAnimation/LoaderAnimation'
 
 export default function Card() {
     const [profile, setProfile] = useState({})
@@ -42,7 +43,11 @@ export default function Card() {
         <Main>
             <CardHeader />
             <ChangePage page={'/matches'}/>
-            <Person profile={profile} getProfile={getCurrentProfile}/>
+            {profile.name ? 
+                <Person profile={profile} getProfile={getCurrentProfile}/>
+              :
+                <LoaderAnimation />
+            }
             <ButtonClear onClick={() => {clearMatches()}}>Limpar</ButtonClear>
         </Main>
     )
