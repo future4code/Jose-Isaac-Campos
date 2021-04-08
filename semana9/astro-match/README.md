@@ -6,16 +6,12 @@
 
 Deploy in [surge](http://jose-isaac-astro-match.surge.sh/)
 
-<br>
-
 ### Possui como depedência as seguinites libs:
 <ul>
   <li>styled-components</li>
   <li>axios</li>
   <li>react-router-dom</li>
 </ul>
-
-<br>
 
 ### Requisitos
 
