@@ -80,7 +80,7 @@ Para executar esse projeto em sua máquila local é necessário que o node js es
 <br>
 <br>
 
-<h4>4º | Inicie o servido:</h4>
+<h4>4º | Inicie o servidor:</h4>
 
 <code>
    npm run start
