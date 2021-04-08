@@ -2,8 +2,12 @@
 
 Esté projeto foi desenvolvido utilizando a biblioteca React
 
-Possui como depedência as seguinites libs:
+<img src="./assets/astromatch.jpg">
 
+<br>
+Possui como depedência as seguinites libs:
 <ul>
-  
+  <li>styled-components</li>
+  <li>axios</li>
+  <li>react-router-dom</li>
 </ul>
