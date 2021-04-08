@@ -15,8 +15,6 @@ Deploy in [surge](http://jose-isaac-astro-match.surge.sh/)
 
 ### Requisitos
 
-<br>
-
 <input type="checkbox" checked disabled> Tela Inicial
 
 <ul>
@@ -51,16 +49,9 @@ Deploy in [surge](http://jose-isaac-astro-match.surge.sh/)
     <li>Para isso, adicione um botão que fique bem claro que faz isso (com uma mensagem ou um ícone pertinente)</li>
 </ul>
 
-
-<br>
-
 ### Rodando localmente
 
-<br>
-
 Para executar esse projeto em sua máquila local é necessário que o node js esteja intalado. Caso ainda não tenha, você pode está fazendo o download [aqui](https://nodejs.org/en/download/).
-
-<br>
 
 <h4>1º | Faça o clone do repo:</h4>
 
