@@ -3,7 +3,8 @@
 <em>Esté projeto foi desenvolvido utilizando a biblioteca React</em>
 <br>
 <img src="./assets/astromatch.jpg">
-<p>Deploy in: <a href="http://jose-isaac-astro-match.surge.sh/" target="_blank">surge</a></p>
+
+Deploy in [surge](http://jose-isaac-astro-match.surge.sh/)
 
 <br>
 
@@ -61,7 +62,7 @@
 
 <br>
 
-Para executar esse projeto em sua máquila local é necessário que o node js esteja intalado. Caso ainda não tenha, você pode está fazendo o download <a href="https://nodejs.org/en/download/" target="_blank">aqui</a>.
+Para executar esse projeto em sua máquila local é necessário que o node js esteja intalado. Caso ainda não tenha, você pode está fazendo o download [aqui](https://nodejs.org/en/download/).
 
 <br>
 
