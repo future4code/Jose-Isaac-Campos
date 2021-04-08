@@ -1,6 +1,7 @@
 # Hellou ! ! ! <br> Seja bem vindo(a) ao repo do <strong>astro match</strong>
 
 <em>Esté projeto foi desenvolvido utilizando a biblioteca React</em>
+<br>
 <img src="./assets/astromatch.jpg">
 <p>Deploy in: <a href="http://jose-isaac-astro-match.surge.sh/" target='_blank'>surge</a></p>
 
@@ -67,7 +68,7 @@ Para executar esse projeto em sua máquila local é necessário que o node js es
 <h4>1º | Faça o clone do repo:</h4>
 
 <code>
-     &nbsp&nbsp&nbsp&nbsp git clone https://github.com/future4code/Jose-Isaac-Campos.git
+    git clone https://github.com/future4code/Jose-Isaac-Campos.git
 </code>
 
 <br>
@@ -76,7 +77,7 @@ Para executar esse projeto em sua máquila local é necessário que o node js es
 <h4>2º | Navegue até a pasta do projeto:</h4>
 
 <code>
-    &nbsp&nbsp&nbsp&nbsp cd ./Jose-Isaac-Campos/semana9/astro-match
+    cd ./Jose-Isaac-Campos/semana9/astro-match
 </code>
 
 <br>
@@ -85,7 +86,7 @@ Para executar esse projeto em sua máquila local é necessário que o node js es
 <h4>3º | Instale as dependências:</h4>
 
 <code>
-    &nbsp&nbsp&nbsp&nbsp npm install
+   npm install
 </code>
 
 <br>
@@ -94,6 +95,6 @@ Para executar esse projeto em sua máquila local é necessário que o node js es
 <h4>4º | Inicie o servido:</h4>
 
 <code>
-    &nbsp&nbsp&nbsp&nbsp npm run start
+   npm run start
 </code>
 
