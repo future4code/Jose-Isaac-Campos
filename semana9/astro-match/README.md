@@ -3,7 +3,7 @@
 <em>Esté projeto foi desenvolvido utilizando a biblioteca React</em>
 <br>
 <img src="./assets/astromatch.jpg">
-<p>Deploy in: <a href="http://jose-isaac-astro-match.surge.sh/" target='_blank'>surge</a></p>
+<p>Deploy in: <a href="http://jose-isaac-astro-match.surge.sh/" target="_blank">surge</a></p>
 
 <br>
 
