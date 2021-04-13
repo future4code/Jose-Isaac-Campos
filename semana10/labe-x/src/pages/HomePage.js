@@ -1,9 +1,14 @@
 import React from 'react'
 
+import Header from '../components/Header/Header'
+import EntryPresentation from '../components/EntryPresentation/EntryPresentation'
+
+
 export default function HomePage() {
     return (
         <div>
-            <p>HomePage</p>
+            <Header />
+            <EntryPresentation />
         </div>
     )
 }
