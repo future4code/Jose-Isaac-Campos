@@ -17,6 +17,7 @@ export const Main = styled.header`
 
 export const Icon = styled.img`
     width: 4vw;
+    cursor: pointer;
 
     @media screen and (min-width: 320px) and (max-width: 767px) {
         width: 8vw;
