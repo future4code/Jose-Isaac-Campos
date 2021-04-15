@@ -9,7 +9,7 @@ import ListTrip from '../components/ListTrip/ListTrip'
 import BackIcon from '../icons/undo.png'
 import BuyTicketIcon from '../icons/login.png'
 
-import {goToLastPage} from '../router/coordinator'
+import { goToLastPage, goToApllicationFormPage } from '../router/coordinator'
 
 export default function ListTripPage() {
     const history = useHistory()
@@ -19,7 +19,7 @@ export default function ListTripPage() {
             <img src={BackIcon} alt='back'/>
             Voltar
         </ButtonAction>,
-        <ButtonAction onClick={() => goToLastPage(history)}>
+        <ButtonAction onClick={() => goToApllicationFormPage(history)}>
             Comprar bilhete
             <img src={BuyTicketIcon} alt='back'/>
         </ButtonAction>

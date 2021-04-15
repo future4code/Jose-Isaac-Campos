@@ -14,6 +14,10 @@ export const goToListTripPage = (history) => {
     history.push('/trips/list')
 }
 
+export const goToApllicationFormPage = (history) => {
+    history.push('/trips/application')
+}
+
 export const goToAdminHomePage = (history) => {
     history.push('/admin/trips/list')
 }
