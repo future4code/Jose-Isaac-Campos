@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import { BASE_URL } from "../constants/urls"
 
-export const useRequestData = (endpoint, initialState) => {
+export const useRequestData = async (endpoint, initialState) => {
   const [data, setData] = useState(initialState)
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export const useRequestData = (endpoint, initialState) => {
       .catch((error) => {
         console.log(error.data.message)
       })
-  }, [endpoint])
+  }, [endpoint]);
 
   return data
 };

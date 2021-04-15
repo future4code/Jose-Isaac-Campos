@@ -6,7 +6,7 @@ import LocationIllustration from '../../illustrations/undraw_Location_search_re_
 import {Main, Illustration, ActionContainer} from './entryPresentation-style'
 import ButtonAction from '../ButtonAction/ButtonAction'
 
-import { goToLoginPage } from '../../router/coordinator'
+import { goToLoginPage, goToListTripPage } from '../../router/coordinator'
 
 export default function EntryPresentation() {
     const history = useHistory()
@@ -16,7 +16,7 @@ export default function EntryPresentation() {
             <Illustration src={LocationIllustration} alt='ilustração de uma ponto de localização' />
 
             <ActionContainer>
-                <ButtonAction>Buscar Viagens</ButtonAction>
+                <ButtonAction onClick={() => goToListTripPage(history)}>Buscar Viagens</ButtonAction>
                 <ButtonAction onClick={() => goToLoginPage(history)}>área Administrativa</ButtonAction>
             </ActionContainer>
         </Main>

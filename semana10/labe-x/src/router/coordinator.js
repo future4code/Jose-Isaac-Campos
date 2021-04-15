@@ -10,6 +10,10 @@ export const goToHomePage = (history) => {
     history.push('/')
 }
 
+export const goToListTripPage = (history) => {
+    history.push('/trips/list')
+}
+
 export const goToAdminHomePage = (history) => {
     history.push('/admin/trips/list')
 }
