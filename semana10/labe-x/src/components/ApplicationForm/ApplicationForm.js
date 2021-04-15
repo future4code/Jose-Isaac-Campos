@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useRequestData } from '../../hooks/useRequestData'
+import { useForm } from '../../hooks/useForm'
 
 import TitlePage from '../TitlePage/TitlePage'
 import ButtonAction from '../ButtonAction/ButtonAction'
@@ -8,6 +9,8 @@ import { Main, Form, Input, Select, Option } from './applicationForm-style'
 import { countriesName } from '../../constants/countriesNameList'
 
 export default function ApplicationForm() {
+    const initialForm = { tripName: '', userName: '', age: '', applicationText: '', profession: '', countryName: '' }
+    const [form, handleForm, resetForm] = useState(initialForm)
     const [trips, setTrips] = useState([])
 
     useRequestData('/trips', {})
@@ -26,10 +29,10 @@ export default function ApplicationForm() {
                     })}
                 </Select>
 
-                <Input placeholder='Nome'/>
-                <Input placeholder='Idade'/>
-                <Input placeholder='Texto de candidatura'/>
-                <Input placeholder='Profissão'/>
+                <Input placeholder='Nome' />
+                <Input placeholder='Idade' />
+                <Input placeholder='Texto de candidatura' />
+                <Input placeholder='Profissão' />
 
                 <Select>
                     <Option disabled>Escolha um país:</Option>
