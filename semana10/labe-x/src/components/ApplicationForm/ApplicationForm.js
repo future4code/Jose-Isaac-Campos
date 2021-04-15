@@ -23,7 +23,7 @@ export default function ApplicationForm() {
             <TitlePage>Comprar um bilhete</TitlePage>
             <Form>
                 <Select>
-                    <Option disabled>Escolha uma viagem:</Option>
+                    <Option>Escolha uma viagem:</Option>
                     {trips && trips.map(trip => {
                         return <Option>{trip.name}</Option>
                     })}
@@ -35,7 +35,7 @@ export default function ApplicationForm() {
                 <Input placeholder='Profissão' />
 
                 <Select>
-                    <Option disabled>Escolha um país:</Option>
+                    <Option>Escolha um país:</Option>
                     {countriesName.map(country => {
                         return <Option>{country.nome}</Option>
                     })}
