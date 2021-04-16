@@ -1,5 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+import { useProtectedPage } from '../hooks/useProtectedPage'
 
 import Header from '../components/Header/Header'
 import Nav from '../components/Nav/Nav'
@@ -12,6 +13,7 @@ import BuyTicketIcon from '../icons/login.png'
 import { goToLastPage, goToApllicationFormPage } from '../router/coordinator'
 
 export default function AdminHomePage() {
+    useProtectedPage()
     const history = useHistory()
 
     const menuOptions = [

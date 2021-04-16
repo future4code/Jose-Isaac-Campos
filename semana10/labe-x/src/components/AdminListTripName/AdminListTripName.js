@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { useHistory } from "react-router-dom"
 import { useRequestData } from "../../hooks/useRequestData"
 
 import { Main, ListTrip, Trip, IconAction, ContainerNewTrip, Icon } from "./adminListTripName-style"
@@ -7,7 +8,11 @@ import AddIcon from '../../icons/sinal-de-mais.png'
 import ButtonAction from '../ButtonAction/ButtonAction'
 
 import TitlePage from "../TitlePage/TitlePage"
+
+import { goToCreateTripPage } from '../../router/coordinator'
+
 export default function AdminListTripName() {
+  const history = useHistory()
   const [trips, setTrips] = useState([])
 
   useRequestData("/trips", {}).then((response) => {
@@ -23,7 +28,7 @@ export default function AdminListTripName() {
           })} 
       </ListTrip>
       <ContainerNewTrip>
-        <ButtonAction><Icon src={AddIcon} />Nova viagem</ButtonAction>
+        <ButtonAction onClick={() => goToCreateTripPage(history)}><Icon src={AddIcon} />Nova viagem</ButtonAction>
     </ContainerNewTrip>
     </Main>
   )
