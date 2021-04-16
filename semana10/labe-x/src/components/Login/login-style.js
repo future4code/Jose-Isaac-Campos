@@ -21,7 +21,7 @@ export const Illustration = styled.img`
     width: 40vw;
 `
 
-export const Form = styled.div`
+export const Form = styled.form`
     flex: 1;
 `
 
