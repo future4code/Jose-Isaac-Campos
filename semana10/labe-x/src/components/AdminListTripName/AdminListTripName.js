@@ -9,7 +9,7 @@ import ButtonAction from '../ButtonAction/ButtonAction'
 
 import TitlePage from "../TitlePage/TitlePage"
 
-import { goToCreateTripPage } from '../../router/coordinator'
+import { goToCreateTripPage, goToTripDetailsPage } from '../../router/coordinator'
 
 export default function AdminListTripName() {
   const history = useHistory()
@@ -24,7 +24,7 @@ export default function AdminListTripName() {
       <TitlePage>viagens cadastradas</TitlePage>
       <ListTrip>
           {trips && trips.map(trip => {
-              return <Trip key={trip.id}><p><span>Nome:</span>{trip.name}</p><IconAction src={BinIcon}/></Trip>
+              return <Trip onClick={() => goToTripDetailsPage(history, trip.id)} key={trip.id}><p><span>Nome:</span>{trip.name}</p><IconAction src={BinIcon}/></Trip>
           })} 
       </ListTrip>
       <ContainerNewTrip>

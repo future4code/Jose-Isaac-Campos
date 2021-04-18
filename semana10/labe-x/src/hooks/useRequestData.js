@@ -19,17 +19,19 @@ export const useRequestData = async (endpoint, initialState) => {
   return data
 };
 
-export const useRequestDataWithAuth = (endpoint, initialState, auth) => {
+export const useRequestDataWithAuth = async (endpoint, initialState, auth) => {
   const [data, setData] = useState(initialState)
 
   useEffect(() => {
     axios
-      .get(`${BASE_URL}${endpoint}`, auth)
+      .get(`${BASE_URL}${endpoint}`, { headers: {
+        'auth': auth
+      }})
       .then((response) => {
         setData(response.data)
       })
       .catch((error) => {
-        console.log(error.data.message)
+        console.log(error.message)
       })
   }, [endpoint, auth])
 
