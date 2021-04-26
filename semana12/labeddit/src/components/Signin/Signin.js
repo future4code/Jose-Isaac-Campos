@@ -2,20 +2,24 @@ import React from "react";
 import Logo from "../Logo/Logo";
 import Input from "../Input/Input";
 import { useForm } from "../../hooks/useForm";
+import { useHistory } from 'react-router-dom'
 
 import {
   Main,
   SiginForm,
   SigninAppresetation,
   ButtonAction,
-} from "./LoginStyle";
+} from "./SigninStyle";
 
 import EmailIcon from "../../icons/mail.svg";
 import PasswordIcon from "../../icons/password.svg";
+import { login } from "../../services/api";
+import { goToSignupPage, goToFeedPage } from '../../router/coordinator'
 
 export default function Login() {
   const initialState = { email: "", password: "" };
-  const [form, onChange, resetForm] = useForm(initialState);
+  const [form, onChange] = useForm(initialState);
+  const history = useHistory()
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -25,7 +29,7 @@ export default function Login() {
       password: form.password,
     };
 
-    console.log(body);
+    login(body).then(() => goToFeedPage(history))
   };
 
   return (
@@ -55,14 +59,14 @@ export default function Login() {
               pattern={"^(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$"}
             />
           </div>
-          <ButtonAction>Sign in</ButtonAction>
+          <ButtonAction>Signin</ButtonAction>
         </div>
       </SiginForm>
       <SigninAppresetation>
         <div>
           <h2>Olá, user!</h2>
           <p>Com um pequeno cadastro você já inicia sua jornada no LabEddit</p>
-          <ButtonAction>Signup</ButtonAction>
+          <ButtonAction onClick={() => {goToSignupPage(history)}}>Signup</ButtonAction>
         </div>
       </SigninAppresetation>
     </Main>

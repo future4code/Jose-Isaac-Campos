@@ -21,7 +21,7 @@ export const SiginForm = styled.form`
     justify-content: center;
 
     div {
-        height: 80%;
+        height: 60%;
         width: 40%;
         display: flex;
         flex-direction: column;
@@ -43,12 +43,12 @@ export const SiginForm = styled.form`
             color: rgb(30,190,172);
             font-size: 2.6em;
             font-weight: 600;
-            letter-spacing: 6px;
+            letter-spacing: 8px;
         }
 
         button {
             background-color: rgb(30,190,172);
-            width: 70%;
+            width: 60%;
             font-size: 1.4em;
         }
     }

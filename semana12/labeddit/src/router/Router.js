@@ -7,6 +7,7 @@ import {
 import FeedPage from '../pages/FeedPage'
 import LoginPage from '../pages/LoginPage'
 import PostDetails from '../pages/PostDetails'
+import SignupPage from "../pages/SignupPage";
 
 export default function Router() {
     return <BrowserRouter>
@@ -17,6 +18,10 @@ export default function Router() {
 
             <Route exact path="/login">
                 <LoginPage />
+            </Route>
+
+            <Route exact path="/signup">
+                <SignupPage />
             </Route>
 
             <Route exact path="/post/details/:id">
