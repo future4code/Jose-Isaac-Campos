@@ -101,4 +101,5 @@ export const ButtonAction = styled.button`
     letter-spacing: 4px;
     text-transform: uppercase;
     cursor: pointer;
+    outline: none;
 `

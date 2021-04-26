@@ -1,12 +1,28 @@
-import React from 'react'
+import React from "react"
 
-import { Main, Icon, InputStyled } from './InputStyle'
+import { Main, Icon, InputStyled } from "./InputStyle"
 
-export default function Input({icon, placeholder}) {
-    return (
-        <Main>
-            <Icon src={icon} alt=''/>
-            <InputStyled placeholder={placeholder}/>
-        </Main>
-    )
+export default function Input({
+  icon,
+  placeholder,
+  name,
+  value,
+  onChange,
+  pattern,
+  type,
+}) {
+  return (
+    <Main>
+      <Icon src={icon} alt={name} />
+      <InputStyled
+        required
+        type={type}
+        pattern={pattern}
+        name={name}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+      />
+    </Main>
+  )
 }
