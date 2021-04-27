@@ -1,4 +1,7 @@
 import React from 'react'
+import ContainerRelative from '../components/ContainerRelative/ContainerRelative'
+import Feed from '../components/Feed/Feed'
+import Logo from '../components/Logo/Logo'
 
 import { useProtectedPage } from '../hooks/useProtectedPage'
 
@@ -6,8 +9,9 @@ export default function FeedPage() {
     useProtectedPage()
     
     return (
-        <div>
-            <h1>FeedPage</h1>
-        </div>
+        <ContainerRelative>
+            <Logo />
+            <Feed />
+        </ContainerRelative>
     )
 }
