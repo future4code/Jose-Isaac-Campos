@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const BASE_URL = 'https://us-central1-labenu-apis.cloudfunctions.net/labEddit'
+export const BASE_URL = 'https://us-central1-labenu-apis.cloudfunctions.net/labEddit'
 
 export const login = async (body) => {
     await axios.post(`${BASE_URL}/login`, body)

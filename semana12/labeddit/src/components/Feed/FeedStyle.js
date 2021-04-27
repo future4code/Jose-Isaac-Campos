@@ -11,3 +11,7 @@ export const Main = styled.main`
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(241,242,246,1) 100%);
     border-radius: 30px 0 0 30px;
 `
+
+export const SectionPost = styled.section`
+    width: 100%;
+`
