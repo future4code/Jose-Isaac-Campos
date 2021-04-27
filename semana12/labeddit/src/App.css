@@ -2,13 +2,14 @@
 
 body {
   background-color: rgba(241,242,246,1);
-
 }
 
 #root, .App {
+  min-height: 100vh;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
 .App > div {
+  min-height: 100vh;
   box-sizing: border-box;
 }
