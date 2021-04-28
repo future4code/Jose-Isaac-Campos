@@ -8,6 +8,7 @@ export default function CardPost({ post }) {
       <Username>{post.username}</Username>
       <TextPost>{post.text}</TextPost>
       <CommentsInfo
+        postId={post.id}
         commentsCount={post.commentsCount}
         voteDirection={post.userVoteDirection}
         votesCount={post.votesCount}

@@ -12,16 +12,19 @@ export const Main = styled.div`
 
     p {
         letter-spacing: 1px;
-        line-height: 1.4em;
+        line-height: 1.6em;
     }
 `
 
 export const Username = styled.p`
     font-weight: bold;
-    font-size: 1.3em;
+    font-size: 1.4em;
     text-transform: capitalize;
 `
 
 export const TextPost = styled.p`
     margin-top: 10px;
+    color: #2f3542;
+    font-weight: 300;
+    font-size: 1.1em;
 `

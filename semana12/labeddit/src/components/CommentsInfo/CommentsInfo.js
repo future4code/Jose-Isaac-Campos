@@ -3,6 +3,7 @@ import VotingInfo from "../VotingInfo/VotingInfo";
 import { CommentDetail, CommentsCount, Main } from "./CommentsInfoStyle";
 
 export default function CommentsInfo({
+  postId,
   commentsCount,
   voteDirection,
   votesCount,
@@ -10,7 +11,7 @@ export default function CommentsInfo({
   return (
     <Main>
       <CommentDetail>
-        <VotingInfo voteDirection={voteDirection} votesCount={votesCount} />
+        <VotingInfo postId={postId} voteDirection={voteDirection} votesCount={votesCount} />
         <CommentsCount>
           {commentsCount} {commentsCount > 1 ? 'comentários' : 'comentário'}
         </CommentsCount>
