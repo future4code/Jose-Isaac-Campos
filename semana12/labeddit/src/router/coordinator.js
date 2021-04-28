@@ -11,7 +11,7 @@ export const goToFeedPage = (history) => {
 }
 
 export const goToPostDetailsPage = (history, id) => {
-    history.push('/post/details/id');
+    history.push(`/post/details/${id}`);
 }
 
 export const goBack = (history) => {

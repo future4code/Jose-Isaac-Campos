@@ -22,6 +22,10 @@ export const Username = styled.p`
     text-transform: capitalize;
 `
 
+export const Title = styled.p`
+    font-weight: bold;
+`
+
 export const TextPost = styled.p`
     margin-top: 10px;
     color: #2f3542;

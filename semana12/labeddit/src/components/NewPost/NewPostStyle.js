@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Main = styled.div`
+export const Main = styled.form`
     width: 100%;
     display: flex;
     padding: 0 10px 0 0;
@@ -22,6 +22,17 @@ export const Main = styled.div`
             color: rgba(255,255,255, .9);
         }
     }
+`
+
+export const ContainerInputs = styled.div`
+    width: 100%;
+`
+
+export const Button = styled.button`
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
 `
 
 

@@ -6,7 +6,7 @@ import {
 
 import FeedPage from '../pages/FeedPage'
 import LoginPage from '../pages/LoginPage'
-import PostDetails from '../pages/PostDetails'
+import PostDetailsPage from '../pages/PostDetailsPage'
 import SignupPage from "../pages/SignupPage";
 
 export default function Router() {
@@ -25,7 +25,7 @@ export default function Router() {
             </Route>
 
             <Route exact path="/post/details/:id">
-                <PostDetails />
+                <PostDetailsPage />
             </Route>
         </Switch>
     </BrowserRouter>
