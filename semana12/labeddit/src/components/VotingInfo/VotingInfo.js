@@ -5,6 +5,7 @@ import { ReactComponent as UpArrow } from "../../icons/up-arrow.svg";
 import { vote } from "../../services/api";
 
 export default function VotingInfo({ postId, voteDirection, votesCount }) {
+  const id = postId
   const [direction, setDirection] = useState(voteDirection);
   const [votes, setVotes] = useState(votesCount);
 
@@ -19,7 +20,7 @@ export default function VotingInfo({ postId, voteDirection, votesCount }) {
       direction: userVote,
     };
 
-    vote(body, postId, token)
+    vote(body, id, token)
       .then((res) => {
         if (userVote === 0) {
           if (direction > 0) {

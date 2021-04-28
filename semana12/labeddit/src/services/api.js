@@ -41,3 +41,10 @@ export const getPosts = async () => {
   return await axios
     .get(`${BASE_URL}/posts`, { headers: { Authorization: token } })
 };
+
+
+export const getPostsDetails = async (postId) => {
+  const token = localStorage.getItem("token");
+  return await axios
+    .get(`${BASE_URL}/posts/${postId}`, { headers: { Authorization: token } })
+};
