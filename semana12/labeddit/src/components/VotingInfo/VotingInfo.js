@@ -1,26 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Main, VoteCount } from "./VotingInfoStyle";
 
 import { ReactComponent as UpArrow } from "../../icons/up-arrow.svg";
-import { vote } from "../../services/api";
 
-export default function VotingInfo({ postId, voteDirection, votesCount }) {
-  const id = postId
+export default function VotingInfo({ voteDirection, votesCount, callbackVote }) {
   const [direction, setDirection] = useState(voteDirection);
   const [votes, setVotes] = useState(votesCount);
 
+  useEffect(() => {
+    setVotes(votesCount)
+    setDirection(voteDirection)
+  }, [votesCount, voteDirection])
+
   const onClickVote = (userVote) => {
+    console.log(votes);
     if (userVote === direction) {
       userVote = 0;
     }
-
-    const token = localStorage.getItem("token");
 
     const body = {
       direction: userVote,
     };
 
-    vote(body, id, token)
+    callbackVote(body)
       .then((res) => {
         if (userVote === 0) {
           if (direction > 0) {
@@ -35,12 +37,13 @@ export default function VotingInfo({ postId, voteDirection, votesCount }) {
         setDirection(userVote);
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.message);
       });
   };
 
   let fillColor =
     direction === 0 ? "#747d8c" : direction === 1 ? "#5352ed" : "#ff4757";
+
   return (
     <Main>
       <UpArrow

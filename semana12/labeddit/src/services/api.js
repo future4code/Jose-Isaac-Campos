@@ -25,13 +25,28 @@ export const signup = async (body) => {
 };
 
 export const vote = async (body, postId, token) => {
+  console.log(postId);
   return await axios.put(`${BASE_URL}/posts/${postId}/vote`, body, {
     headers: { Authorization: token },
   });
 };
 
-export const createComment = async (body, token) => {
+
+export const voteInComment = async (body, postId, commentId, token) => {
+  console.log(postId);
+  return await axios.put(`${BASE_URL}/posts/${postId}/comment/${commentId}/vote`, body, {
+    headers: { Authorization: token },
+  });
+};
+
+export const createPost = async (body, token) => {
   return await axios.post(`${BASE_URL}/posts`, body, {
+    headers: { Authorization: token },
+  });
+};
+
+export const createComment = async (body, postId,token) => {
+  return await axios.post(`${BASE_URL}/posts/${postId}/comment`, body, {
     headers: { Authorization: token },
   });
 };

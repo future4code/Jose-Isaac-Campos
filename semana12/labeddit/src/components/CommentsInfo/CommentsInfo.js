@@ -7,11 +7,12 @@ export default function CommentsInfo({
   commentsCount,
   voteDirection,
   votesCount,
+  callbackVote
 }) {
   return (
     <Main>
       <CommentDetail>
-        <VotingInfo postId={postId} voteDirection={voteDirection} votesCount={votesCount} />
+        <VotingInfo id={postId} voteDirection={voteDirection} votesCount={votesCount} callbackVote={callbackVote} />
         <CommentsCount>
           {commentsCount} {commentsCount > 1 ? 'comentários' : 'comentário'}
         </CommentsCount>

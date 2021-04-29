@@ -28,3 +28,10 @@ export const TextComment = styled.p`
     font-weight: 300;
     font-size: 1em;
 `
+
+export const ContainerVoting = styled.div`
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+`

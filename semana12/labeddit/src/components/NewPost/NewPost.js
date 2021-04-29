@@ -6,7 +6,7 @@ import NewPostIcon from "../../icons/speech-bubble-with-ellipsis.svg";
 import TitlePostIcon from "../../icons/top.svg";
 import { ReactComponent as SendIcon } from "../../icons/paper-plane.svg";
 import { useForm } from "../../hooks/useForm";
-import { createComment } from "../../services/api";
+import { createPost } from "../../services/api";
 
 export default function NewPost({ setPosts, setNewPost }) {
   const [form, onChange, resetForm] = useForm({ text: "", title: "" });
@@ -21,7 +21,7 @@ export default function NewPost({ setPosts, setNewPost }) {
 
     const token = localStorage.getItem("token");
 
-    createComment(body, token)
+    createPost(body, token)
       .then(() => {
         setNewPost({ ...body});
         resetForm();
