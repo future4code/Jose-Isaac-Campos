@@ -4,7 +4,7 @@ export const Main = styled.main`
     width: 40%;
     margin: 0 auto;
     min-height: 100%;
-    padding: 30px 4px 4px 30px;
+    padding: 4px 4px 4px 30px;
     box-sizing: border-box;
 
     background: rgb(255,255,255);
@@ -14,6 +14,17 @@ export const Main = styled.main`
 
 export const SectionComments = styled.section`
     width: 100%;
+
+    > div, form {
+        transition: all .6s;
+    }
+
+    > div:hover, form:hover {
+        transition: all 0.3s;
+        box-shadow: 2px 2px 8px rgba(30,14,255,.2);
+        backface-visibility: hidden;
+
+    }
 `
 export const SectionPostInfo = styled.section`
     width: 100%;

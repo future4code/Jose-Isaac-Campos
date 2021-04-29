@@ -9,6 +9,17 @@ export const Main = styled.div`
     padding: 14px;
     margin: 20px 0;
     box-sizing: border-box;
+    transition: all 0.6s;
+
+    div {
+        cursor: pointer;
+    }
+
+    :hover {
+        transition: all 0.4s;
+        box-shadow: 2px 2px 12px rgba(30,14,255,.2);
+        backface-visibility: hidden;
+    }
 
     p {
         letter-spacing: 1px;

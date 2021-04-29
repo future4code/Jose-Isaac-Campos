@@ -4,6 +4,7 @@ import {
   Username,
   TextComment,
   ContainerVoting,
+  DateFormated,
 } from "./CardCommentStyle";
 import VotingInfo from "../VotingInfo/VotingInfo";
 import { voteInComment } from "../../services/api";
@@ -16,6 +17,11 @@ export default function CardComment({ postId, comment }) {
     return await voteInComment(body, postId, comment.id, token);
   };
 
+  const formateDate = () => {
+    const date = new Date(comment.createdAt)
+    return date.toLocaleDateString('pt-br')
+  }
+
   return (
     <Main>
       <Username>{comment.username}</Username>
@@ -26,6 +32,7 @@ export default function CardComment({ postId, comment }) {
           votesCount={comment.votesCount}
           callbackVote={vote}
         />
+        <DateFormated>{formateDate()}</DateFormated>
       </ContainerVoting>
     </Main>
   );

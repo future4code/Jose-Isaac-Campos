@@ -5,10 +5,21 @@ export const Main = styled.div`
     top: 20px;
     left: 20px;
     width: 14%;
+    cursor: pointer;
 
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    transition: all .6s;
+    padding: 4px 0;
+
+
+    :hover {
+        transition: all .4s;
+        box-shadow: 2px 2px 8px rgba(30,14,255,.2);
+        border-radius: 8px;
+        backface-visibility: hidden;
+    }
 `
 
 export const LogoIcon = styled.img`
@@ -20,5 +31,4 @@ export const LogoText = styled.h1`
     font-size: 1.6em;
     letter-spacing: 4px;
     font-weight: 500;
-
 `
