@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { useRequestData } from '../../hooks/useRequestData'
 import CardPost from '../CardPost/CardPost'
 import NewPost from '../NewPost/NewPost'
@@ -10,13 +10,27 @@ export default function Feed() {
     const data = useRequestData('/posts', [])
     const [posts, setPosts] = useState([])
 
+    const sortPosts = useCallback((posts) => {
+        const postsSorted = posts
+          .sort((itemA, itemB) => {
+            return itemB.createdAt - itemA.createdAt;
+           })
+          .sort((itemA, itemB) => {
+            return itemB.commentsCount - itemA.commentsCount;
+          })
+          .sort((itemA, itemB) => {
+            return itemB.votesCount - itemA.votesCount;
+          });
+        setPosts(postsSorted);
+    }, [])
+
     useEffect(() => {
-        setPosts(data)
-    }, [data])
+        sortPosts(data)
+    }, [data, sortPosts])
 
     const updatePosts = () => {
         getPosts().then(response => {
-            setPosts(response.data.posts)
+            sortPosts(response.data.posts)
         })
     }
 

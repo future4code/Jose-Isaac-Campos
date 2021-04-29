@@ -31,10 +31,21 @@ export const Username = styled.p`
     font-weight: bold;
     font-size: 1.4em;
     text-transform: capitalize;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > span {
+        font-weight: 300;
+        font-size: .78em;
+        color: #2f3542;
+    }
 `
 
 export const Title = styled.p`
     font-weight: bold;
+    margin: 8px 0;
 `
 
 export const TextPost = styled.p`

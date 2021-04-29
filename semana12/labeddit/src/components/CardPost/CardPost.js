@@ -14,13 +14,18 @@ export default function CardPost({ post }) {
     return await vote(body, post.id, token)
   }
 
+  const formateDate = () => {
+    const date = new Date(post.createdAt)
+    return date.toLocaleDateString('pt-br')
+  }
+
   const toDetails = () => {
     goToPostDetailsPage(history, post.id)
   }
   return (
     <Main>
       <div onClick={toDetails}>
-        <Username>{post.username}</Username>
+        <Username>{post.username}<span>{formateDate()}</span></Username>
         <Title>{post.title}</Title>
         <TextPost>{post.text}</TextPost>
       </div>

@@ -42,22 +42,22 @@ export default function VotingInfo({ voteDirection, votesCount, callbackVote }) 
   };
 
   let fillColor =
-    direction === 0 ? "#747d8c" : direction === 1 ? "#5352ed" : "#ff4757";
+    direction === 0 ? "#747d8c" : direction === 1 ? "#0fb9b1" : "#ff4757";
 
   return (
     <Main>
       <UpArrow
         onClick={() => onClickVote(1)}
-        width="20px"
-        height="20px"
+        width="24px"
+        height="24px"
         fill={direction >= 0 && fillColor}
         style={{ cursor: "pointer" }}
       />
       <VoteCount>{votes}</VoteCount>
       <UpArrow
         onClick={() => onClickVote(-1)}
-        width="20px"
-        height="20px"
+        width="24px"
+        height="24px"
         fill={direction <= 0 && fillColor}
         style={{ transform: "rotate(180deg)", cursor: "pointer" }}
       />

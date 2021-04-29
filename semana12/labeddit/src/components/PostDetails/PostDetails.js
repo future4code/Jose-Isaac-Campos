@@ -14,23 +14,25 @@ export default function PostDetails() {
   useEffect(() => {
     getPostsDetails(params.id).then((response) => {
       setPost(response.data.post);
-      setCommnets(
-        response.data.post.comments.sort((itemA, itemB) => {
-          return itemA.createdAt === itemB.createdAt;
-        })
-      );
+      setCommnets([...response.data.post.comments]);
     });
   }, [params.id]);
 
   const updateComments = async () => {
     await getPostsDetails(post.id).then((response) => {
-      console.log("update comments: ", response.data);
-      setCommnets(
-        response.data.post.comments.sort((itemA, itemB) => {
-          return itemA.createdAt === itemB.createdAt;
-        })
-      );
+      sortComments(response.data.post.comments)
     });
+  };
+
+  const sortComments = (comments) => {
+    const commentsSorted = comments
+      .sort((itemA, itemB) => {
+        return itemB.createdAt - itemA.createdAt;
+      })
+      .sort((itemA, itemB) => {
+        return itemB.votesCount - itemA.votesCount;
+      });
+    setCommnets([...commentsSorted]);
   };
 
   console.log(comments);
