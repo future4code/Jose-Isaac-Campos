@@ -28,6 +28,10 @@ export const TextComment = styled.p`
     font-weight: 300;
     font-size: 1em;
     letter-spacing: 1px;
+
+    span {
+        font-style: italic;
+    }
 `
 
 export const ContainerVoting = styled.div`

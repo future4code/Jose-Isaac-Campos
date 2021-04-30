@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Main = styled.div`
     width: 100%;
-    background-color: rgba(112, 161, 255, .2);
+    background-color: rgba(52,138,219,.2);
     border-radius: 8px;
     display: flex;
     flex-direction: column;

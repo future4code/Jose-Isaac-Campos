@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Main, Icon, InputStyled } from "./InputStyle"
+import { Main, InputStyled } from "./InputStyle"
 
 export default function Input({
   icon,
@@ -13,7 +13,7 @@ export default function Input({
 }) {
   return (
     <Main>
-      <Icon src={icon} alt={name} />
+      {icon}
       <InputStyled
         required
         type={type}

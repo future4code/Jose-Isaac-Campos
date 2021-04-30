@@ -1,13 +1,15 @@
 import React from "react";
 import { useForm } from "../../hooks/useForm";
 import Input from "../Input/Input";
-import {Main, Button } from "./NewCommentStyle";
-import { ReactComponent as SendIcon } from "../../icons/paper-plane.svg";
-import NewCommentIcon from '../../icons/speech-bubbles-with-ellipsis.svg'
-import { createComment } from '../../services/api'
+import { Main, Button } from "./NewCommentStyle";
+// import { ReactComponent as SendIcon } from "../../icons/paper-plane.svg";
+// import NewCommentIcon from '../../icons/speech-bubbles-with-ellipsis.svg'
+import BalloonComponentIcon from "../IconsComponents/BolloonCommentIcon";
+import SendIcon from "../IconsComponents/SendIcon"
+import { createComment } from "../../services/api";
 
-export default function NewComment({postId, setNewComment}) {
-  const [form, onChange, resetForm] = useForm({ text: ""});
+export default function NewComment({ postId, setNewComment }) {
+  const [form, onChange, resetForm] = useForm({ text: "" });
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -18,7 +20,7 @@ export default function NewComment({postId, setNewComment}) {
 
     const token = localStorage.getItem("token");
 
-    createComment(body, postId ,token)
+    createComment(body, postId, token)
       .then(() => {
         resetForm();
         setNewComment({ ...body });
@@ -34,14 +36,19 @@ export default function NewComment({postId, setNewComment}) {
         value={form.text}
         name="text"
         onChange={onChange}
-        icon={NewCommentIcon}
+        icon={
+          <BalloonComponentIcon
+            width="26px"
+            fillColor="rgba(255, 255, 255, 1)"
+          />
+        }
         placeholder="Compartilhe suas ideias com o mundo..."
       />
       <Button>
         <SendIcon
           width="26px"
-          fill="rgba(255, 255, 255, 1)"
-          style={{ padding: " 0 10px", cursor: "pointer" }}
+          fillColor="rgba(255, 255, 255, 1)"
+          hoverFillColor="#2ed573"
         />
       </Button>
     </Main>

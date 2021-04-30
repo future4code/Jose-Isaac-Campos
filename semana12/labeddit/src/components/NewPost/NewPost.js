@@ -2,11 +2,11 @@ import React from "react";
 import { Button, ContainerInputs, Main } from "./NewPostStyle";
 
 import Input from "../Input/Input";
-import NewPostIcon from "../../icons/speech-bubble-with-ellipsis.svg";
-import TitlePostIcon from "../../icons/top.svg";
-import { ReactComponent as SendIcon } from "../../icons/paper-plane.svg";
+import TitlePostIcon from "../IconsComponents/TitlePostIcon";
+import BalloonTextPostIcon from "../IconsComponents/BalloonTextPostIcon"
 import { useForm } from "../../hooks/useForm";
 import { createPost } from "../../services/api";
+import SendIcon from "../IconsComponents/SendIcon";
 
 export default function NewPost({ setPosts, setNewPost }) {
   const [form, onChange, resetForm] = useForm({ text: "", title: "" });
@@ -23,7 +23,7 @@ export default function NewPost({ setPosts, setNewPost }) {
 
     createPost(body, token)
       .then(() => {
-        setNewPost({ ...body});
+        setNewPost({ ...body });
         resetForm();
       })
       .catch((err) => {
@@ -38,7 +38,9 @@ export default function NewPost({ setPosts, setNewPost }) {
           value={form.title}
           name="title"
           onChange={onChange}
-          icon={TitlePostIcon}
+          icon={
+            <TitlePostIcon width="26px" fillColor="rgba(255, 255, 255, 1)" />
+          }
           placeholder="Título..."
         />
         <Input
@@ -46,15 +48,15 @@ export default function NewPost({ setPosts, setNewPost }) {
           value={form.text}
           name="text"
           onChange={onChange}
-          icon={NewPostIcon}
+          icon={<BalloonTextPostIcon width="26px" fillColor="rgba(255, 255, 255, 1)"/>}
           placeholder="Compartilhe suas ideias com o mundo..."
         />
       </ContainerInputs>
       <Button>
         <SendIcon
-          width="26px"
-          fill="rgba(255, 255, 255, 1)"
-          style={{ padding: " 0 10px", cursor: "pointer" }}
+          width="36px"
+          fillColor="rgba(255, 255, 255, 1)"
+          hoverFillColor="#2ed573"
         />
       </Button>
     </Main>

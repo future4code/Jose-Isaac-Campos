@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Main = styled.label`
     width: 100%;
-
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -10,12 +10,12 @@ export const Main = styled.label`
     padding: 10px 20px;
     box-sizing: border-box;
 
+    span {
+        height: auto;
+        width: auto;
+        margin-right: 8px;
+    }
 `
-
-export const Icon = styled.img`
-    width: 24px;
-    margin-right: 8px;
-` 
 
 export const InputStyled = styled.input`
     width: 100%;

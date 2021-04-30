@@ -18,14 +18,20 @@ export default function CardComment({ postId, comment }) {
   };
 
   const formateDate = () => {
-    const date = new Date(comment.createdAt)
-    return date.toLocaleDateString('pt-br')
-  }
+    const date = new Date(comment.createdAt);
+    return date.toLocaleDateString("pt-br");
+  };
 
   return (
     <Main>
       <Username>{comment.username}</Username>
-      <TextComment>{comment.text}</TextComment>
+      <TextComment>
+        {typeof comment.text === "string" ? (
+          comment.text
+        ) : (
+          <span>Comentário bloqueado!</span>
+        )}
+      </TextComment>
       <ContainerVoting>
         <VotingInfo
           voteDirection={comment.userVoteDirection}
