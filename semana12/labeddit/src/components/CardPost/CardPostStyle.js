@@ -11,6 +11,10 @@ export const Main = styled.div`
     box-sizing: border-box;
     transition: all 0.6s;
 
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+        margin: 4px 0 14px;
+    }
+
     div {
         cursor: pointer;
     }
