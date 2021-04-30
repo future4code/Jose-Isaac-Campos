@@ -13,6 +13,15 @@ export const Main = styled.div`
     transition: all .6s;
     padding: 4px 0;
 
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+        position: relative;
+        width: 60%;
+        padding: 0;
+        margin: 4% auto;
+        top: auto;
+        left: auto;
+    }
+
 
     :hover {
         transition: all .4s;

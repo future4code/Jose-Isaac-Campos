@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const BASE_URL =
-  "https://us-central1-labenu-apis.cloudfunctions.net/labEddit";
+  "https://us-central1-labenu-apis.cloudfunctions.net/labeddit";
 
 export const login = async (body) => {
   await axios
