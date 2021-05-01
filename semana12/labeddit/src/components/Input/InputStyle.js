@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Main = styled.label`
     width: 100%;
-    height: 80px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;

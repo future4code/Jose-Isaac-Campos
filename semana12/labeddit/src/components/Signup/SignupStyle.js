@@ -39,7 +39,7 @@ export const SiginForm = styled.form`
   justify-content: center;
 
   div {
-    height: 60%;
+    height: 70%;
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -63,7 +63,7 @@ export const SiginForm = styled.form`
 
     h2 {
       color: rgb(30, 190, 172);
-      font-size: 2.6em;
+      font-size: 2.4em;
       font-weight: 600;
       letter-spacing: 8px;
     }
@@ -120,27 +120,28 @@ export const SigninAppresetation = styled.div`
   justify-content: center;
 
   div {
-    height: 36%;
-    width: 60%;
+    height: 34%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 
     h2 {
-      font-size: 3.4em;
-      letter-spacing: 10px;
+      font-size: 2.2em;
+      letter-spacing: 4px;
       font-weight: 600;
       text-align: center;
+      margin-bottom: 20px;
     }
 
     p {
       font-size: 1.2em;
       text-align: center;
-      line-height: 1.4em;
     }
 
     button {
+      margin-top: 30px;
       width: 70%;
       border: 2px solid white;
     }

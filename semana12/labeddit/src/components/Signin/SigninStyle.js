@@ -40,7 +40,7 @@ export const SiginForm = styled.form`
 
   div {
     height: 60%;
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,7 +63,7 @@ export const SiginForm = styled.form`
 
     h2 {
       color: rgb(30, 190, 172);
-      font-size: 2.6em;
+      font-size: 2.4em;
       font-weight: 600;
       letter-spacing: 8px;
       text-align: center;
@@ -121,15 +121,15 @@ export const SigninAppresetation = styled.div`
   justify-content: center;
 
   div {
-    height: 36%;
-    width: 60%;
+    height: 44%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 
     h2 {
-      font-size: 3.4em;
+      font-size: 3em;
       letter-spacing: 10px;
       font-weight: 600;
       text-align: center;
