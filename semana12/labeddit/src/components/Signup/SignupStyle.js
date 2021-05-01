@@ -18,6 +18,7 @@ export const Main = styled.div`
 
   @media screen and (min-width: 320px) and (max-width: 767px) {
     flex-direction: column;
+    min-height: 100vh;
     background: linear-gradient(
         112deg,
         rgba(30, 190, 172, 0.99) 12%,
