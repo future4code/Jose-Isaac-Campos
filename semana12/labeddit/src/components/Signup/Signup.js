@@ -11,9 +11,9 @@ import {
   ButtonAction,
 } from "./SignupStyle";
 
-import EmailIcon from "../../icons/mail.svg";
-import PasswordIcon from "../../icons/password.svg";
-import UserIcon from "../../icons/user.svg";
+import {ReactComponent as EmailIcon} from "../../icons/mail.svg";
+import {ReactComponent as PasswordIcon} from "../../icons/password.svg";
+import {ReactComponent as UserIcon} from "../../icons/user.svg";
 import { signup } from "../../services/api";
 import { goToLoginPage, goToFeedPage } from '../../router/coordinator'
 
@@ -43,7 +43,8 @@ export default function Signup() {
           <div>
             <p>Digite seus dados de cadastro!</p>
             <Input 
-              icon={UserIcon}
+              fillColor='#747d8c'
+              icon={<UserIcon />}
               type="text"
               value={form.username}
               name='username'
@@ -52,7 +53,8 @@ export default function Signup() {
               pattern={'[a-zA-Z0-9]{5,}$'}
             />
             <Input
-              icon={EmailIcon}
+              fillColor='#747d8c'
+              icon={<EmailIcon />}
               type="email"
               value={form.email}
               name="email"
@@ -61,7 +63,8 @@ export default function Signup() {
               pattern={"[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$"}
             />
             <Input
-              icon={PasswordIcon}
+              fillColor='#747d8c'
+              icon={<PasswordIcon />}
               type="password"
               value={form.password}
               name="password"

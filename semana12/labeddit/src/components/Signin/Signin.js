@@ -11,8 +11,8 @@ import {
   ButtonAction,
 } from "./SigninStyle";
 
-import EmailIcon from "../../icons/mail.svg";
-import PasswordIcon from "../../icons/password.svg";
+import {ReactComponent as EmailIcon} from "../../icons/mail.svg";
+import {ReactComponent as PasswordIcon} from "../../icons/password.svg";
 import { login } from "../../services/api";
 import { goToSignupPage, goToFeedPage } from '../../router/coordinator'
 
@@ -41,7 +41,8 @@ export default function Login() {
           <div>
             <p>Entre com seus dados de acesso!</p>
             <Input
-              icon={EmailIcon}
+              fillColor='#747d8c'
+              icon={<EmailIcon />}
               type="email"
               placeholderalue={form.email}
               name="email"
@@ -50,7 +51,8 @@ export default function Login() {
               pattern={"[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$"}
             />
             <Input
-              icon={PasswordIcon}
+              fillColor='#747d8c'
+              icon={<PasswordIcon />}
               type="password"
               value={form.password}
               name="password"

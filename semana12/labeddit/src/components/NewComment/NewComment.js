@@ -2,11 +2,10 @@ import React from "react";
 import { useForm } from "../../hooks/useForm";
 import Input from "../Input/Input";
 import { Main, Button } from "./NewCommentStyle";
-// import { ReactComponent as SendIcon } from "../../icons/paper-plane.svg";
-// import NewCommentIcon from '../../icons/speech-bubbles-with-ellipsis.svg'
-import BalloonComponentIcon from "../IconsComponents/BolloonCommentIcon";
-import SendIcon from "../IconsComponents/SendIcon"
+import { ReactComponent as SendIcon } from "../../icons/paper-plane.svg";
+import {ReactComponent as BalloonComponentIcon} from "../../icons/speech-bubbles-with-ellipsis.svg";
 import { createComment } from "../../services/api";
+import SvgContainer from "../SvgContainer/SvgContainer";
 
 export default function NewComment({ postId, setNewComment }) {
   const [form, onChange, resetForm] = useForm({ text: "" });
@@ -36,20 +35,18 @@ export default function NewComment({ postId, setNewComment }) {
         value={form.text}
         name="text"
         onChange={onChange}
-        icon={
-          <BalloonComponentIcon
-            width="26px"
-            fillColor="rgba(255, 255, 255, 1)"
-          />
-        }
+        icon={<BalloonComponentIcon />}
         placeholder="Compartilhe suas ideias com o mundo..."
       />
       <Button>
-        <SendIcon
+        <SvgContainer
+          hover
           width="26px"
           fillColor="rgba(255, 255, 255, 1)"
           hoverFillColor="#2ed573"
-        />
+        >
+          <SendIcon />
+        </SvgContainer>
       </Button>
     </Main>
   );

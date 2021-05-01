@@ -1,4 +1,5 @@
 import React from "react"
+import SvgContainer from "../SvgContainer/SvgContainer"
 
 import { Main, InputStyled } from "./InputStyle"
 
@@ -10,10 +11,13 @@ export default function Input({
   onChange,
   pattern,
   type,
+  fillColor
 }) {
   return (
     <Main>
-      {icon}
+      <SvgContainer width="26px" fillColor={fillColor ? fillColor : "rgba(255, 255, 255, 1)"}>
+        {icon}
+      </SvgContainer>
       <InputStyled
         required
         type={type}

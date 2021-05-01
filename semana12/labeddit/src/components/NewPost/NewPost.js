@@ -2,11 +2,12 @@ import React from "react";
 import { Button, ContainerInputs, Main } from "./NewPostStyle";
 
 import Input from "../Input/Input";
-import TitlePostIcon from "../IconsComponents/TitlePostIcon";
-import BalloonTextPostIcon from "../IconsComponents/BalloonTextPostIcon"
+import {ReactComponent as TitlePostIcon} from "../../icons/top.svg";
+import {ReactComponent as BalloonTextPostIcon} from "../../icons/speech-bubble-with-ellipsis.svg";
+import {ReactComponent as SendIcon} from "../../icons/paper-plane.svg";
 import { useForm } from "../../hooks/useForm";
 import { createPost } from "../../services/api";
-import SendIcon from "../IconsComponents/SendIcon";
+import SvgContainer from "../SvgContainer/SvgContainer";
 
 export default function NewPost({ setPosts, setNewPost }) {
   const [form, onChange, resetForm] = useForm({ text: "", title: "" });
@@ -38,9 +39,7 @@ export default function NewPost({ setPosts, setNewPost }) {
           value={form.title}
           name="title"
           onChange={onChange}
-          icon={
-            <TitlePostIcon width="26px" fillColor="rgba(255, 255, 255, 1)" />
-          }
+          icon={<TitlePostIcon />}
           placeholder="Título..."
         />
         <Input
@@ -48,16 +47,19 @@ export default function NewPost({ setPosts, setNewPost }) {
           value={form.text}
           name="text"
           onChange={onChange}
-          icon={<BalloonTextPostIcon width="26px" fillColor="rgba(255, 255, 255, 1)"/>}
+          icon={<BalloonTextPostIcon />}
           placeholder="Compartilhe suas ideias com o mundo..."
         />
       </ContainerInputs>
       <Button>
-        <SendIcon
+        <SvgContainer
+          hover
           width="36px"
           fillColor="rgba(255, 255, 255, 1)"
           hoverFillColor="#2ed573"
-        />
+        >
+          <SendIcon />
+        </SvgContainer>
       </Button>
     </Main>
   );

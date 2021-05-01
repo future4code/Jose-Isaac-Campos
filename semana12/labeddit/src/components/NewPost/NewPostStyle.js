@@ -22,6 +22,10 @@ export const Main = styled.form`
             color: rgba(255,255,255, .9);
         }
     }
+
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+        flex-direction: column;
+    }
 `
 
 export const ContainerInputs = styled.div`
