@@ -79,7 +79,8 @@ export default function Signup() {
       <SigninAppresetation>
         <div>
           <h2>Bem vindo de volta!</h2>
-          <p>Os Eddits tem espara na sua jornada. Por favor, conecte-se novamente</p>
+          <p>Os Eddits te esparam na sua jornada.</p>
+          <p>Por favor, conecte-se novamente</p>
           <ButtonAction onClick={() => goToLoginPage(history)} >Signin</ButtonAction>
         </div>
       </SigninAppresetation>

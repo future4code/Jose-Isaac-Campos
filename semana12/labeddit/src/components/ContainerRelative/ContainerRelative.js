@@ -7,6 +7,10 @@ const Container = styled.div`
     position: relative;
 
     background-color: #f1f2f6;
+
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+        height: auto;
+    }
 `
 
 export default function ContainerRelative({children}) {
