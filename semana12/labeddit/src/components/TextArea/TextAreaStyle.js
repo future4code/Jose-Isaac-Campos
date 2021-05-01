@@ -17,7 +17,7 @@ export const Main = styled.label`
     }
 `
 
-export const InputStyled = styled.input`
+export const TextAreaStyled = styled.textarea`
     width: 100%;
     background-color: #f1f2f6;
     border: none;

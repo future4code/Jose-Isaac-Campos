@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "../../hooks/useForm";
-import Input from "../Input/Input";
+import TextArea from "../TextArea/TextArea";
 import { Main, Button } from "./NewCommentStyle";
 import { ReactComponent as SendIcon } from "../../icons/paper-plane.svg";
 import {ReactComponent as BalloonComponentIcon} from "../../icons/speech-bubbles-with-ellipsis.svg";
@@ -30,13 +30,13 @@ export default function NewComment({ postId, setNewComment }) {
   };
   return (
     <Main onSubmit={onSubmit}>
-      <Input
+      <TextArea
         pattern={"[a-zA-Z0-9]{3, }$"}
         value={form.text}
         name="text"
         onChange={onChange}
         icon={<BalloonComponentIcon />}
-        placeholder="Compartilhe suas ideias com o mundo..."
+        placeholder="Compartilhe sua opinião sobre o tema..."
       />
       <Button>
         <SvgContainer

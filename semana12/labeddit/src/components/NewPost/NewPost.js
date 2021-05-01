@@ -1,10 +1,10 @@
 import React from "react";
 import { Button, ContainerInputs, Main } from "./NewPostStyle";
 
-import Input from "../Input/Input";
+import TextArea from "../TextArea/TextArea";
 import {ReactComponent as TitlePostIcon} from "../../icons/top.svg";
 import {ReactComponent as BalloonTextPostIcon} from "../../icons/speech-bubble-with-ellipsis.svg";
-import {ReactComponent as SendIcon} from "../../icons/paper-plane.svg";
+import {ReactComponent as SendIcon} from "../../icons/paper-plane.svg"
 import { useForm } from "../../hooks/useForm";
 import { createPost } from "../../services/api";
 import SvgContainer from "../SvgContainer/SvgContainer";
@@ -34,7 +34,7 @@ export default function NewPost({ setPosts, setNewPost }) {
   return (
     <Main onSubmit={onSubmit}>
       <ContainerInputs>
-        <Input
+        <TextArea
           pattern={"[^]{3,}$"}
           value={form.title}
           name="title"
@@ -42,7 +42,7 @@ export default function NewPost({ setPosts, setNewPost }) {
           icon={<TitlePostIcon />}
           placeholder="Título..."
         />
-        <Input
+        <TextArea
           pattern={"[a-zA-Z0-9]{3, }$"}
           value={form.text}
           name="text"
@@ -58,7 +58,7 @@ export default function NewPost({ setPosts, setNewPost }) {
           fillColor="rgba(255, 255, 255, 1)"
           hoverFillColor="#2ed573"
         >
-          <SendIcon />
+          <SendIcon /> 
         </SvgContainer>
       </Button>
     </Main>

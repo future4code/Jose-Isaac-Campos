@@ -1,7 +1,7 @@
 import React from "react"
 import SvgContainer from "../SvgContainer/SvgContainer"
 
-import { Main, InputStyled } from "./InputStyle"
+import { Main, TextAreaStyled } from "./TextAreaStyle"
 
 export default function Input({
   icon,
@@ -18,7 +18,7 @@ export default function Input({
       <SvgContainer width="30px" fillColor={fillColor ? fillColor : "rgba(255, 255, 255, 1)"}>
         {icon}
       </SvgContainer>
-      <InputStyled
+      <TextAreaStyled
         required
         type={type}
         pattern={pattern}
