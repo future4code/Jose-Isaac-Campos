@@ -66,7 +66,7 @@ Deploy in [surge](http://jose-isaac-labeddit.surge.sh/)
 <input type="checkbox" checked disabled> Página de detalhes do post
 
 <ul>
-  <,>Página de detalhes de um post, caso o usuário já esteja logado, ela só pode ser acesado por usuário autenticados no app. Ela é responsavel por obter e listar todos os comentários relacionados aquele post.</li>
+  <li>Página de detalhes de um post, caso o usuário já esteja logado, ela só pode ser acesado por usuário autenticados no app. Ela é responsavel por obter e listar todos os comentários relacionados aquele post.</li>
   <li>Ela possui um Card do post como as mesmas informações da páginado feed.</li>
   <li>Abaixo do card deve ter um formulário para a criação de um novo comentários ele revece o conteúdo do novo comentário.</li>
   <li>Cada comentário possui as seguintes informações:</li>
