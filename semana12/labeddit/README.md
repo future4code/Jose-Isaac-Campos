@@ -6,7 +6,7 @@
 
 Deploy in [surge](http://jose-isaac-labeddit.surge.sh/)
 
-### Possui como depedência as seguinites libs:
+### Possui como depedência as seguintes libs:
 
 <ul>
   <li>styled-components</li>
