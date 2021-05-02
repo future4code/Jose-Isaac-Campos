@@ -79,6 +79,13 @@ Deploy in [surge](http://jose-isaac-labeddit.surge.sh/)
     </ul>
 </ul>
 
+### Mockups da aplicação
+
+<img src="./assets/mockup-labeddit (2).jpg">
+<img src="./assets/mockup-labeddit (1).jpg">
+<img src="./assets/mockup-labeddit (3).jpg">
+<img src="./assets/mockup-labeddit (4).jpg">
+
 ### Rodando localmente
 
 Para executar esse projeto em sua máquila local é necessário que o node js esteja intalado. Caso ainda não tenha, você pode está fazendo o download [aqui](https://nodejs.org/en/download/).
