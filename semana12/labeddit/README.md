@@ -1,70 +1,117 @@
-# Getting Started with Create React App
+# Hellou ! ! ! <br> Seja bem vindo(a) ao repo do <strong>LabEddit</strong>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<em>Esté projeto foi desenvolvido utilizando a biblioteca React</em>
+<br>
+<img src="./assets/logo-labeddit.png">
 
-## Available Scripts
+Deploy in [surge](http://jose-isaac-labeddit.surge.sh/)
 
-In the project directory, you can run:
+### Possui como depedência as seguinites libs:
 
-### `npm start`
+<ul>
+  <li>styled-components</li>
+  <li>axios</li>
+  <li>react-router-dom</li>
+</ul>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Requisitos
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<input type="checkbox" checked disabled> Página de login
 
-### `npm test`
+<ul>
+    <li>Ao entrar na nossa aplicação, se o usuário ainda não estiver logado ele deve ser direcionado para tela de login.</li>
+    <li>Devem ser mostrado:</li>
+    <ul>
+        <li>campo para o email</li>
+        <li>campo paro a senha</li>
+        <li>um botão para a página de signup</li>
+    </ul>
+</ul>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<input type="checkbox" checked disabled> Página de cadastro
 
-### `npm run build`
+<ul>
+    <.>Essa página é destinada a criação de  um novo usuário.</li>
+   <li>Devem ser mostrado:</li>
+    <ul>
+        <li>campo para o nome do usuário</li>
+        <li>campo para o email</li>
+        <li>campo paro a senha</li>
+        <li>um botão para a página de login</li>
+    </ul>
+</ul>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<input type="checkbox" checked disabled> Página de Feed
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<ul>
+    <li>Página inicial da aplicação, caso o usuário já esteja logado, ela só pode ser acesado por usuário autenticados no app. Ela é responsavel por obter e listar todos os post publicados.</li>
+    <li>Cada post possui as seguintes informações:</li>
+    <ul>
+      <li>Nome do usuário</li>
+      <li>Título do post</li>
+      <li>Texto do post</li>
+      <li>Data de criação</li>
+      <li>A direção da interação do usuário com o post ( Se curtiu, se não curtiu ou se não achou legal) que vem na forma de 1, 0 ,-1 respectivamente.</li>
+      <li>Quantidade de comentários</li>
+      <li>Quantidade de interações</li>
+      <li>Ao clicar sobre o post deve ser direcionado para página de detalhes do respectivo post.</li>
+    </ul>
+    <li>Além disso ela possui um formulário para a criação de um noco post, ele recebe as seguintes informações:</li>
+    <ul>
+      <li>Título do post</li>
+      <li>Conteúdo do post</li>
+    </ul>
+</ul>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<input type="checkbox" checked disabled> Página de detalhes do post
 
-### `npm run eject`
+<ul>
+  <,>Página de detalhes de um post, caso o usuário já esteja logado, ela só pode ser acesado por usuário autenticados no app. Ela é responsavel por obter e listar todos os comentários relacionados aquele post.</li>
+  <li>Ela possui um Card do post como as mesmas informações da páginado feed.</li>
+  <li>Abaixo do card deve ter um formulário para a criação de um novo comentários ele revece o conteúdo do novo comentário.</li>
+  <li>Cada comentário possui as seguintes informações:</li>
+    <ul>
+      <li>Nome do usuário</li>
+      <li>Texto do comentário</li>
+      <li>Data de criação</li>
+      <li>A direção da interação do usuário com o comentário ( Se curtiu, se não curtiu ou se não achou legal) que vem na forma de 1, 0 ,-1 respectivamente.</li>
+      <li>Quantidade de interações</li>
+    </ul>
+</ul>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Rodando localmente
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Para executar esse projeto em sua máquila local é necessário que o node js esteja intalado. Caso ainda não tenha, você pode está fazendo o download [aqui](https://nodejs.org/en/download/).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<h4>1º | Faça o clone do repo:</h4>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<code>
+    git clone https://github.com/future4code/Jose-Isaac-Campos.git
+</code>
 
-## Learn More
+<br>
+<br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<h4>2º | Navegue até a pasta do projeto:</h4>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<code>
+    cd ./Jose-Isaac-Campos/semana12/labeddit
+</code>
 
-### Code Splitting
+<br>
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<h4>3º | Instale as dependências:</h4>
 
-### Analyzing the Bundle Size
+<code>
+   npm install
+</code>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<br>
+<br>
 
-### Making a Progressive Web App
+<h4>4º | Inicie o servidor:</h4>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<code>
+   npm run start
+</code>
