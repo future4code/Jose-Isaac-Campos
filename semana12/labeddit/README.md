@@ -31,7 +31,7 @@ Deploy in [surge](http://jose-isaac-labeddit.surge.sh/)
 <input type="checkbox" checked disabled> Página de cadastro
 
 <ul>
-    <.>Essa página é destinada a criação de  um novo usuário.</li>
+    <li>Essa página é destinada a criação de  um novo usuário.</li>
    <li>Devem ser mostrado:</li>
     <ul>
         <li>campo para o nome do usuário</li>
