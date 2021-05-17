@@ -1,0 +1,15 @@
+{
+  "name": "exercício-02",
+  "version": "1.0.0",
+  "description": "Exercícios referentes a aula 41 de introdução ao nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "José Isaac",
+  "license": "ISC"
+}
