@@ -1,3 +1,4 @@
+const cliColor = require('../cli-color/cli-color')
 const operation = process.argv[2];
 let num1 = process.argv[3];
 let num2 = process.argv[4];
@@ -21,23 +22,23 @@ const calc = () => {
 if (operation) {
   if (num1) {
     if (isNaN(num1)) {
-      console.log("É esperado um valor numérico para o segundo parâmetro!");
+      console.log(`${cliColor.toYellow('É esperado um valor numérico para o segundo parâmetro!')}`);
     } else {
       if (num2) {
         if (isNaN(num2)) {
           console.log(
-            "É esperado um valor numérico para o terceiro parâmetro!"
+            `${cliColor.toYellow('É esperado um valor numérico para o terceiro parâmetro!')}`
           );
         } else {
-          console.log(`${operation}: ${num1} and ${num2} -> result: ${calc()}`);
+          console.log(`${operation}: ${num1} and ${num2} -> ${cliColor.toGreen('result')}: ${calc()}`);
         }
       } else {
-        console.log("Esperava 3 parâmetros só recebi dois!");
+        console.log(`Esperava ${cliColor.toYellow('3')} parâmetros só recebi ${cliColor.toYellow('dois')}!`);
       }
     }
   } else {
-    console.log("Esperava 3 parâmetros só recebi um!");
+    console.log(`Esperava ${cliColor.toYellow('3')} parâmetros só recebi ${cliColor.toYellow('um')}!`);
   }
 } else {
-  console.log("Por favor, forneça os parâmetros esperado: node index.js operation number1 number2");
+  console.log(`Por favor, forneça os parâmetros esperado: ${cliColor.toYellow('node index.js operation number1 number2')}`);
 }
