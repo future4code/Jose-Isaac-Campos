@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+body {
+  background-color: rgba(241,242,246,1);
+}
+
+#root, .App {
+  min-height: 100vh;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.App > div {
+  min-height: 100vh;
+  box-sizing: border-box;
+}
