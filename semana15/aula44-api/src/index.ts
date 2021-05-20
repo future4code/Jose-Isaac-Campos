@@ -59,6 +59,29 @@ app.get('/users', (req: Request, res: Response) => {
     res.status(200).send(users);
 })
 
+app.get('/users/search', (req: Request, res: Response) => {
+    let statusCode = 400
+    try {
+        if (!req.query.type) {
+            throw new Error('This endpoint expects a query type!')
+        }
+
+        const type = req.query.type as string
+        
+        const result = users.filter((user) => {
+            return user.type === type.toUpperCase()
+        })
+
+        if (!result.length) {
+            throw new Error('users type not found!')
+        }
+
+        res.status(200).send(result)
+    } catch (error) {
+        res.status(statusCode).send({ message: error.message})
+    }
+})
+
 const server = app.listen(3003, () => {
     if (server) {
         console.log('[ Server ] listing in port 3003 at http://localhost:3003');   
