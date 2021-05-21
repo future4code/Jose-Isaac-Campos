@@ -2,6 +2,7 @@ import express, {Request, Response} from 'express'
 import cors from 'cors'
 import { clients } from './db-data'
 import { client } from './model/client'
+import { transaction } from './model/transaction'
 
 const app = express()
 app.use(express.json())
@@ -71,7 +72,14 @@ app.put('/clients/account/:cpf/balance', (req: Request, res: Response) => {
             throw new Error('the name provided is different from the name registered in the system')
         }
 
+        const newTransaction: transaction = {
+            value: Number(balance),
+            date: new Date().getTime(),
+            description: 'Depósito de dinheiro'
+        }
+
         client.account.balance += Number(balance)
+        client.account.extract.push(newTransaction)
 
         res.status(200).send({message: 'Success', currentBalance: client.account.balance})
     } catch (error) {

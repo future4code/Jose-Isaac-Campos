@@ -1,5 +1,5 @@
 export type transaction = {
     value: number, 
-    date: string,
+    date: number,
     description: string
 }
