@@ -11,6 +11,74 @@ app.get('/clients', (req: Request, res: Response) => {
     res.status(200).send(clients)
 })
 
+app.get('/clients/account/:cpf/balance', (req: Request, res: Response) => {
+    let statusCode = 400
+    try {
+        const cpf = req.params.cpf
+
+        if (!cpf) {
+            throw new Error('cpf not provided')
+        }
+
+        const client = clients.find(client => client.cpf === cpf)
+        
+        if (!client) {
+            statusCode = 404
+            throw new Error('no account was found for the given cpf')
+        }
+
+        res.status(200).send({balance: client.account.balance})
+    } catch (error) {
+        res.status(statusCode).send({ message: error.message})
+    }
+})
+
+app.put('/clients/account/:cpf/balance', (req: Request, res: Response) => {
+    let statusCode = 400
+    try {
+        const cpf = req.params.cpf
+        const name = req.body.name
+        const balance = req.body.balance
+
+        if (!cpf) {
+            throw new Error('cpf not provided')
+        }
+
+        if (!name) {
+            throw new Error('name not provided')
+        }
+
+        if (!balance) {
+            throw new Error('balance not provided')
+        }
+
+        if (isNaN(Number(balance))) {
+            throw new Error('balance is not a number')
+        }
+
+        if (balance < 1) {
+            throw new Error('the estimated amount for the balance is not positive')
+        } 
+
+        const client = clients.find(client => client.cpf === cpf)
+        
+        if (!client) {
+            statusCode = 404
+            throw new Error('no account was found for the given cpf')
+        }
+
+        if (name.toUpperCase() !== client.name.toUpperCase()) {
+            throw new Error('the name provided is different from the name registered in the system')
+        }
+
+        client.account.balance += Number(balance)
+
+        res.status(200).send({message: 'Success', currentBalance: client.account.balance})
+    } catch (error) {
+        res.status(statusCode).send({ message: error.message})
+    }
+})
+
 app.post('/clients', (req: Request, res: Response) => {
     try {
         const newClient: client = req.body.client
