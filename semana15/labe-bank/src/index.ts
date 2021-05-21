@@ -12,6 +12,39 @@ app.get('/clients', (req: Request, res: Response) => {
     res.status(200).send(clients)
 })
 
+app.post('/clients', (req: Request, res: Response) => {
+    try {
+        const newClient: client = req.body.client
+
+        if (!newClient) {
+            throw new Error(`the request body came empty`)
+        }
+
+        if (isNaN(Number(newClient.age)) || !newClient.age) {
+            throw new Error(`age is not a number`)
+        }
+
+        newClient.age = Number(newClient.age)
+
+        if (newClient.age < 18) {
+            throw new Error(`only adults can open a new account`)
+        }
+
+        const cpfIsInUse = clients.find(client => client.cpf === newClient.cpf)
+
+        if (cpfIsInUse) {
+            throw new Error(`The supplied cpf is already in use`)
+        }
+
+        console.log(newClient);
+
+        clients.push(newClient)
+        res.status(200).send({message: 'Success', client: newClient})
+    } catch (error) {
+        res.status(400).send({ message: error.message})   
+    }
+})
+
 app.get('/clients/account/:cpf/balance', (req: Request, res: Response) => {
     let statusCode = 400
     try {
@@ -87,38 +120,65 @@ app.put('/clients/account/:cpf/balance', (req: Request, res: Response) => {
     }
 })
 
-app.post('/clients', (req: Request, res: Response) => {
+app.post('/clients/account/:cpf/extract', (req: Request, res: Response) => {
+    let statusCode = 400
     try {
-        const newClient: client = req.body.client
+        const cpf = req.params.cpf
+        const purchaseValue = req.body.purchaseValue
+        let dueDate = req.body.dueDate
+        const description = req.body.description
 
-        if (!newClient) {
-            throw new Error(`the request body came empty`)
+        if (!cpf) {
+            throw new Error('cpf not provided')
         }
 
-        if (isNaN(Number(newClient.age)) || !newClient.age) {
-            throw new Error(`age is not a number`)
+        if (!purchaseValue) {
+            throw new Error('purchase value not provided')
         }
 
-        newClient.age = Number(newClient.age)
-
-        if (newClient.age < 18) {
-            throw new Error(`only adults can open a new account`)
+        if (isNaN(Number(purchaseValue))) {
+            throw new Error('purchase value is not a number')
         }
 
-        const cpfIsInUse = clients.find(client => client.cpf === newClient.cpf)
+        if (purchaseValue < 1) {
+            throw new Error('the purchase value is not positive')
+        } 
 
-        if (cpfIsInUse) {
-            throw new Error(`The supplied cpf is already in use`)
+        if (!dueDate) {
+            dueDate = new Date().getTime()
         }
 
-        console.log(newClient);
+        if (isNaN(Number(dueDate))) {
+            throw new Error('the expiration date must be a timestamp')
+        }
 
-        clients.push(newClient)
-        res.status(200).send({message: 'Success', client: newClient})
+        if (!description) {
+            throw new Error('description not provided')
+        }
+
+        const client = clients.find(client => client.cpf === cpf)
+        
+        if (!client) {
+            statusCode = 404
+            throw new Error('no account was found for the given cpf')
+        }
+
+        const newTransaction: transaction = {
+            value: -Number(purchaseValue),
+            date: new Date().getTime(),
+            dueDate: dueDate,
+            description: description
+        }
+
+        client.account.extract.push(newTransaction)
+
+        res.status(200).send({message: 'Success', newExtracted: newTransaction})
     } catch (error) {
-        res.status(400).send({ message: error.message})   
+        res.status(statusCode).send({ message: error.message})
     }
 })
+
+
 
 const server = app.listen(3003, () => {
     if (server) {
