@@ -1,8 +1,9 @@
-import express, {Request, Response} from 'express'
+import express, { Request, Response } from 'express'
 import cors from 'cors'
 import { clients } from './db-data'
 import { client } from './model/client'
 import { transaction } from './model/transaction'
+import { error } from 'console'
 
 const app = express()
 app.use(express.json())
@@ -27,7 +28,7 @@ app.post('/clients', (req: Request, res: Response) => {
         const birthDate = new Date(newClient.birthDate)
         const currentDate = new Date()
         const age = currentDate.getFullYear() - birthDate.getFullYear()
-        
+
         if (age < 18) {
             throw new Error(`only adults can open a new account`)
         }
@@ -43,7 +44,7 @@ app.post('/clients', (req: Request, res: Response) => {
                 }
             }
         }
-        
+
         const cpfIsInUse = clients.find(client => client.cpf === newClient.cpf)
 
         if (cpfIsInUse) {
@@ -59,9 +60,9 @@ app.post('/clients', (req: Request, res: Response) => {
         }
 
         clients.push(newClient)
-        res.status(200).send({message: 'Success', client: newClient})
+        res.status(200).send({ message: 'Success', client: newClient })
     } catch (error) {
-        res.status(400).send({ message: error.message})   
+        res.status(400).send({ message: error.message })
     }
 })
 
@@ -79,15 +80,15 @@ app.get('/clients/account/:cpf/balance', (req: Request, res: Response) => {
         }
 
         const client = clients.find(client => client.cpf === Number(cpf))
-        
+
         if (!client) {
             statusCode = 404
             throw new Error('no account was found for the given cpf')
         }
 
-        res.status(200).send({balance: client.account.balance})
+        res.status(200).send({ balance: client.account.balance })
     } catch (error) {
-        res.status(statusCode).send({ message: error.message})
+        res.status(statusCode).send({ message: error.message })
     }
 })
 
@@ -120,10 +121,10 @@ app.put('/clients/account/:cpf/balance', (req: Request, res: Response) => {
 
         if (balance < 1) {
             throw new Error('the estimated amount for the balance is not positive')
-        } 
+        }
 
         const client = clients.find(client => client.cpf === Number(cpf))
-        
+
         if (!client) {
             statusCode = 404
             throw new Error('no account was found for the given cpf')
@@ -136,15 +137,16 @@ app.put('/clients/account/:cpf/balance', (req: Request, res: Response) => {
         const newTransaction: transaction = {
             value: Number(balance),
             date: new Date().getTime(),
+            dueDate: new Date().getTime(),
             description: 'Depósito de dinheiro'
         }
 
         client.account.balance += Number(balance)
         client.account.extract.push(newTransaction)
 
-        res.status(200).send({message: 'Success', currentBalance: client.account.balance})
+        res.status(200).send({ message: 'Success', currentBalance: client.account.balance })
     } catch (error) {
-        res.status(statusCode).send({ message: error.message})
+        res.status(statusCode).send({ message: error.message })
     }
 })
 
@@ -174,7 +176,7 @@ app.post('/clients/account/:cpf/extract', (req: Request, res: Response) => {
 
         if (purchaseValue < 1) {
             throw new Error('the purchase value is not positive')
-        } 
+        }
 
         if (!dueDate) {
             dueDate = new Date().getTime()
@@ -189,7 +191,7 @@ app.post('/clients/account/:cpf/extract', (req: Request, res: Response) => {
         }
 
         const client = clients.find(client => client.cpf === Number(cpf))
-        
+
         if (!client) {
             statusCode = 404
             throw new Error('no account was found for the given cpf')
@@ -204,13 +206,47 @@ app.post('/clients/account/:cpf/extract', (req: Request, res: Response) => {
 
         client.account.extract.push(newTransaction)
 
-        res.status(200).send({message: 'Success', newExtracted: newTransaction})
+        res.status(200).send({ message: 'Success', newExtracted: newTransaction })
     } catch (error) {
-        res.status(statusCode).send({ message: error.message})
+        res.status(statusCode).send({ message: error.message })
     }
 })
 
-app.put('/clients/account/:cpf/extract', (req: Request, res: Response) => {
+app.put('/clients/account/:cpf/update/balance', (req: Request, res: Response) => {
+    const cpf = req.params.cpf
+    let statusCode = 400
+    try {
+        if (!cpf) {
+            throw new Error('cpf not provided')
+        }
+
+        if (!cpf) {
+            throw new Error('cpf not provided')
+        }
+
+        const client = clients.find(client => client.cpf === Number(cpf))
+
+        if (!client) {
+            statusCode = 404
+            throw new Error('client not provided')
+        }
+
+        const currentDate = new Date().getTime()
+
+        let totalExpenses = 0
+        client.account.extract.forEach(expenses => {
+            if (expenses.dueDate < currentDate &&  expenses.description !== 'Depósito de dinheiro') {
+                totalExpenses += expenses.value
+            }
+        })
+
+        client.account.extract = client.account.extract.filter(expense => expense.dueDate > currentDate)
+        client.account.balance += totalExpenses
+        res.status(200).send({ balance: client.account.balance})
+    } catch (error) {
+        res.status(statusCode).send({ message: error.message })
+    }
+
 
 })
 
