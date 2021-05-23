@@ -14,29 +14,49 @@ app.get('/clients', (req: Request, res: Response) => {
 
 app.post('/clients', (req: Request, res: Response) => {
     try {
-        const newClient: client = req.body.client
+        let newClient: client = req.body.client
 
         if (!newClient) {
             throw new Error(`the request body came empty`)
         }
 
-        if (isNaN(Number(newClient.age)) || !newClient.age) {
-            throw new Error(`age is not a number`)
+        if (isNaN(Number(newClient.birthDate)) || !newClient.birthDate) {
+            throw new Error(`Birth date is not a timestamp`)
         }
 
-        newClient.age = Number(newClient.age)
-
-        if (newClient.age < 18) {
+        const birthDate = new Date(newClient.birthDate)
+        const currentDate = new Date()
+        const age = currentDate.getFullYear() - birthDate.getFullYear()
+        
+        if (age < 18) {
             throw new Error(`only adults can open a new account`)
         }
 
+        if (age === 18) {
+            if (birthDate.getMonth() < currentDate.getMonth()) {
+                throw new Error(`only adults can open a new account`)
+            }
+
+            if (birthDate.getMonth() === currentDate.getMonth()) {
+                if (birthDate.getDate() < currentDate.getDate()) {
+                    throw new Error(`only adults can open a new account`)
+                }
+            }
+        }
+        
         const cpfIsInUse = clients.find(client => client.cpf === newClient.cpf)
 
         if (cpfIsInUse) {
             throw new Error(`The supplied cpf is already in use`)
         }
 
-        console.log(newClient);
+        newClient = {
+            ...newClient,
+            account: {
+                balance: 0,
+                extract: []
+            }
+        }
 
         clients.push(newClient)
         res.status(200).send({message: 'Success', client: newClient})
@@ -54,7 +74,11 @@ app.get('/clients/account/:cpf/balance', (req: Request, res: Response) => {
             throw new Error('cpf not provided')
         }
 
-        const client = clients.find(client => client.cpf === cpf)
+        if (isNaN(Number(cpf))) {
+            throw new Error('cpf is not a number')
+        }
+
+        const client = clients.find(client => client.cpf === Number(cpf))
         
         if (!client) {
             statusCode = 404
@@ -78,6 +102,10 @@ app.put('/clients/account/:cpf/balance', (req: Request, res: Response) => {
             throw new Error('cpf not provided')
         }
 
+        if (!cpf) {
+            throw new Error('cpf not provided')
+        }
+
         if (!name) {
             throw new Error('name not provided')
         }
@@ -94,7 +122,7 @@ app.put('/clients/account/:cpf/balance', (req: Request, res: Response) => {
             throw new Error('the estimated amount for the balance is not positive')
         } 
 
-        const client = clients.find(client => client.cpf === cpf)
+        const client = clients.find(client => client.cpf === Number(cpf))
         
         if (!client) {
             statusCode = 404
@@ -132,6 +160,10 @@ app.post('/clients/account/:cpf/extract', (req: Request, res: Response) => {
             throw new Error('cpf not provided')
         }
 
+        if (!cpf) {
+            throw new Error('cpf not provided')
+        }
+
         if (!purchaseValue) {
             throw new Error('purchase value not provided')
         }
@@ -156,7 +188,7 @@ app.post('/clients/account/:cpf/extract', (req: Request, res: Response) => {
             throw new Error('description not provided')
         }
 
-        const client = clients.find(client => client.cpf === cpf)
+        const client = clients.find(client => client.cpf === Number(cpf))
         
         if (!client) {
             statusCode = 404
@@ -176,6 +208,10 @@ app.post('/clients/account/:cpf/extract', (req: Request, res: Response) => {
     } catch (error) {
         res.status(statusCode).send({ message: error.message})
     }
+})
+
+app.put('/clients/account/:cpf/extract', (req: Request, res: Response) => {
+
 })
 
 
