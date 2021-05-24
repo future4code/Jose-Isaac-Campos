@@ -121,4 +121,11 @@ WHERE
 
 ---
 ### Exercício 5
+a) estamos criando uma nova tabela com as colunas id, name, sinopse, release date, assessment. Muito semelhante a tabela de atores, a principal diferença aqui está na sinopse que usa o tipo TEXT que basicamente consegue armazenas mais caracteres que o CHAR e o VARCHAR, porém o TEXT é um pouco mais lento pois o DB não salva na memória principal e sim em arquivos.
 
+---
+### Exercício 6
+a) ``` SELECT id, title, sinopse FROM Films WHERE id = "002"; ```
+b) ``` SELECT * FROM Films WHERE title LIKE  "%ce%" OR sinopse LIKE "%ce%"; ```
+
+c) ``` SELECT id, title, sinopse FROM Films WHERE assessment >= 7; ```
