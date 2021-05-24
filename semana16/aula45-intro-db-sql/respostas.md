@@ -129,3 +129,13 @@ a) ``` SELECT id, title, sinopse FROM Films WHERE id = "002"; ```
 b) ``` SELECT * FROM Films WHERE title LIKE  "%ce%" OR sinopse LIKE "%ce%"; ```
 
 c) ``` SELECT id, title, sinopse FROM Films WHERE assessment >= 7; ```
+
+---
+### Exercício 7
+a) ``` SELECT * FROM Films WHERE title LIKE  "%vida%"; ```
+
+b) ``` SELECT * FROM Films WHERE title LIKE  "%Tropa%" OR sinopse LIKE "%Tropa%"; ``` 
+
+c) ``` SELECT  * FROM Films WHERE releaseDate < "2010-10-20"; ```
+
+d) ``` SELECT  * FROM Films WHERE releaseDate < "2010-10-20" AND (title LIKE  "%Tropa%" OR sinopse LIKE "%Tropa%") AND assessment >= 7; ```
