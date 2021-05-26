@@ -1,9 +1,11 @@
-import { countActorByGender } from './controller/countActorByGender';
+import { countActorByGender } from './functions/countActorByGender';
 import express, { Express } from "express";
 import cors from "cors";
 import { AddressInfo } from "net";
 import { connection } from "./connection";
-import { getActorByName } from "./controller/getActorByName";
+import { getActorByName } from "./functions/getActorByName";
+import { updateSalary } from './functions/updateSalary';
+import { avgSalary } from './functions/avgSalary';
 
 const app: Express = express();
 app.use(express.json());
@@ -18,7 +20,7 @@ const getActorById = async (id: string): Promise<any> => {
 }
 
 (async () => {
-    console.log(await countActorByGender("female"))
+    console.log(await avgSalary('female'))
   })()
 
 const server = app.listen(process.env.PORT || 3003, () => {
