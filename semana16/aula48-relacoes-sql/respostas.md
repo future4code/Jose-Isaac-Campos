@@ -19,4 +19,7 @@ d) Retorna um erro informado que não é possível excluir devido uma restriçã
 
 ### Exercício 03
 --- 
-a) 
+a) o operador on serve para informarmos como os dados das duas tabelas deve ser combinados.
+
+b) ``` select Movies.id, title, rate from Movies
+inner join Rating on Movies.id = Rating.fk_films_id; ``` 
