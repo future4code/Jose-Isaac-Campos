@@ -1,7 +1,8 @@
 import { user as userModel } from '../models/user';
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4, validate } from 'uuid';
 
 import { Request, Response } from "express"
+import { error } from 'console';
 
 export const user = {
     create: async (req: Request, res: Response) => {
@@ -35,8 +36,6 @@ export const user = {
 
             //TODO: remover espaços no nickname
 
-            // TODO: verifique se o nickname já existe
-
             if (!email) {
                 throw new Error('email not provided')
             }
@@ -52,10 +51,34 @@ export const user = {
             const id = uuidv4()
             const dbResult = await userModel.create(id, name, nickname, email)
             console.log(dbResult);
-        
+
+             // TODO: verifique se o nickname ou email já existe
+             // TODO: validar error do db
+
             res.status(200).send({ message: 'Success'})
         } catch (error) {
             res.status(statusCode).send({ message: error.message})
         }
     },
+    findById: async (req: Request, res: Response) => {
+        let statusCode = 400
+        try {
+            const id = req.params.id
+            
+            if (!validate(id)) {
+                throw new Error('is not a valid id!')
+            }
+
+            const dbResult = await userModel.findById(id)
+            
+            if (dbResult.length === 0) {
+                statusCode = 404
+                throw new Error('user not found!')
+            }
+
+            res.status(200).send({ message: 'Success', user: {id, nickname: dbResult[0].nickname}})
+        } catch (error) {
+            res.status(statusCode).send({ message: error.message})
+        }
+    }
 }
