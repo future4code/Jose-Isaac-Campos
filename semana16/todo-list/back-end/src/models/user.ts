@@ -17,7 +17,16 @@ const findById = async (id: string) => {
     }
 }
 
+const edit = async (id: string, name: string, nickname: string) => {
+    try {
+        return await connection('TodoListUser').update({name, nickname}).where({id})
+    } catch (error) {
+        return error.message
+    }
+}
+
 export const user = {
     create,
     findById,
+    edit,
 }
