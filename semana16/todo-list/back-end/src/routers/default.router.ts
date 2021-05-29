@@ -3,5 +3,6 @@ import { Controller } from '../controllers/default.controller';
 const Router = express.Router()
 
 Router.get('/ping', Controller.ping)
+Router.put('/user', Controller.user.create)
 
 export default Router;
