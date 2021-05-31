@@ -63,5 +63,24 @@ export const userController = {
            console.log(error)
            res.send(error.message || error.sqlMessage)
         }
+     },
+     getAllUsersOrderBy: async(req: Request,res: Response): Promise<void> =>{
+        try {
+           const orderBy = req.query.orderBy || 'email'
+           const order = req.query.order || 'asc'
+
+           const users = await userModel.selectAllUsersOrderBy(order as string, orderBy as string)
+                      
+           if(!users.length){
+              res.statusCode = 404
+              throw new Error("No recipes found")
+           }
+     
+           res.status(200).send(users)
+           
+        } catch (error) {
+           console.log(error)
+           res.send(error.message || error.sqlMessage)
+        }
      }
 }
