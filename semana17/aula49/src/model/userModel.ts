@@ -36,4 +36,15 @@ export const userModel = {
    
       return result[0]
    },
+   selectAllUsersByPage: async (page: number): Promise<any> => {
+      const limit = 5
+      const result = await connection.raw(`
+         SELECT id, name, email, type
+         FROM aula48_exercicio
+         LIMIT ${limit}
+         OFFSET ${limit * (page - 1)};
+      `)
+   
+      return result[0]
+   }
 }

@@ -6,6 +6,7 @@ const Router = express.Router()
 Router.get('/ping', pingController.ping)
 Router.get('/users', userController.getAllUsers)
 Router.get('/users/order', userController.getAllUsersOrderBy)
+Router.get('/users/pages', userController.getUsersByPage)
 Router.get('/users/search', userController.getUsersByName)
 Router.get('/users/:type', userController.getUsersByType)
 

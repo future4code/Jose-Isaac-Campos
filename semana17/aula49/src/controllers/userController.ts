@@ -82,5 +82,32 @@ export const userController = {
            console.log(error)
            res.send(error.message || error.sqlMessage)
         }
-     }
+     },
+     getUsersByPage: async(req: Request,res: Response): Promise<void> =>{
+      try {
+         const page = Number(req.query.page) || 1
+
+         if (isNaN(page)) {
+            res.statusCode = 400
+            throw new Error("Invalid page, is not a number")
+         }
+
+         const users = await userModel.selectAllUsersByPage(page)
+
+         if(!users.length){
+            res.statusCode = 404
+            throw new Error("No recipes found")
+         }
+
+         res.status(200).send({page: {
+            previous: `http://localhost:3003/users/pages?page=${page > 1 ? page - 1 : 1}`,
+            current: page,
+            next: `http://localhost:3003/users/pages?page=${page + 1}`
+         }, users})
+         
+      } catch (error) {
+         console.log(error)
+         res.send(error.message || error.sqlMessage)
+      }
+   }
 }
