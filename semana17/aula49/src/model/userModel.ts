@@ -1,10 +1,15 @@
 import { connection } from '../connection';
 
 export const userModel = {
-    selectAllUsers: async (): Promise<any> => {
+    selectAllUsers: async (name: string, type: string, order: string, orderBy: string, page: number): Promise<any> => {
+       const limit = 5
         const result = await connection.raw(`
            SELECT id, name, email, type
-           FROM aula48_exercicio;
+           FROM aula48_exercicio
+           WHERE name LIKE '%${name}%' AND type LIKE '%${type}%'
+           ORDER BY ${orderBy} ${order}
+           LIMIT ${limit}
+           OFFSET ${limit * (page - 1)};
         `)
      
         return result[0]
