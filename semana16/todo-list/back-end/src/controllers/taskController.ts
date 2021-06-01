@@ -1,3 +1,4 @@
+import { taskModel } from './../models/task';
 import { v4 as uuidv4, validate } from "uuid";
 import { Request, Response } from "express";
 
@@ -46,11 +47,12 @@ export const task = {
             limitDate = limitDate.replace(/\//g, "-").split("-").reverse().join("-");
 
             const currentDate = new Date().getTime();
-            limitDate = new Date(limitDate).getTime()
-            const diff = limitDate - currentDate
+            const limit = new Date(limitDate).getTime();
+            const diff = limit - currentDate
             
-            const days = (diff / (1000 * 60 * 60 * 24));
+            const days = Math.round(diff / (1000 * 60 * 60 * 24));
             console.log(days);
+            //TODO resolver bug para data do mesmo dia
 
             if (days < 0) {
                 throw new Error('the limit date is less than the current date')
@@ -63,6 +65,11 @@ export const task = {
             if (!validate(creatorUserId)) {
                 throw new Error("creatorUserId is not valid");
             }
+
+            const id = uuidv4()
+            const dbResult = await taskModel.create(id, title, description, limitDate, creatorUserId)
+            console.log(dbResult);
+            
 
             res.status(200).send({ message: "Success" });
         } catch (error) {

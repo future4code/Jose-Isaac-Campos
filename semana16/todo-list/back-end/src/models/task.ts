@@ -12,14 +12,14 @@ const create = async (
       id,
       title,
       description,
-      limitDate,
-      creatorUserId
+      limit_date: limitDate,
+      creator_user_id: creatorUserId
     });
   } catch (error) {
     return error.message;
   }
 };
 
-export const task = {
+export const taskModel = {
   create,
 };
