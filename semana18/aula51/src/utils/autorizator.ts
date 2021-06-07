@@ -4,7 +4,7 @@ type authenticationData = {
   id: string
 }
 
-export const generateToken = (input: string):string => {
+export const generateToken = (input: authenticationData):string => {
   return jwt.sign(
     input,
     process.env.JWT_KEY as string,

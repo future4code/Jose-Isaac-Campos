@@ -1,6 +1,10 @@
 import { Request, Response } from "express";
 import connection from "../connection";
 import { user } from "../types";
+import { generateToken } from "../utils/autorizator";
+import { generateId } from '../utils/generateId'
+
+const userTableName = 'Aula51_User'
 
 export default async function createUser(
    req: Request,
@@ -8,14 +12,17 @@ export default async function createUser(
 ): Promise<void> {
    try {
 
-      const { name, nickname, email, password } = req.body
+      const { email, password } = req.body
 
-      if (!name || !nickname || !email || !password) {
-         res.statusCode = 422
-         throw new Error("Preencha os campos 'name','nickname', 'password' e 'email'")
+      if (!req.body.email || req.body.email.indexOf("@") === -1) {
+         throw new Error("Invalid email");
+       }
+   
+       if (!req.body.password || req.body.password.length < 6) {
+         throw new Error("Invalid password");
       }
 
-      const [user] = await connection('to_do_list_users')
+      const [user] = await connection(userTableName)
          .where({ email })
 
       if (user) {
@@ -23,14 +30,14 @@ export default async function createUser(
          throw new Error('Email já cadastrado')
       }
 
-      const id: string = Date.now().toString()
+      const id = generateId()
 
-      const newUser: user = { id, name, nickname, email, password }
+      const newUser: user = { id, email, password }
 
-      await connection('to_do_list_users')
+      await connection(userTableName)
          .insert(newUser)
 
-      res.status(201).send({ newUser })
+      res.status(201).send({ token: generateToken({id: user.id})})
 
    } catch (error) {
 
