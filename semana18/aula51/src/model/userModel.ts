@@ -10,5 +10,9 @@ export const userModel = {
   findByEmail: async (email: string): Promise<any> => {
     return await connection(userTableName)
          .where({ email })
+  },
+  findById: async (id: string): Promise<any> => {
+    return await connection(userTableName)
+         .where({ id })
   }
 }

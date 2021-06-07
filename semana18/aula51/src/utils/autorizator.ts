@@ -8,7 +8,7 @@ export const generateToken = (input: AuthenticationData):string => {
   return jwt.sign(
     {id : input.id},
     process.env.JWT_KEY as string,
-    { expiresIn: '30s'}
+    { expiresIn: '30m'}
   )
 }
 
