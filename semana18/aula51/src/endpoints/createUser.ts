@@ -1,10 +1,8 @@
 import { Request, Response } from "express";
-import connection from "../connection";
+import { userModel } from "../model/userModel";
 import { user } from "../types";
 import { generateToken } from "../utils/autorizator";
 import { generateId } from '../utils/generateId'
-
-const userTableName = 'Aula51_User'
 
 export default async function createUser(
    req: Request,
@@ -22,8 +20,7 @@ export default async function createUser(
          throw new Error("Invalid password");
       }
 
-      const [user] = await connection(userTableName)
-         .where({ email })
+      const [user] = await userModel.findByEmail(email)
 
       if (user) {
          res.statusCode = 409
@@ -34,8 +31,7 @@ export default async function createUser(
 
       const newUser: user = { id, email, password }
 
-      await connection(userTableName)
-         .insert(newUser)
+      await userModel.create(newUser)
 
       res.status(201).send({ token: generateToken({id: newUser.id})})
 
