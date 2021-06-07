@@ -6,9 +6,9 @@ type authenticationData = {
 
 export const generateToken = (input: authenticationData):string => {
   return jwt.sign(
-    input,
+    {id : input.id},
     process.env.JWT_KEY as string,
-    { expiresIn: '30m'}
+    { expiresIn: '30s'}
   )
 }
 

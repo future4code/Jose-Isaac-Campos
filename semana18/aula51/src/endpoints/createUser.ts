@@ -37,7 +37,7 @@ export default async function createUser(
       await connection(userTableName)
          .insert(newUser)
 
-      res.status(201).send({ token: generateToken({id: user.id})})
+      res.status(201).send({ token: generateToken({id: newUser.id})})
 
    } catch (error) {
 
