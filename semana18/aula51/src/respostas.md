@@ -18,3 +18,9 @@ a) A tipagem do arquivo .env diz que o valor de JWT_KEY pode ser uma string caso
 tenha ela definida no arquivo com um valor associado ou undefined caso ela não
 esteja definida ou não tenha um valor associado a ela. Com o 'as string' estamos
 dizendo paro o typescript que temos certeza que aquilo vira como string.
+
+### exercício 07
+
+a) o 'as any' especifica que o retorno do verify pode ser de qualquer tipo, sem
+ele ao final o typescript reclamaria do 'payload.id' pois a tipagem do verify diz
+que o retorno pode ser uma string ou um object.

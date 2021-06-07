@@ -1,14 +1,21 @@
 import * as jwt from 'jsonwebtoken'
 
-type authenticationData = {
+type AuthenticationData = {
   id: string
 }
 
-export const generateToken = (input: authenticationData):string => {
+export const generateToken = (input: AuthenticationData):string => {
   return jwt.sign(
     {id : input.id},
     process.env.JWT_KEY as string,
     { expiresIn: '30s'}
   )
+}
+
+export const getData = (token: string): AuthenticationData => {
+  const payload = jwt.verify(token, process.env.JWT_KEY as string) as any
+  return {
+    id: payload.id
+  }
 }
 
