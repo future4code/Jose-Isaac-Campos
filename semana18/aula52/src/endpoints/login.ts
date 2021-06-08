@@ -28,13 +28,13 @@ export default async function login(
       }
       
       const passwordIsVerified = compareHash(password, user.password)
-      
+
       if (!passwordIsVerified) {
         res.statusCode = 409
         throw new Error('Senha incorreta!')
       }
 
-      res.status(201).send({ token: generateToken({id: user.id})})
+      res.status(201).send({ token: generateToken({id: user.id, role: user.role})})
 
    } catch (error) {
 

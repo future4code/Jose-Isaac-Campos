@@ -1,7 +1,8 @@
 import * as jwt from 'jsonwebtoken'
 
 type AuthenticationData = {
-  id: string
+  id: string,
+  role: string
 }
 
 export const generateToken = (input: AuthenticationData):string => {
@@ -15,7 +16,8 @@ export const generateToken = (input: AuthenticationData):string => {
 export const getData = (token: string): AuthenticationData => {
   const payload = jwt.verify(token, process.env.JWT_KEY as string) as any
   return {
-    id: payload.id
+    id: payload.id,
+    role: payload.role
   }
 }
 
