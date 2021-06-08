@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { userModel } from "../model/userModel";
-import { ENUM_ROLE, user } from "../types";
-import { generateToken, getData } from "../utils/autorizator";
+import { ENUM_ROLE} from "../types";
+import { getData } from "../utils/autorizator";
 
 export default async function login(
    req: Request,

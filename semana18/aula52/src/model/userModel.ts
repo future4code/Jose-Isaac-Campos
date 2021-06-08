@@ -14,5 +14,8 @@ export const userModel = {
   findById: async (id: string): Promise<any> => {
     return await connection(userTableName)
          .where({ id })
+  },
+  deleteById: async (id: string): Promise<any> => {
+    return await connection(userTableName).delete().where({ id })
   }
 }
