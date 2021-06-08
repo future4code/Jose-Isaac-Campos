@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { userModel } from "../model/userModel";
 import { user } from "../types";
 import { generateToken } from "../utils/autorizator";
+import { compareHash } from "../utils/hashManager";
 
 export default async function login(
    req: Request,
@@ -26,7 +27,9 @@ export default async function login(
          throw new Error('Email não encontrado!')
       }
       
-      if (user.password !== password) {
+      const passwordIsVerified = compareHash(password, user.password)
+      
+      if (!passwordIsVerified) {
         res.statusCode = 409
         throw new Error('Senha incorreta!')
       }

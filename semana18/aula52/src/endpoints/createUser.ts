@@ -3,6 +3,7 @@ import { userModel } from "../model/userModel";
 import { user } from "../types";
 import { generateToken } from "../utils/autorizator";
 import { generateId } from '../utils/generateId'
+import { generateHash } from "../utils/hashManager";
 
 export default async function createUser(
    req: Request,
@@ -28,15 +29,16 @@ export default async function createUser(
       }
 
       const id = generateId()
-
-      const newUser: user = { id, email, password }
+      const passwordHash = generateHash(password)
+      const newUser: user = { id, email, password: passwordHash}
 
       await userModel.create(newUser)
 
-      res.status(201).send({ token: generateToken({id: newUser.id})})
+      const token = generateToken({id: newUser.id})
+
+      res.status(201).send({token})
 
    } catch (error) {
-
       if (res.statusCode === 200) {
          res.status(500).send({ message: "Internal server error" })
       } else {
