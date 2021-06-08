@@ -11,28 +11,22 @@ export default async function login(
    try {
 
       const authorization = req.headers.authorization as string;
-      const id = req.params.id
 
       const authorized = getData(authorization)
 
-      if (authorized.role !== ENUM_ROLE.ADMIN) {
-         res.statusCode = 403
-         throw new Error('Unauthorized, Only a admin user can access this functionality')
+      if (authorized.role !== ENUM_ROLE.NORMAL && authorized.role !== ENUM_ROLE.ADMIN) {
+         res.statusCode = 403;
+         throw new Error('Unauthorized')
       }
 
-      if (!validate(id)) {
-        res.statusCode = 400
-        throw new Error("Invalid id")
-      }
+      const [user] = await userModel.findById(authorized.id)
 
-      const result = await userModel.deleteById(id)
-
-      if (result === 0) {
+      if (!user) {
         res.statusCode = 404
         throw new Error('User not found')
       }
 
-      res.status(201).send({message: 'User deleted with success'})
+      res.status(201).send({id: user.id, email: user.email})
 
    } catch (error) {
       if (error.message === 'jwt expired') {

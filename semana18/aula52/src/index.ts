@@ -4,7 +4,9 @@ import createUser from './endpoints/createUser'
 import login from "./endpoints/login"
 import getProfile from "./endpoints/getProfile"
 import deleteUser from "./endpoints/deleteUser"
+import getUser from "./endpoints/getUser"
 
+app.get('/user', getUser)
 app.get('/user/profile', getProfile)
 app.post('/user/signup', createUser)
 app.post('/user/login', login)
