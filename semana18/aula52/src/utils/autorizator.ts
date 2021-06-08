@@ -7,7 +7,7 @@ type AuthenticationData = {
 
 export const generateToken = (input: AuthenticationData):string => {
   return jwt.sign(
-    {id : input.id},
+    {id : input.id, role: input.role},
     process.env.JWT_KEY as string,
     { expiresIn: '30m'}
   )

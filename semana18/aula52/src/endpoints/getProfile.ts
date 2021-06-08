@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { userModel } from "../model/userModel";
-import { user } from "../types";
+import { ENUM_ROLE, user } from "../types";
 import { generateToken, getData } from "../utils/autorizator";
 
 export default async function login(
@@ -13,6 +13,11 @@ export default async function login(
 
       const authorized = getData(authorization)
 
+      if (authorized.role !== ENUM_ROLE.NORMAL) {
+         res.statusCode = 403;
+         throw new Error('Unauthorized')
+      }
+
       const [user] = await userModel.findById(authorized.id)
 
       if (!user) {
@@ -24,10 +29,10 @@ export default async function login(
 
    } catch (error) {
       if (error.message === 'jwt expired') {
-        res.status(400).send({message: 'token expired!'})
+        res.status(403).send({message: 'Unauthorized, token expired!'})
       }
       if (error.message === 'jwt malformed' || error.message === 'invalid signature') {
-        res.status(400).send({message: 'token inválido!'})
+        res.status(403).send({message: 'Unauthorized, token inválido!'})
       }
       if (res.statusCode === 200) {
          res.status(500).send({ message: "Internal server error" })
