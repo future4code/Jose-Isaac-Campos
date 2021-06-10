@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import { userModel } from '../model/userModel'
 import { user } from '../types'
-import { generateToken } from '../utils/autorizator'
+import { generateToken, getData } from '../utils/autorizator'
 import { generateId } from '../utils/generateId'
 import { compareHash, generateHash } from '../utils/hashManager'
 import { validateEmail } from '../utils/validateEmail'
@@ -86,6 +86,37 @@ export const userController = {
          res.status(500).send({ message: "Internal server error" })
       } else {
          res.send({ message: error.message })
+      }
+    }
+  },
+  profile: async (req: Request, res: Response) => {
+    try {
+      const authorization = req.headers.authorization as string
+
+      const authorizationData = getData(authorization)
+
+      const [user] = await userModel.findById(authorizationData.id)
+
+      if (!user) {
+        res.statusCode = 404
+        throw new Error('User not found!')
+      }
+
+      res.send({id: user.id, email: user.email})
+
+    } catch (error) {
+      if (error.message === 'jwt expired') {
+        res.status(403).send({message: 'Unauthorized, token expired!'})
+      }
+
+      if (error.message === 'jwt malformed' || error.message === 'invalid signature') {
+        res.status(403).send({message: 'Unauthorized, token inválido!'})
+      }
+
+      if (res.statusCode === 200) {
+        res.status(500).send({ message: "Internal server error" })
+      } else {
+        res.send({ message: error.message })
       }
     }
   }
