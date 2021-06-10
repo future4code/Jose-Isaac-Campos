@@ -92,17 +92,20 @@ export const userController = {
   profile: async (req: Request, res: Response) => {
     try {
       const authorization = req.headers.authorization as string
+      const {id} = req.params
 
       const authorizationData = getData(authorization)
 
-      const [user] = await userModel.findById(authorizationData.id)
+      const userId = id ? id : authorizationData.id
+
+      const [user] = await userModel.findById(userId)
 
       if (!user) {
         res.statusCode = 404
         throw new Error('User not found!')
       }
 
-      res.send({id: user.id, email: user.email})
+      res.send({id: user.id, name: user.name, email: user.email})
 
     } catch (error) {
       if (error.message === 'jwt expired') {
