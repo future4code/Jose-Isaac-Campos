@@ -27,7 +27,12 @@ export const userController = {
         throw new Error('Sorry, the password must be at least 6 characters long and at least one numeric and one special character.')
       }
 
-      //TODO validar se o email já existe
+      const [user] = await userModel.findByEmail(email)
+
+      if (user) {
+        res.statusCode = 400
+        throw new Error('Email already registered!')
+      }
 
       const newUser = {
         id: generateId(),
