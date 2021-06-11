@@ -51,4 +51,43 @@ export const revenueController = {
       }
     }
   },
+  get: async (req: Request, res: Response) => {
+    try {
+      const { id } = req.params;
+
+      const authorization = req.headers.authorization as string;
+
+      getData(authorization);
+
+      const [revenue] = await revenueModel.findById(id);
+
+      if (!revenue) {
+        res.statusCode = 404;
+        throw new Error('Sorry, revenue not found!');
+      }
+
+      res.send({
+        id: revenue.id,
+        title: revenue.title,
+        description: revenue.description,
+        createdAt: revenue.creation_date,
+      });
+    } catch (error) {
+      if (error.message === 'jwt expired') {
+        res.status(403).send({ message: 'Unauthorized, token expired!' });
+      }
+
+      if (
+        error.message === 'jwt malformed' ||
+        error.message === 'invalid signature'
+      ) {
+        res.status(403).send({ message: 'Unauthorized, token invalid!' });
+      }
+      if (res.statusCode === 200) {
+        res.status(500).send({ message: 'Internal server error' });
+      } else {
+        res.send({ message: error.message });
+      }
+    }
+  },
 };
