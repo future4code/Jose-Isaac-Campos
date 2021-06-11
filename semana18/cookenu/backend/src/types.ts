@@ -15,3 +15,8 @@ export type revenue = {
 export type authenticationData = {
   id: string;
 };
+
+export type follower = {
+  fk_user_id: string;
+  fk_following_user_id: string;
+};

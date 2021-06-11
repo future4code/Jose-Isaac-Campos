@@ -70,7 +70,7 @@ export const revenueController = {
         id: revenue.id,
         title: revenue.title,
         description: revenue.description,
-        createdAt: revenue.creation_date,
+        createdAt: new Date(revenue.creation_date).toLocaleDateString(),
       });
     } catch (error) {
       if (error.message === 'jwt expired') {

@@ -1,5 +1,9 @@
-import { v4 } from 'uuid'
+import { v4, validate } from 'uuid';
 
 export const generateId = () => {
-  return v4()
-}
+  return v4();
+};
+
+export const validateFormatId = (id: string): boolean => {
+  return validate(id);
+};
