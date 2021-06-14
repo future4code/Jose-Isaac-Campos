@@ -1,17 +1,15 @@
 import { Request, Response } from 'express';
 import { userBusiness } from '../business/userBusiness';
-import { userData } from '../model/user';
+import { userAccessData } from '../model/user';
 
-export const signup = async (req: Request, res: Response) => {
+export const login = async (req: Request, res: Response) => {
   try {
-    const input: userData = {
+    const input: userAccessData = {
       email: req.body.email,
-      name: req.body.name,
       password: req.body.password,
-      role: req.body.role,
     };
 
-    const token = await userBusiness.createUser(input);
+    const token = await userBusiness.login(input);
 
     res.status(200).send({ token });
   } catch (error) {

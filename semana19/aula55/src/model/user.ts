@@ -11,3 +11,8 @@ export type userData = {
 };
 
 export type user = userData & { id: string };
+
+export type userAccessData = {
+  email: string;
+  password: string;
+};
