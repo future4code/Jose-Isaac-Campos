@@ -24,4 +24,13 @@ export type signupInputDTO = {
 	role: any
 }
 
+export type signupBusinessDTO = {
+   id: string,
+   name: string,
+   nickname: string,
+   email: string,
+   password: string,
+	role: USER_ROLES
+}
+
 export type user = userData & { id: string }
