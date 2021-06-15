@@ -1,8 +1,8 @@
 import { connection } from "../connection";
-import { user } from "../../model/user";
+import { signupBusinessDTO } from "../../model/user";
 
 export const insertUser = async(
-   user: user
+   user: signupBusinessDTO
 ) => {
    await connection.insert(user).into('to_do_list_users')
 }

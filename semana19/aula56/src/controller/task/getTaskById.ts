@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { getTaskByIdBusiness } from "../../business/task/getTaskByIdBusiness";
 import {selectTaskById} from "../../data/task/selectTaskById";
+import { task, taskInputDTO } from "../../model/task";
 
 export const getTaskById = async (
    req: Request,
@@ -8,9 +9,9 @@ export const getTaskById = async (
 ) => {
    try {
 
-      const { id } = req.params
+      const { id }: taskInputDTO = req.params as taskInputDTO
 
-      const task = getTaskByIdBusiness(id)
+      const task: task = await getTaskByIdBusiness(id)
 
       res.status(200).send(task)
 
