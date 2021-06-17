@@ -9,8 +9,13 @@ export class friendRelationshipDatabase {
             .insert(friendRelationship)
     }
 
-    public async findById(id: string): Promise<any> {
+    public async delete(friendRelationship: friendRelationshipDTO): Promise<any> {
         return await connection(this.tableName)
-            .where({ id })
+            .delete()
+            .where({ 
+                fk_follower_id: friendRelationship.fk_follower_id, 
+                fk_following_id: friendRelationship.fk_following_id 
+            })
+
     }
 }

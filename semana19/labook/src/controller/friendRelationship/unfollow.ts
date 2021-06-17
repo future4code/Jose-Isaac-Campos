@@ -1,8 +1,9 @@
 import { Request, Response } from "express";
 import { followBusiness } from "../../business/friendRelationship/followBusines";
+import { unFollowBusiness } from "../../business/friendRelationship/unFollowBusiness";
 import { friendRelationshipInputDTO } from "../../model/friendRelationship";
 
-export const follow = async (req: Request, res: Response): Promise<void> => {
+export const unFollow = async (req: Request, res: Response): Promise<void> => {
     try {
         const id = req.params.id
         const token = req.headers.authorization
@@ -12,7 +13,7 @@ export const follow = async (req: Request, res: Response): Promise<void> => {
             token
         }
 
-        await followBusiness(friendRelationship)
+        await unFollowBusiness(friendRelationship)
 
         res.send({ message: 'Success!'})
     } catch (error) {
