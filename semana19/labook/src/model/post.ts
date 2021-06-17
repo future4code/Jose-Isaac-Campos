@@ -23,6 +23,15 @@ export enum POST_TYPES {
     author_id: string
  }
 
+ export type postResponseDTO = {
+    id: string,
+    photo: string,
+    description: string,
+    type: POST_TYPES,
+    createdAt: string,
+    authorId: string
+ }
+
  export type postInputDTO = {
     photo: any,
     description: any,

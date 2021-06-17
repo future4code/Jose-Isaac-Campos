@@ -23,7 +23,7 @@ export const createBusiness = async (post: postInputDTO, token: string): Promise
             .reverse()
             .join('-'),
         author_id: tokenData.id
-    }
+    }    
 
     await new PostDatabase().create(newPost)
 }
