@@ -1,5 +1,5 @@
 # Labook 📚
-<h4 align="center"> 
+<h4> 
 	🚧 🚀 Em construção...  🚧
 </h4>
 
