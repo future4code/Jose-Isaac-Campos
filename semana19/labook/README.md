@@ -3,8 +3,6 @@
 	🚧 🚀 Em construção...  🚧
 </h4>
 
-<br>
-
 ### Tabela de conteúdos
 <!--ts-->
    * [Sobre](#Sobre)
@@ -14,13 +12,9 @@
    * [Tecnologias](#tecnologias)
 <!--te-->
 
-<br>
-
 ### Sobre
 
 <p>O LaBook será uma rede social com o objetivo de promover a conexão e interação entre seus mais diversos usuários. Os usuários podem criar posts de dois tipos ("evento" ou "normal"), comentá-los e curti-los também.</p>
-
-<br>
 
 ### Features
 
@@ -31,8 +25,6 @@
 - [x] Se tornar amigo de um usuário
 - [x] Desfazer a amizade com um usuário
 - [ ] 
-
-<br>
 
 ### Pré-requisitos
 
@@ -60,8 +52,6 @@ $ npm run dev
 
 # O servidor inciará na porta:3003 - acesse <http://localhost:3003>
 ```
-
-<br>
 
 ### 🛠 Tecnologias
 
