@@ -1,35 +1,44 @@
-import { Casino, User, Result, ResultItem, LOCATION } from "../model/exercicio03_types";
+import { Casino, User, Result, ResultItem, LOCATION, NATIONALITY } from "../model/exercicio03_types";
 
 export function verifyAge(
     casino: Casino,
     users: User[]
 ): Result {
-    const result: Result = {
-        brazilians: {
-            allowed: [],
-            unallowed: []
-        },
-        americans: {
-            allowed: [],
-            unallowed: []
-        }
-    }
+    const allowed: User[] = [];
+    const unallowed: User[] = [];
 
     for (let user of users) {
         if (casino.location === LOCATION.EUA) {
             if (user.age >= 21) {
-                result.americans.allowed.push(user.name)
+                allowed.push(user)
             } else {
-                result.americans.unallowed.push(user.name)
+                unallowed.push(user)
             }
-        } else {
-            if (user.age >= 21) {
-                result.brazilians.allowed.push(user.name)
+        } else if (casino.location === LOCATION.BRAZIL){            
+            if (user.age >= 18) {
+                allowed.push(user)
             } else {
-                result.brazilians.unallowed.push(user.name)
+                unallowed.push(user)
             }
         }
     }
 
-    return result
+    return {
+        brazilians: {
+            allowed: allowed
+                .filter((user) => user.nationality === NATIONALITY.BRAZILIAN)
+                .map((user) => user.name),
+            unallowed: unallowed
+                .filter((user) => user.nationality === NATIONALITY.BRAZILIAN)
+                .map((user) => user.name)
+        },
+        americans: {
+            allowed: allowed
+                .filter((user) => user.nationality === NATIONALITY.AMERICAN)
+                .map((user) => user.name),
+            unallowed: unallowed
+                .filter((user) => user.nationality === NATIONALITY.AMERICAN)
+                .map((user) => user.name)
+        }
+    }
 }
