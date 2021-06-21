@@ -1,4 +1,4 @@
-import { User } from "../src/model/user"
+import { User } from "../src/model/exercicio02_User"
 import { performPurchas } from "../src/utils/performPurchas"
 
 describe("Testando a validação se o usuário tem saldo para comprar", () => {
