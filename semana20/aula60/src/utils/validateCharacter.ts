@@ -7,7 +7,11 @@ export const validateCharacter = (character: Character) => {
         return false
     }
 
-    if (life <= 1500 || typeof life !== "number") {
+    if (name.length === 0) {
+        return false
+    }
+
+    if (life < 1500 || typeof life !== "number") {
         return false
     }
 
