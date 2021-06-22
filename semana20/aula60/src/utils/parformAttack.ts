@@ -7,11 +7,13 @@ const performAttack = (
 ) => {
     
     if(!validator(attacker) || !validator(defender)) {
-        throw new Error('Ivalid character')
+        throw new Error('Invalid character')
     }
 
     if (attacker.attack > defender.defense) {
-        defender.life -= defender.defense - attacker.attack
+        const damage = Math.abs(defender.defense - attacker.attack)
+
+        defender.life -= damage
     }
 }
 
