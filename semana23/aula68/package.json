@@ -7,6 +7,7 @@
     "start": "tsc && node ./build/src/index.js",
     "build": "tsc",
     "list": "tsc && node ./build/src/list/index.js",
+    "stack": "tsc && node ./build/src/stack/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

@@ -41,4 +41,28 @@ export class LinkedList {
     const title = '\nAll items: \n-------------------\n';
     return title + this.getAll().join(', ');
   };
+
+  public pop = (): any => {
+    if (!this.head) return null;
+
+    let currentSelectedNode = this.head;
+
+    if (!currentSelectedNode.next) {
+      const deletedValue = this.head.value;
+      this.head = null;
+      return deletedValue;
+    }
+
+    let nextNode = currentSelectedNode.next;
+
+    while (nextNode.next) {
+      currentSelectedNode = nextNode;
+      nextNode = nextNode.next;
+    }
+
+    const deletedValue = nextNode.value;
+    currentSelectedNode.next = null;
+
+    return deletedValue;
+  };
 }
