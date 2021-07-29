@@ -1,4 +1,4 @@
-const checkParentheses = (params) => {
+const checkParentheses = (params: string): boolean => {
   if (!params.length) {
     return true;
   }
